@@ -2,18 +2,24 @@
 #include "Fraction.h"
 
 
-int gcd (unsigned int n1, unsigned int n2) {
+int gcd(unsigned int n1, unsigned int n2) {
     return (n2 == 0) ? n1 : gcd (n2, n1 % n2);
 }
 
 Fraction::Fraction(int numerator, int denominator) {
     this->numerator = numerator;
     this->denominator = denominator;
+    if (this->denominator == 0) {
+        throw -1;
+    }
 }
 
-Fraction::Fraction(Fraction& exemplar) {
+Fraction::Fraction(const Fraction& exemplar) {
     this->numerator = exemplar.numerator;
     this->denominator = exemplar.denominator;
+    if (this->denominator == 0) {
+        throw -1;
+    }
 }
 
 void Fraction::normalize() {
@@ -26,9 +32,9 @@ void Fraction::normalize() {
 std::string Fraction::getValue() {
     std::string string;
     if (this->denominator != 1) {
-       string += std::to_string(this->numerator) + (std::string)"/" + std::to_string(this->denominator);
-    }
-    else {
+       string += std::to_string(this->numerator) + (std::string)"/" + 
+                std::to_string(this->denominator);
+    } else {
         string += std::to_string(this->numerator);
     }
     return string;
