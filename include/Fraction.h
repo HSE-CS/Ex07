@@ -1,32 +1,31 @@
-/*
- * @author Stanislav Stoianov
- */
+// Copyright 2017 Stanislav Stoianov
 
-#ifndef GHA_FRAC_FRACTION_H
-#define GHA_FRAC_FRACTION_H
+#ifndef INCLUDE_FRACTION_H_
+#define INCLUDE_FRACTION_H_
 
 #include <cstdint>
 #include <string>
 
 class Fraction {
-private:
+ private:
+  int32_t numerator, denominator;
 
-    int32_t numerator, denominator;
+  void normalize();
 
-    void normalize();
+ public:
+  explicit Fraction(int32_t numerator = 0, int32_t denominator = 1)
+      : numerator(numerator), denominator(denominator) {
+    if (denominator == 0)
+      throw "Exception in thread \"main\" ArithmeticException: Divide by zero";
+    normalize();
+  }
 
-public:
+  Fraction(Fraction &fraction)
+      : numerator(fraction.numerator), denominator(fraction.denominator){};
 
-    explicit Fraction(int32_t numerator = 0, int32_t denominator = 1) : numerator(numerator), denominator(denominator) {
-        if (denominator == 0) throw "Exception in thread \"main\" ArithmeticException: Divide by zero";
-        normalize();
-    }
+  std::string getValue() const;
 
-    Fraction(Fraction &fraction) : numerator(fraction.numerator), denominator(fraction.denominator) {};
-
-    std::string getValue() const;
-
-    int32_t getNumerator() const;
+  int32_t getNumerator() const;
 
     int32_t getDenominator() const;
 
@@ -42,4 +41,4 @@ public:
 
 };
 
-#endif
+#endif  // INCLUDE_FRACTION_H_

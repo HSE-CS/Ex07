@@ -1,6 +1,4 @@
-/*
- * @author Stanislav Stoianov
- */
+// Copyright 2017 Stanislav Stoianov
 
 #include <iostream>
 #include "../include/Fraction.h"
