@@ -22,7 +22,7 @@ public:
         normalize();
     }
 
-    Fraction(Fraction &fraction) : numerator(fraction.numerator), denominator(fraction.denominator) {}
+    Fraction(Fraction &fraction) : numerator(fraction.numerator), denominator(fraction.denominator) {};
 
     std::string getValue() const;
 
@@ -40,6 +40,6 @@ public:
 
     Fraction &operator=(const Fraction &fraction);
 
-}
+};
 
 #endif
