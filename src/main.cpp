@@ -8,6 +8,6 @@ int main() {
     Fraction c;
     std::cout << c.getValue() << std::endl;
     c = a + b;
-    std::cout << c.getValue();
+    std::cout << c.getValue() << std::endl;
     return 0;
 }

@@ -24,6 +24,8 @@ class Fraction {
     int getDenominator();
     Fraction operator+(const Fraction &frs);
     Fraction operator-(const Fraction &frs);
+    Fraction operator*(const Fraction &fr);
+    Fraction operator/(const Fraction &fr);
     Fraction& operator=(const Fraction &fr);
 };
 

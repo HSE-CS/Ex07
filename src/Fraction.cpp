@@ -17,7 +17,9 @@ void Fraction::normalize() {
 
 std::string Fraction::getValue() {
   normalize();
-  if(getNumerator() == getDenominator())
+  if (!getNumerator())
+    return "0";
+  else if (getNumerator() == getDenominator())
     return "1";
   return std::to_string(getNumerator()) + "/"
   + std::to_string(getDenominator());
@@ -34,7 +36,6 @@ int Fraction::getDenominator() {
 Fraction Fraction::operator+(const Fraction &frs) {
   int num = numerator * this->getDenominator() +
   this->getNumerator() * denominator;
-  std::cout << num << std::endl;
   int den = this->getDenominator() * denominator;
   Fraction temp = Fraction(num, den);
   return temp;
@@ -54,14 +55,16 @@ Fraction& Fraction::operator=(const Fraction& fr)  {
   return *this;
 }
 
-// Fraction operator*(const Fraction &frf, const Fraction &frs) {
-//   int num = frf.getNumerator() * frs.getNumerator();
-//   int den = frf.getDenominator() * frs.getDenominator();
-//   return Fraction(num, den);
-// }
+Fraction Fraction::operator*(const Fraction& fr) {
+  int num = getNumerator() * this->getNumerator();
+  int den = getDenominator() * this->getDenominator();
+  Fraction temp = Fraction(num, den);
+  return temp;
+}
 
-// Fraction operator/(const Fraction &frf, const Fraction &frs) {
-//   int num = frf.getNumerator() * frs.getDenominator();
-//   int den = frf.getDenominator() * frs.getNumerator();
-//   return Fraction(num, den);
-// }
+Fraction Fraction::operator/(const Fraction& fr) {
+  int num = getNumerator() * this->getDenominator();
+  int den = getDenominator() * this->getNumerator();
+  Fraction temp = Fraction(num, den);
+  return temp;
+}
