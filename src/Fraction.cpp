@@ -5,14 +5,14 @@
 #include "../include/Fraction.h"
 
 void Fraction::normalize() {
-    auto denominator = this->denominator;
-    auto numerator = this->numerator;
-    if (denominator < numerator) std::swap(denominator, numerator);
-    while (numerator) {
-        denominator %= numerator;
-        std::swap(denominator, numerator);
+    auto denom = this->denominator;
+    auto numer = this->numerator;
+    if (denom < numer) std::swap(denom, numer);
+    while (numer) {
+        denom %= numer;
+        std::swap(denom, numer);
     }
-    int32_t divisor = denominator;
+    int32_t divisor = denom;
     this->denominator /= divisor;
     this->numerator /= divisor;
 }
