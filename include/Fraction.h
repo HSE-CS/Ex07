@@ -1,5 +1,4 @@
 // Copyright 2020 Nikita Stifeev
-
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
 

@@ -1,5 +1,4 @@
 ﻿// Copyright 2020 Nikita Stifeev
-
 #include <iostream>
 #include "Fraction.h"
 
