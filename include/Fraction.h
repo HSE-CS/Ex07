@@ -7,9 +7,9 @@ class Fraction {
  private:
   int numerator, denominator;
  public:
-  explicit Fraction();
+  Fraction();
   explicit Fraction(int a, int b);
-  Fraction(Fraction &a);
+  Fraction(const Fraction &a);
   void normalize();
   std::string getValue();
   int getNumerator() const;

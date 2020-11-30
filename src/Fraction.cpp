@@ -14,7 +14,7 @@ Fraction::Fraction(int a, int b) {
   normalize();
 }
 
-Fraction::Fraction(Fraction &a) {
+Fraction::Fraction(const Fraction &a) {
   numerator = a.numerator;
   denominator = a.denominator;
 }
@@ -23,7 +23,7 @@ void Fraction::normalize() {
   int a = numerator;
   int b = denominator;
   int c = 0;
-  while(b) {
+  while (b) {
     c = a % b;
     a = b;
     b = c;
@@ -32,18 +32,17 @@ void Fraction::normalize() {
   denominator = denominator / abs(a);
 }
 
-std::string Fraction::getValue()
-{
+std::string Fraction::getValue() {
   std::string ans =  "";
   ans = std::to_string(numerator) + "/" + std::to_string(denominator);
   return ans;
 }
 
-int Fraction::getNumerator() const{
+int Fraction::getNumerator() const {
   return numerator;
 }
 
-int Fraction::getDenominator() const{
+int Fraction::getDenominator() const {
   return denominator;
 }
 
