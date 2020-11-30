@@ -1,3 +1,4 @@
+//Copyright 2020 Elizaveta Drobot
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
 
@@ -30,6 +31,9 @@ public:
 	Fraction& operator= (const Fraction& a) {
 		this->numerator = a.numerator;
 		this->denominator = a.denominator;
+		if (this->denominator == 0) {
+			throw - 1;
+		}
 		return *this;
 	}
 
@@ -48,6 +52,9 @@ public:
 			d.numerator = a.numerator * this->denominator;
 			result.numerator = c.numerator + d.numerator;
 			result.denominator = c.denominator;
+		}
+		if (result.denominator == 0) {
+			throw - 1;
 		}
 		normalize();
 		return result;
@@ -69,6 +76,9 @@ public:
 			result.numerator = c.numerator - d.numerator;
 			result.denominator = c.denominator;
 		}
+		if (result.denominator == 0) {
+			throw - 1;
+		}
 		normalize();
 		return result;
 	}
@@ -77,6 +87,9 @@ public:
 		Fraction result;
 		result.numerator = this->numerator * a.numerator;
 		result.denominator = this->denominator * a.denominator;
+		if (result.denominator == 0) {
+			throw - 1;
+		}
 		return result;
 	}
 
@@ -84,6 +97,9 @@ public:
 		Fraction result;
 		result.numerator = this->numerator * a.denominator;
 		result.denominator = this->denominator * a.numerator;
+		if (result.denominator == 0) {
+			throw - 1;
+		}
 		return result;
 	}
 };

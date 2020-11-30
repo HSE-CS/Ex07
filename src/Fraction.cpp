@@ -5,6 +5,9 @@
 
 
 Fraction::Fraction(int a, int b) {
+	if (b == 0) {
+		throw - 1;
+	}
 	this->numerator = a;
 	this->denominator = b;
 }
