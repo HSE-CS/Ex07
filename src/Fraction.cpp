@@ -11,7 +11,7 @@ void Fraction::normalize() {
     int num_1 = abs(numerator);
     int num_2 = abs(denominator);
     while (num_1 != 0 && num_2 != 0) {
-        if (num_1 > num_2)
+        if (num_1 >= num_2)
             num_1 = num_1 % num_2;
         else
             num_2 = num_2 % num_1;
