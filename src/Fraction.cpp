@@ -10,9 +10,11 @@ void Fraction::normalize() {
             numerator *= -1;
             denominator *= -1;
         }
-        else if (numerator > 0 && denominator < 0) {
-            numerator *= -1;
-            denominator *= -1;
+        else {
+            if (numerator > 0 && denominator < 0) {
+                numerator *= -1;
+                denominator *= -1;
+            }
         }
         int size = std::min(abs(numerator), abs(denominator));
         for (int iterator = 1; iterator <= size; ++iterator) {
