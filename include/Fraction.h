@@ -1,23 +1,21 @@
-//
 // Created by Алексей Трутнев on 01.12.2020.
-//
 
-#ifndef UNTITLED14_FRACTION_H
-#define UNTITLED14_FRACTION_H
+#ifndef INCLUDE_FRACTION_H_EX07
+#define INCLUDE_FRACTION_H_EX07
 
 #include<iostream>
 #include<string>
 #include<algorithm>
 
 class Fraction {
-private:
+ private:
     int numerator;
     int denominator;
 
-protected:
+ protected:
     void normalize();
 
-public:
+ public:
     [[nodiscard]] std::string getValue() const;
     [[nodiscard]] int getNumerator() const;
     [[nodiscard]] int getDenominator() const;
@@ -34,7 +32,7 @@ public:
             normalize();
         }
         catch (int a) {
-            std::cerr << "We caught a zero value of denominator: " << a << std::endl;
+            std::cerr << "We caught a zero value of denominator"<< std::endl;
         }
     }
 
@@ -57,20 +55,20 @@ public:
             return *this;
         }
         catch (int a) {
-            std::cerr << "We caught a zero value of denominator: " << a << std::endl;
+            std::cerr << "We caught a zero value of denominator"<< std::endl;
         }
     }
 
-    Fraction operator+ (const Fraction& addendum) const {
-        int numer = numerator * addendum.denominator + addendum.numerator * denominator;
-        int denom = denominator * addendum.denominator;
+    Fraction operator+ (const Fraction& add) const {
+        int numer = numerator * add.denominator + add.numerator * denominator;
+        int denom = denominator * add.denominator;
         Fraction result(numer, denom);
         return result;
     }
 
-    Fraction operator- (const Fraction& subtrahend) const {
-        int numer = numerator * subtrahend.denominator - subtrahend.numerator * denominator;
-        int denom = denominator * subtrahend.denominator;
+    Fraction operator- (const Fraction& sub) const {
+        int numer = numerator * sub.denominator - sub.numerator * denominator;
+        int denom = denominator * sub.denominator;
         Fraction result(numer, denom);
         return result;
     }
@@ -90,4 +88,4 @@ public:
     }
 };
 
-#endif //UNTITLED14_FRACTION_H
+#endif // INCLUDE_FRACTION_H_EX07
