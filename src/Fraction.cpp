@@ -16,8 +16,12 @@ void Fraction::normalize() {
 }
 
 std::string Fraction::getValue() const {
-    return this->denominator == 1 ? std::to_string(this->numerator) : std::to_string(this->numerator) + "/" +
-                                                                      std::to_string(this->denominator);
+  if (this->denominator == 1) {
+    return std::to_string(this->numerator);
+  } else {
+    return std::to_string(this->numerator) + "/" +
+           std::to_string(this->denominator);
+  }
 }
 
 int32_t Fraction::getNumerator() const {
