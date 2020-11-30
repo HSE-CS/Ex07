@@ -6,7 +6,11 @@ void Fraction::normalize() {
         this->denominator = 1;
         return;
     } else {
-        if ((numerator < 0 && denominator < 0) || (numerator > 0 && denominator < 0)) {
+        if (numerator < 0 && denominator < 0) {
+            numerator *= -1;
+            denominator *= -1;
+        }
+        else if (numerator > 0 && denominator < 0) {
             numerator *= -1;
             denominator *= -1;
         }
