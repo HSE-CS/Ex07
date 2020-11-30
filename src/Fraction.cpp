@@ -4,9 +4,10 @@
 int NOD(int a, int b) {
   while (a != 0 && b != 0) {
     if (a > b)
-	  a %= b;
-	else
-	  b %= a;
+      a = a % b;
+    else {
+      b = b % a;
+	}
   }
   return a + b;
 }
@@ -23,10 +24,9 @@ std::string Fraction::getValue() {
   char char_den = f.denominator + '0';
   std::string(res);
   res.append(1, char_num);
-  if (f.denominator != 1)
-  {
+  if (f.denominator != 1) {
     res.append(1, '\\');
-	res.append(1, char_den);
+    res.append(1, char_den);
   }
   return res;
 }

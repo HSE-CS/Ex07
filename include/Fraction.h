@@ -11,12 +11,12 @@ class Fraction {
  public:
   explicit Fraction(int num = 0, int den = 1) {
     this->numerator = num;
-	this->denominator = den;
-  };
+    this->denominator = den;
+  }
   Fraction(const Fraction& f) {
-	this->numerator = f.numerator;
-	this->denominator = f.denominator;
-  };
+    this->numerator = f.numerator;
+    this->denominator = f.denominator;
+  }
   Fraction normalize();
   std::string getValue();
   int getNumerator() const;
@@ -28,4 +28,4 @@ class Fraction {
   Fraction operator=(const Fraction&);
 };
 int NOD(int, int);
-#endif  // INCLUDE_FRACTION_
+#endif  // INCLUDE_FRACTION_H_
