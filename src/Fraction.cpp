@@ -36,7 +36,7 @@ int Fraction::getNumerator() {
     return numerator;
 }
 
-int Fraction::getDominator() {
+int Fraction::getDenominator() {
     return denominator;
 }
 

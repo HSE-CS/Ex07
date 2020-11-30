@@ -1,23 +1,23 @@
 // Copyright 2020 Nikita Kasyanov
 
-#ifndef _INCLUDE_FRACTION_H_
-#define _INCLUDE_FRACTION_H_
+#ifndef INCLUDE_FRACTION_H_
+#define INCLUDE_FRACTION_H_
 
 #include <numeric>
 #include <string>
 
 class Fraction {
-private:
+ private:
     int numerator;
     int denominator;
     void normalize();
 
-public:
+ public:
     Fraction(int, int);
     Fraction(const Fraction &);
     std::string getValue();
     int getNumerator();
-    int getDominator();
+    int getDenominator();
     Fraction operator+(const Fraction &);
     Fraction operator-(const Fraction &);
     Fraction operator*(const Fraction &);
@@ -26,4 +26,4 @@ public:
 };
 
 
-#endif // _INCLUDE_FRACTION_H_
+#endif  // _INCLUDE_FRACTION_H_
