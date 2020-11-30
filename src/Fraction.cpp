@@ -9,8 +9,7 @@ void Fraction::normalize() {
         if (numerator < 0 && denominator < 0) {
             numerator *= -1;
             denominator *= -1;
-        }
-        else {
+        } else {
             if (numerator > 0 && denominator < 0) {
                 numerator *= -1;
                 denominator *= -1;
