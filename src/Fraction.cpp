@@ -3,16 +3,16 @@
 #include "../include/Fraction.h"
 
 void Fraction::normalize() {
-    auto denom = this->denominator;
-    auto numer = this->numerator;
-    if (denom < numer) std::swap(denom, numer);
-    while (numer) {
-        denom %= numer;
-        std::swap(denom, numer);
-    }
-    int32_t divisor = denom;
-    this->denominator /= divisor;
-    this->numerator /= divisor;
+  auto a = this->denominator;
+  auto b = this->numerator;
+  if (a < b) std::swap(a, b);
+  while (b) {
+    a %= b;
+    std::swap(a, b);
+  }
+  int32_t divisor = a;
+  this->denominator /= divisor;
+  this->numerator /= divisor;
 }
 
 std::string Fraction::getValue() const {
