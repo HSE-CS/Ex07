@@ -20,4 +20,4 @@ class Fraction {
      Fraction operator/(const Fraction& op);
 };
 
-#endif // INCLUDE_FRACTION_H_
+#endif  // INCLUDE_FRACTION_H_
