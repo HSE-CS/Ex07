@@ -25,5 +25,11 @@ int main() {
     std::cout << c.getValue() << '\n';
     c = a / b;
     std::cout << c.getValue() << '\n';
+    Fraction a1(1, 2);
+    Fraction b1(1, 2);
+    Fraction c1;
+    c1 = a1 - b1;
+    std::cout << c1.getNumerator() << '\n';
+    std::cout << c1.getDenominator() << '\n';
     return 0;
 }
