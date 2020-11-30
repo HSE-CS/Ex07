@@ -2,9 +2,8 @@
 #include <iostream>
 #include "Fraction.h"
 
-int main()
-{
-    //example
+
+int main(){
     Fraction a(1, 2); 
     Fraction b(a);
     Fraction c;

@@ -26,8 +26,7 @@ void Fraction::normalize() {
 std::string Fraction::getValue() {
     if (denominator == 1) {
         return std::to_string(numerator);
-    }
-    else {
+    } else {
         return std::to_string(numerator) + "/" + std::to_string(denominator);
     }
 }
@@ -41,8 +40,8 @@ int Fraction::getDenominator() {
 }
 
 Fraction Fraction::operator+(const Fraction& fptr) {
-    return  Fraction(fptr.denominator * numerator + 
-        denominator * fptr.numerator, 
+    return  Fraction(fptr.denominator * numerator +
+        denominator * fptr.numerator,
         denominator * fptr.denominator);
 }
 
@@ -53,12 +52,12 @@ Fraction Fraction::operator-(const Fraction& fptr) {
 }
 
 Fraction Fraction::operator*(const Fraction& fptr) {
-    return Fraction(numerator * fptr.numerator, 
+    return Fraction(numerator * fptr.numerator,
         denominator * fptr.denominator);
 }
 
 Fraction Fraction::operator/(const Fraction& fptr) {
-    return Fraction(numerator * fptr.denominator, 
+    return Fraction(numerator * fptr.denominator,
         denominator * fptr.numerator);
 }
 
