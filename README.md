@@ -46,12 +46,12 @@ int numerator, denominator;
 
 int main()
 {
-    Fraction a(1,2); // 1/2
+    Fraction a(1, 2); // 1/2
     Fraction b(a);
     Fraction c;
-    std::cout<<c.getValue(); // 0
-    c=a+b;
-    std::cout<<c.getValue(); // 1
+    std::cout << c.getValue(); // 0
+    c = a + b;
+    std::cout << c.getValue(); // 1
     ...
 }
 ```
@@ -69,9 +69,9 @@ int main()
 
 ## Структура проекта
 
-- **Fraction.h** - заголовочный файл для класса **Prime**.
-- **Fraction.cpp** - файл с реализацией методов класса **Prime**.
-- **main.cpp** - домонстрационная программы для работы с классом **Prime**.
+- **Fraction.h** - заголовочный файл для класса **Fraction**.
+- **Fraction.cpp** - файл с реализацией методов класса **Fraction**.
+- **main.cpp** - домонстрационная программы для работы с классом **Fraction**.
 
 Файл `Fraction.h` помещаются в каталог `include`
 Файлы `Fraction.cpp, main.cpp` помещаются в каталог `src` 
