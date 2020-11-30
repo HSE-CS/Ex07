@@ -35,7 +35,8 @@ void Fraction::normalize() {
 Fraction::Fraction(int _numerator, int _denominator) {
     numerator = _numerator;
     denominator = _denominator;
-    denominator != 0 ? normalize() : throw std::runtime_error("DivisionByZero");
+    denominator != 0 ? normalize() :
+    throw std::runtime_error("DivisionByZero");
 }
 
 std::string Fraction::getValue() {
