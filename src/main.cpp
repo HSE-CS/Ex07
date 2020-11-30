@@ -2,7 +2,7 @@
 #include"Fraction.h"
 #include <string>
 int main() {
-    Fraction a1;	
+    Fraction a1;
     if (!a1.getNumerator()) std::cout << "Test 1.1 true" << std::endl;
     if (a1.getDenominator() == 1) std::cout << "Test 1.2 true" << std::endl;
     Fraction a2(1, 2);
