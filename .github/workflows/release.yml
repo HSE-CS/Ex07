@@ -16,4 +16,4 @@ jobs:
     - name: Run Test
       run: |
         ls -l  /home/runner/work
-        /home/runner/work/GHA-frac/GHA-frac/build/test/GHA-frac.test
+        /home/runner/work/Ex07/Ex07/build/test/Ex07.test
