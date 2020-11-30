@@ -10,9 +10,9 @@ void Fraction::normalize() {
   int gcd = std::gcd(numerator, denominator);
   numerator /= gcd;
   denominator /= gcd;
-};
+}
 
-explicit Fraction::Fraction(int num = 0, int den = 1) {
+Fraction::Fraction(int num, int den) {
   if (den != 0) {
     numerator = num;
     denominator = den;
@@ -20,12 +20,12 @@ explicit Fraction::Fraction(int num = 0, int den = 1) {
   } else {
     throw "Division by 0";
   }
-};
+}
 
 Fraction::Fraction(const Fraction &copied_frac) {
   numerator = copied_frac.numerator;
   denominator = copied_frac.denominator;
-};
+}
 
 std::string Fraction::getValue() {
   std::string result;
@@ -40,7 +40,7 @@ std::string Fraction::getValue() {
   }
 
   return result;
-};
+}
 
 int Fraction::getNumerator() { return numerator; };
 
@@ -49,22 +49,22 @@ int Fraction::getDenominator() { return denominator; };
 Fraction Fraction::operator+(const Fraction &frac) {
   return Fraction(numerator * frac.denominator + frac.numerator * denominator,
                   denominator * frac.denominator);
-};
+}
 
 Fraction Fraction::operator-(const Fraction &frac) {
   return Fraction(numerator * frac.denominator - frac.numerator * denominator,
                   denominator * frac.denominator);
-};
+}
 
 Fraction Fraction::operator*(const Fraction &frac) {
   return Fraction(numerator * frac.numerator, denominator * frac.denominator);
-};
+}
 
 Fraction Fraction::operator/(const Fraction &frac) {
   return Fraction(numerator * frac.denominator, denominator * frac.numerator);
-};
+}
 
 Fraction Fraction::operator=(const Fraction &frac) {
   numerator = frac.numerator;
   denominator = frac.denominator;
-};
+}
