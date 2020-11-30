@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <cstring>
+#include <string>
 #include "Fraction.h"
 
 
@@ -33,5 +34,5 @@ void Fraction::normalize() {
     denominator /= NOD;
 }
 
-string Fraction::getValue(Fraction &fraction) {
+std::string Fraction::getValue(Fraction &fraction) {
 }
