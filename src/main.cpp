@@ -1,14 +1,13 @@
-//Copyright 2020 Igumnova Natasha
+// Copyright 2020 Igumnova Natasha
 #include "Fraction.h"
 
-int main()
-{
-  Fraction z(1, 2); // 1/2
+int main() {
+  Fraction z(1, 2);  // 1/2
   Fraction x(z);
   Fraction y;
-  std::cout << y.getValue() << std::endl; // 0
+  std::cout << y.getValue() << std::endl;  // 0
   y = z + x;
-  std::cout << y.getValue() << std::endl; // 1
+  std::cout << y.getValue() << std::endl;  // 1
   Fraction a(1, 3);
   Fraction b(2, 3);
   Fraction c;
