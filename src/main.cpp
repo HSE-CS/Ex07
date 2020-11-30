@@ -1,10 +1,9 @@
 // Copyright 2020 test
-#include "../include/Fraction.h"
-//#include "Fraction.h"
+#include "Fraction.h"
 
 int main() {
     Fraction a(1, 2);
-    Fraction b(-1,3);
+    Fraction b(-1, 3);
     Fraction c;
     c = a + b;
     std::cout << c.getValue() << "\n";

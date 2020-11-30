@@ -14,10 +14,10 @@ class Fraction {
 
  public:
      explicit Fraction(int numerator = 0, int denominator = 1);
-     Fraction(Fraction &toCopy);
+     Fraction(Fraction const &toCopy);
      std::string getValue();
-     int getNumerator();     
-     int getDenominator();     
+     int getNumerator();  
+     int getDenominator();    
      Fraction& operator= (const Fraction& fract) {
          if (fract.denominator == 0) {
              throw - 1;
@@ -42,13 +42,13 @@ class Fraction {
      Fraction operator* (const Fraction& mult) {
          int numer = numerator * mult.numerator;
          int denom = denominator * mult.denominator;
-         Fraction result( numer, denom);
+         Fraction result(numer, denom);
          return result;
      }
      Fraction operator/ (const Fraction& div) {
          int numer = numerator * div.denominator;
          int denom = denominator * div.numerator;
-         Fraction result( numer, denom);
+         Fraction result(numer, denom);
          return result;
      }
 };
