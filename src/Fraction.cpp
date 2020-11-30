@@ -11,6 +11,7 @@ Fraction::Fraction() {
 Fraction::Fraction(int a, int b) {
   numerator = a;
   denominator = b;
+  normalize();
 }
 
 Fraction::Fraction(Fraction &a) {

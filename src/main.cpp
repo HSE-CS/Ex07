@@ -3,11 +3,11 @@
 #include "Fraction.h"
 
 int main() {
-  Fraction fst(-7, 4);
-  Fraction scnd(5, 3);
-  std::cout << fst.getNumerator() << '\n';
-  std::cout << fst.getDenominator() << '\n';
+  Fraction fst(1, 5);
+  Fraction scnd(1, 2);
+  std::cout << scnd.getNumerator() << '\n';
+  std::cout << scnd.getDenominator() << '\n';
   fst.normalize();
   std::cout << fst.getValue() << '\n';
-  std::cout << (fst * scnd).getValue() << '\n';
+  std::cout << (fst / scnd).getValue() << '\n';
 }
