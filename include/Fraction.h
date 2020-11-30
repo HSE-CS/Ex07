@@ -3,20 +3,18 @@
 // Created by Vadim Makarov on 30.11.2020.
 //
 
-#ifndef TEST_FRACTION_H
-#define TEST_FRACTION_H
+#ifndef INCLUDE_FRACTION_H_
+#define INCLUDE_FRACTION_H_
 
 #include <cstring>
 
-
-using namespace std;
-
 class Fraction {
-private:
+ private:
     int numerator, denominator;
     void normalize();
-public:
-    explicit Fraction(int num = 0, int denom = 1){
+
+ public:
+    explicit Fraction(int num = 0, int denom = 1) {
         numerator = num;
         denominator = denom;
         if (denominator == 0){
@@ -25,48 +23,48 @@ public:
         normalize();
     }
 
-    Fraction(const Fraction &fraction){
+    Fraction(const Fraction &fraction) {
         numerator = fraction.numerator;
         denominator = fraction.denominator;
     }
 
     int getNumerator();
     int getDenominator();
-    string getValue(Fraction &fraction);
+    std::string getValue(const Fraction &fraction);
 
-    Fraction operator+(const Fraction &fraction){
+    Fraction operator+(const Fraction &fraction) {
         int newDenum = denominator * fraction.denominator;
-        int newNum = (numerator * fraction.denominator) + (fraction.numerator * denominator);
+        int a = numerator * fraction.denominator;
+        int b = fraction.numerator * denominator;
+        int newNum = a + b;
         Fraction newFraction(newNum, newDenum);
-        //newFraction.normalize();
         return newFraction;
     }
 
-    Fraction operator-(const Fraction &fraction){
+    Fraction operator-(const Fraction &fraction) {
         int newDenum = denominator * fraction.denominator;
-        int newNum = (numerator * fraction.denominator) - (fraction.numerator * denominator);
+        int a = numerator * fraction.denominator;
+        int b = fraction.numerator * denominator;
+        int newNum = a - b;
         Fraction newFraction(newNum, newDenum);
-        //newFraction.normalize();
         return newFraction;
     }
 
-    Fraction operator*(const Fraction &fraction){
+    Fraction operator*(const Fraction &fraction) {
         int newDenum = denominator * fraction.denominator;
         int newNum = numerator * fraction.numerator;
         Fraction newFraction(newNum, newDenum);
-        //newFraction.normalize();
         return newFraction;
     }
 
-    Fraction operator/(const Fraction &fraction){
+    Fraction operator/(const Fraction &fraction) {
         int newDenum = denominator * fraction.numerator;
         int newNum = numerator * fraction.denominator;
         Fraction newFraction(newNum, newDenum);
-        //newFraction.normalize();
         return newFraction;
     }
 
-    Fraction operator=(const Fraction &fraction){
+    Fraction operator=(const Fraction &fraction) {
         numerator = fraction.numerator;
         denominator = fraction.denominator;
         return *this;
@@ -74,4 +72,4 @@ public:
 };
 
 
-#endif //TEST_FRACTION_H
+#endif  // INCLUDE_FRACTION_H_

@@ -7,11 +7,7 @@
 #include <cstring>
 #include "Fraction.h"
 
-
-
-using namespace std;
-
-int main(){
+int main() {
 
     /*Fraction a(20,40);
     Fraction b(a);
@@ -32,6 +28,6 @@ int main(){
     Fraction b(1, 2);
     Fraction c;
     c = a / b;
-    cout << c.getNumerator() << "    " << c.getDenominator();
+    std::cout << c.getNumerator() << "    " << c.getDenominator();
 
 }
