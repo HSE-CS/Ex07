@@ -1,6 +1,6 @@
 // Copyright 2020 <JiJa>
-#ifndef FRACTION_H_
-#define  FRACTION_H_
+#ifndef INCLUDE_FRACTION_H_
+#define  INCLUDE_FRACTION_H_
 #include <string>
 
 class Fraction {
@@ -29,4 +29,4 @@ class Fraction {
     Fraction& operator=(const Fraction &fr);
 };
 
-#endif   // FRACTION_H_
+#endif   // INCLUDE_FRACTION_H_
