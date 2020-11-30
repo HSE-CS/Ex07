@@ -8,9 +8,9 @@ Fraction::Fraction(const Fraction& fptr) {
 }
 
 void Fraction::normalize() {
-    int num_1 = abs(numerator);
-    int num_2 = abs(denominator);
-    while (num_1 != 0 && num_2 != 0) {
+    int num_1 = numerator;
+    int num_2 = denominator;
+    while ((num_1 != 0) && (num_2 != 0)) {
         if (num_1 >= num_2)
             num_1 = num_1 % num_2;
         else
@@ -24,20 +24,21 @@ void Fraction::normalize() {
 }
 
 std::string Fraction::getValue() {
-    normalize();
-    if (!getNumerator())
-        return "0";
-    else if (getNumerator() == getDenominator())
-        return "1";
-    return std::to_string(getNumerator()) + "/"
-        + std::to_string(getDenominator());
+    if (denominator == 1) {
+        return std::to_string(numerator);
+    }
+    else {
+        return std::to_string(numerator) + "/" + std::to_string(denominator);
+    }
 }
 
 int Fraction::getNumerator() {
+    normalize();
     return numerator;
 }
 
 int Fraction::getDenominator() {
+    normalize();
     return denominator;
 }
 
