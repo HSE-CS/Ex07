@@ -33,6 +33,3 @@ void Fraction::normalize() {
     numerator /= NOD;
     denominator /= NOD;
 }
-
-std::string Fraction::getValue(Fraction &fraction) {
-}

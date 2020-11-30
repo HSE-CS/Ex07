@@ -31,7 +31,6 @@ class Fraction {
 
     int getNumerator();
     int getDenominator();
-    std::string getValue(const Fraction &fraction);
 
     Fraction operator+(const Fraction &fraction) {
         int newDenum = denominator * fraction.denominator;
