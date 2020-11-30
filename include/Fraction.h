@@ -20,4 +20,8 @@ class Fraction {
      Fraction operator/(const Fraction& op);
 };
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e36c42e7407c25e565bb0857dee8059421e05e6a
 #endif // INCLUDE_FRACTION_H_
