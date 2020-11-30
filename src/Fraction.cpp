@@ -8,7 +8,7 @@ Fraction::Fraction(int num, int denom) {
         numerator = num;
         denominator = 1;
     }
-    if ((num!=0) && (denom!=0)) {
+    if ((num != 0) && (denom != 0)) {
         numerator = num;
         denominator = denom;
     }
@@ -23,7 +23,8 @@ void Fraction::normalize() {
     if (abs(numerator) < abs(denominator)) {
         min = abs(numerator);
     }
-    if ((abs(numerator) > abs(denominator)) || (abs(numerator) == abs(denominator))) {
+    if ((abs(numerator) > abs(denominator)) ||
+        (abs(numerator) == abs(denominator))) {
         min = abs(denominator);
     }
     int gcd = 1;
