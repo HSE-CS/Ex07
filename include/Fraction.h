@@ -13,7 +13,7 @@ class Fraction {
     void normalize();
 
  public:
-    Fraction(int, int);
+    Fraction(int num = 0, int den = 1);
     Fraction(const Fraction &);
     std::string getValue();
     int getNumerator();
@@ -26,4 +26,4 @@ class Fraction {
 };
 
 
-#endif  // _INCLUDE_FRACTION_H_
+#endif  // INCLUDE_FRACTION_H_
