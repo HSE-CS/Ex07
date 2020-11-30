@@ -1,4 +1,5 @@
 // Copyright 2020 Nikita Stifeev
+
 #include "Fraction.h"
 
 Fraction::Fraction(int numerator, int denominator) {
@@ -53,19 +54,27 @@ void Fraction::normalize() {
 }
 
 Fraction Fraction::operator+(const Fraction& fraqtion) const {
-    return Fraction(numerator * fraqtion.denominator + fraqtion.numerator * denominator, denominator * fraqtion.denominator);
+    int num = numerator * fraqtion.denominator + fraqtion.numerator * denominator;
+    int den = denominator * fraqtion.denominator;
+    return Fraction(num, den);
 }
 
 Fraction Fraction::operator-(const Fraction& fraqtion) const {
-    return Fraction(numerator * fraqtion.denominator - fraqtion.numerator * denominator, denominator * fraqtion.denominator);
+    int num = numerator * fraqtion.denominator - fraqtion.numerator * denominator;
+    int den = denominator * fraqtion.denominator;
+    return Fraction(num, den);
 }
 
 Fraction Fraction::operator*(const Fraction& fraqtion) const {
-    return Fraction(numerator * fraqtion.numerator, denominator * fraqtion.denominator);
+    int num = numerator * fraqtion.numerator;
+    int den = denominator * fraqtion.denominator;
+    return Fraction(num, den);
 }
 
 Fraction Fraction::operator/(const Fraction& fraqtion) const {
-    return Fraction(numerator * fraqtion.denominator, denominator * fraqtion.numerator);
+    int num = numerator * fraqtion.denominator;
+    int den = denominator * fraqtion.numerator;
+    return Fraction(num, den);
 }
 
 std::string Fraction::getValue() const {

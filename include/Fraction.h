@@ -1,4 +1,5 @@
 // Copyright 2020 Nikita Stifeev
+
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
 
@@ -23,4 +24,5 @@ class Fraction {
     Fraction operator/(const Fraction& fraqtion) const;
     std::string getValue() const;
 };
+
 #endif  // INCLUDE_FRACTION_H_
