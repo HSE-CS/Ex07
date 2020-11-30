@@ -29,7 +29,8 @@ std::string Fraction::getValue() {
         return "0";
     else if (getNumerator() == getDenominator())
         return "1";
-    return std::to_string(getNumerator()) + "/" + std::to_string(getDenominator());
+    return std::to_string(getNumerator()) + "/"
+        + std::to_string(getDenominator());
 }
 
 int Fraction::getNumerator() {
@@ -41,7 +42,8 @@ int Fraction::getDenominator() {
 }
 
 Fraction Fraction::operator+(const Fraction& fptr) {
-    return  Fraction(fptr.denominator * numerator + denominator * fptr.numerator,
+    return  Fraction(fptr.denominator * numerator
+        + denominator * fptr.numerator,
         denominator * fptr.denominator);
 }
 
