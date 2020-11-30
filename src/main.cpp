@@ -1,4 +1,4 @@
-// Created by Алексей Трутнев on 01.12.2020.
+// Copyright 2020 Alexgiving
 
 #include "Fraction.h"
 

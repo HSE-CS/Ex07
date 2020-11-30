@@ -1,7 +1,7 @@
-// Created by Алексей Трутнев on 01.12.2020.
+// Copyright 2020 Alexgiving
 
-#ifndef INCLUDE_FRACTION_H_EX07
-#define INCLUDE_FRACTION_H_EX07
+#ifndef INCLUDE_FRACTION_H_
+#define INCLUDE_FRACTION_H_
 
 #include<iostream>
 #include<string>
@@ -88,4 +88,4 @@ class Fraction {
     }
 };
 
-#endif // INCLUDE_FRACTION_H_EX07
+#endif  // INCLUDE_FRACTION_H_
