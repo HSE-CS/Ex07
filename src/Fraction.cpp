@@ -9,7 +9,7 @@ void Fraction::normalize() {
     denominator /= gcd;
 }
 
-Fraction::Fraction(int num = 0, int den = 1) {
+Fraction::Fraction(int num, int den) {
     if (den == 0) {
         throw "Div by zero";
     } else {
