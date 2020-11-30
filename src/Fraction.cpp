@@ -26,45 +26,47 @@ std::string Fraction::getValue() {
 }
 
 int Fraction::getNumerator() {
+  normalize();
   return numerator;
 }
 
 int Fraction::getDenominator() {
+  normalize();
   return denominator;
 }
 
 Fraction Fraction::operator+(const Fraction &frs) {
-  int num = numerator * this->getDenominator() +
-  this->getNumerator() * denominator;
-  int den = this->getDenominator() * denominator;
+  int num = numerator * frs.denominator +
+  frs.numerator * denominator;
+  int den = frs.denominator * denominator;
   Fraction temp = Fraction(num, den);
   return temp;
 }
 
 Fraction Fraction::operator-(const Fraction &frs) {
-  int num = numerator * this->getDenominator() -
-  this->getNumerator() * denominator;
-  int den = this->getDenominator() * denominator;
+  int num = numerator * frs.denominator -
+  frs.numerator * denominator;
+  int den = frs.denominator * denominator;
   Fraction temp = Fraction(num, den);
   return temp;
 }
 
-Fraction& Fraction::operator=(const Fraction& fr)  {
-  numerator = fr.numerator;
-  denominator = fr.denominator;
+Fraction& Fraction::operator=(const Fraction& frs)  {
+  numerator = frs.numerator;
+  denominator = frs.denominator;
   return *this;
 }
 
-Fraction Fraction::operator*(const Fraction& fr) {
-  int num = getNumerator() * this->getNumerator();
-  int den = getDenominator() * this->getDenominator();
+Fraction Fraction::operator*(const Fraction& frs) {
+  int num = getNumerator() * frs.numerator;
+  int den = getDenominator() * frs.denominator;
   Fraction temp = Fraction(num, den);
   return temp;
 }
 
-Fraction Fraction::operator/(const Fraction& fr) {
-  int num = getNumerator() * this->getDenominator();
-  int den = getDenominator() * this->getNumerator();
+Fraction Fraction::operator/(const Fraction& frs) {
+  int num = getNumerator() * frs.denominator;
+  int den = getDenominator() * frs.numerator;
   Fraction temp = Fraction(num, den);
   return temp;
 }
