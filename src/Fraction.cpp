@@ -32,7 +32,7 @@ void Fraction::normalize() {
 std::string Fraction::getValue() {
     std::string string;
     if (this->denominator != 1) {
-       string += std::to_string(this->numerator) + (std::string)"/" + 
+       string += std::to_string(this->numerator) + (std::string)"/" +
                 std::to_string(this->denominator);
     } else {
         string += std::to_string(this->numerator);

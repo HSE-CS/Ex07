@@ -9,7 +9,6 @@
 #include <algorithm>
 
 class Fraction {
-
  private:
     int numerator;
     int denominator;
@@ -17,7 +16,7 @@ class Fraction {
 
  public:
     // constructors
-    Fraction(int numerator = 0, int denominator = 1);
+    explicit Fraction(int numerator = 0, int denominator = 1);
     Fraction(const Fraction& exemplar);
 
     // methods
@@ -57,7 +56,8 @@ class Fraction {
             b.denominator = this->denominator;
         } else {
             b.denominator = this->denominator * a.denominator;
-            b.numerator = this->numerator * a.denominator - a.numerator * this->denominator;
+            b.numerator = this->numerator * a.denominator - 
+                        a.numerator * this->denominator;
         }
         if (b.denominator == 0) {
             throw -1;
