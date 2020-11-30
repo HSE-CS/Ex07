@@ -19,7 +19,7 @@ Fraction::Fraction(int num, int den)
 }
 
 Fraction::Fraction(const Fraction &fraction)
- : numerator(fraction.numerator), denominator(fraction.denominator){}
+    : numerator(fraction.numerator), denominator(fraction.denominator) {}
 
 std::string Fraction::getValue() const {
   std::ostringstream fractostr;
@@ -36,11 +36,15 @@ int Fraction::getDenominator() const {
 }
 
 Fraction Fraction::operator+(const Fraction &fr) {
-  return Fraction(numerator * fr.denominator + fr.numerator * denominator, denominator * fr.denominator);
+  return Fraction(numerator * fr.denominator +
+                  fr.numerator * denominator,
+                  denominator * fr.denominator);
 }
 
 Fraction Fraction::operator-(const Fraction &fr) {
-  return Fraction(numerator * fr.denominator - fr.numerator * denominator, denominator * fr.denominator);
+  return Fraction(numerator * fr.denominator -
+                  fr.numerator * denominator,
+                  denominator * fr.denominator);
 }
 
 Fraction Fraction::operator*(const Fraction &fr) {

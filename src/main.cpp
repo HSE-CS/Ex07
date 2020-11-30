@@ -1,6 +1,5 @@
 // Copyright 2020 Kuznetsov Mikhail
 #include "Fraction.h"
-int main()
-{
+int main() {
     return 0;
 }
