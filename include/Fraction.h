@@ -20,8 +20,8 @@ class Fraction {
     normalize();
   }
 
-  Fraction(Fraction &fraction)
-      : numerator(fraction.numerator), denominator(fraction.denominator){};
+  Fraction(Fraction const &fraction)
+      : numerator(fraction.numerator), denominator(fraction.denominator) {}
 
   std::string getValue() const;
 
