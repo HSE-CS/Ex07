@@ -3,15 +3,14 @@
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
 
-class Fraction
-{
+class Fraction {
  private:
     int numerator;
     unsigned int denominator;
     void normalize();
  public:
     Fraction(int _numerator = 0, unsigned int denominator = 1);
-    Fraction(const Fraction& fraction);
+    explicit Fraction(const Fraction& fraction);
     std::string getValue();
     int getNumerator() const;
     unsigned int getDenominator() const;
@@ -20,4 +19,4 @@ class Fraction
     Fraction operator* (const Fraction& fc);
     Fraction operator/ (const Fraction& fc);
 };
-#endif
+#endif // INCLUDE_FRACTION_H_
