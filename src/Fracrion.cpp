@@ -20,7 +20,6 @@ int findNOD(int a, int b) {
 }
 
 int Fraction::getNumerator() {
-    //normalize();
     return numerator;
 }
 
@@ -35,5 +34,4 @@ void Fraction::normalize() {
 }
 
 string Fraction::getValue(Fraction &fraction) {
-
 }
