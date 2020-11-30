@@ -1,6 +1,6 @@
 // Copyright 2020 GHA Test Team
-#ifndef FRACTION_H_
-#define FRACTION_H_
+#ifndef INCLUDE_FRACTION_H_
+#define INCLUDE_FRACTION_H_
 
 #include <string>
 #include <cstring>
@@ -9,7 +9,7 @@ class Fraction{
  private:
   int numerator, denominator;
  public:
-  Fraction(int n=0, int d=1);
+  explicit Fraction(int n = 0, int d = 1);
   Fraction(const Fraction&);
   void normalize();
   std::string getValue() const;
@@ -22,4 +22,4 @@ class Fraction{
   Fraction operator/(const Fraction&);
 };
 
-#endif //FRACTION_H_
+#endif  // INCLUDE_FRACTION_H_
