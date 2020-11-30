@@ -1,6 +1,6 @@
 // Copyright 2020 Kuznetsov Mikhail
-#ifndef FRACTION_H_INCLUDED
-#define FRACTION_H_INCLUDED
+#ifndef INCLUDE_FRACTION_H_
+#define INCLUDE_FRACTION_H_
 
 #include <cmath>
 #include <string>
@@ -15,16 +15,16 @@ class Fraction{
    void normalize();
  public:
    explicit Fraction(int num = 0, int den = 1);
-   Fraction(Fraction &fraction);
-   std::string getValue();
+   Fraction(const Fraction &fraction);
+   std::string getValue() const;
    int getNumerator() const;
    int getDenominator() const;
-   Fraction operator+(const Fraction& fr);
-   Fraction operator-(const Fraction& fr);
-   Fraction operator*(const Fraction& fr);
-   Fraction operator/(const Fraction& fr);
-   Fraction operator=(const Fraction& fr);
+   Fraction operator+(const Fraction &fr);
+   Fraction operator-(const Fraction &fr);
+   Fraction operator*(const Fraction &fr);
+   Fraction operator/(const Fraction &fr);
+   Fraction operator=(const Fraction &fr);
 };
 
 int greatestCommonDivisor(int a, int b);
-#endif // FRACTION_H_INCLUDED
+#endif  // INCLUDE_FRACTION_H_

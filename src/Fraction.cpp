@@ -1,7 +1,7 @@
 // Copyright 2020 Kuznetsov Mikhail
 #include "Fraction.h"
 
-void normalize() {
+void Fraction::normalize() {
   int gcd = greatestCommonDivisor(numerator, denominator);
   numerator /= gcd;
   denominator /= gcd;
@@ -11,49 +11,47 @@ void normalize() {
   }
 }
 
-explicit Fraction(int num = 0, int den = 1) :
-  numerator(num), denominator(den)
-{
-  assert(den != 0);
+Fraction::Fraction(int num, int den)
+  : numerator(num), denominator(den) {
+    if (0 == den)
+      throw "Division by zero!";
+    normalize();
 }
 
-Fraction(Fraction &fraction) :
-  numerator(fraction.numerator), denominator(fraction.denominator)
-{
+Fraction::Fraction(const Fraction &fraction)
+ : numerator(fraction.numerator), denominator(fraction.denominator){}
 
-}
-
-std::string getValue() {
+std::string Fraction::getValue() const {
   std::ostringstream fractostr;
   fractostr << numerator << "/" << denominator;
   return fractostr.str();
 }
 
-int getNumerator() const {
+int Fraction::getNumerator() const {
   return numerator;
 }
 
-int getDenominator() const {
+int Fraction::getDenominator() const {
   return denominator;
 }
 
-Fraction operator+(const Fraction& fr) {
+Fraction Fraction::operator+(const Fraction &fr) {
   return Fraction(numerator * fr.denominator + fr.numerator * denominator, denominator * fr.denominator);
 }
 
-Fraction operator-(const Fraction& fr) {
+Fraction Fraction::operator-(const Fraction &fr) {
   return Fraction(numerator * fr.denominator - fr.numerator * denominator, denominator * fr.denominator);
 }
 
-Fraction operator*(const Fraction& fr) {
+Fraction Fraction::operator*(const Fraction &fr) {
   return Fraction(numerator * fr.numerator, denominator * fr.denominator);
 }
 
-Fraction operator/(const Fraction& fr) {
+Fraction Fraction::operator/(const Fraction &fr) {
   return Fraction(numerator * fr.denominator, denominator * fr.numerator);
 }
 
-Fraction operator=(const Fraction& fr) {
+Fraction Fraction::operator=(const Fraction &fr) {
   numerator = fr.numerator;
   denominator = fr.denominator;
   normalize();
@@ -68,4 +66,3 @@ int greatestCommonDivisor(int a, int b) {
     return a;
   return (b ? greatestCommonDivisor(b, a % b): a);
 }
-
