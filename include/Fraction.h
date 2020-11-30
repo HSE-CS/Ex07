@@ -27,18 +27,17 @@ class Fraction {
 
   int32_t getNumerator() const;
 
-    int32_t getDenominator() const;
+  int32_t getDenominator() const;
 
-    Fraction operator+(const Fraction &fraction) const;
+  Fraction operator+(const Fraction &fraction) const;
 
-    Fraction operator-(const Fraction &fraction) const;
+  Fraction operator-(const Fraction &fraction) const;
 
-    Fraction operator*(const Fraction &fraction) const;
+  Fraction operator*(const Fraction &fraction) const;
 
-    Fraction operator/(const Fraction &fraction) const;
+  Fraction operator/(const Fraction &fraction) const;
 
-    Fraction &operator=(const Fraction &fraction);
-
+  Fraction &operator=(const Fraction &fraction);
 };
 
 #endif  // INCLUDE_FRACTION_H_
