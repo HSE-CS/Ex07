@@ -13,7 +13,7 @@ private:
     void normalize();
 
 public:
-    Fraction(int = 0, int = 1);
+    Fraction(int, int);
     Fraction(const Fraction &);
     std::string getValue();
     int getNumerator();
