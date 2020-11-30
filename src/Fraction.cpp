@@ -1,3 +1,4 @@
+// Copyright 2020 Longa Bonga
 #include <string>
 #include <iostream>
 #include "Fraction.h"
@@ -37,11 +38,11 @@ std::string Fraction::getValue()
   return ans;
 }
 
-int Fraction::getNumerator() {
+int Fraction::getNumerator() const{
   return numerator;
 }
 
-int Fraction::getDenominator() {
+int Fraction::getDenominator() const{
   return denominator;
 }
 
