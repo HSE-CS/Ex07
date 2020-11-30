@@ -9,13 +9,13 @@ void Fraction::normalize() {
     int a = abs(numerator);
     int b = abs(denominator);
     while (a != 0 && b != 0) {
-        if(a > b)
+        if (a > b)
             a = a % b;
         else
             b = b % a;
     }
     numerator /= a + b;
-    denominator /= a + b; 
+    denominator /= a + b;
 }
 
 Fraction::Fraction() {
@@ -71,7 +71,7 @@ Fraction Fraction::operator* (const Fraction& fc) {
 }
 
 Fraction Fraction::operator/ (const Fraction& fc) {
-    if(fc.getNumerator() == 0)
+    if (fc.getNumerator() == 0)
         throw "Divine by  0";
     int newDen = denominator * fc.getNumerator();
     int newEn = numerator * fc.getDenominator();

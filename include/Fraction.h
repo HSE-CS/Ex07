@@ -3,8 +3,7 @@
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
 
-class Fraction
-{
+class Fraction {
  private:
     int numerator;
     unsigned int denominator;
@@ -21,4 +20,4 @@ class Fraction
     Fraction operator* (const Fraction& fc);
     Fraction operator/ (const Fraction& fc);
 };
-#endif
+#endif  // INCLUDE_FRACTION_H_
