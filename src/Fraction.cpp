@@ -3,6 +3,7 @@
 
 void Fraction::normalize() {
 	if (this->numerator == 0) {
+		this->denominator = 1;
 		return;
 	} else {
 		if (numerator < 0 && denominator < 0) {
@@ -20,31 +21,31 @@ void Fraction::normalize() {
 }
 
 Fraction::Fraction(int numerator, int denominator) {
-	if (denominator == 0) {
-		throw - 1;
-	}
-	this->numerator = numerator;
-	this->denominator = denominator;
-	normalize();
+    if (denominator == 0) {
+        throw - 1;
+    }
+    this->numerator = numerator;
+    this->denominator = denominator;
+    normalize();
 }
 
 Fraction::Fraction(Fraction& toCopy) {
-	this->numerator = toCopy.numerator;
-	this->denominator = toCopy.denominator;
-	normalize();
+    this->numerator = toCopy.numerator;
+    this->denominator = toCopy.denominator;
+    normalize();
 }
 
 std::string Fraction::getValue() {
-	if (this->denominator == 1 || this->numerator == 0) {
-		return std::to_string(this->numerator);
-	}
-	return std::to_string(this->numerator) + "/" + std::to_string(this->denominator);
+    if (this->denominator == 1 || this->numerator == 0) {
+        return std::to_string(this->numerator);
+    }
+    return std::to_string(this->numerator) + "/" + std::to_string(this->denominator);
 }
 
 int Fraction::getNumerator() {
-	return this->numerator;
+    return this->numerator;
 }
 
 int Fraction::getDenominator() {
-	return denominator;
+    return denominator;
 }

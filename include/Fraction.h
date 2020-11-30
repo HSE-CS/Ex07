@@ -14,15 +14,10 @@ class Fraction {
 
  public:
      explicit Fraction(int numerator = 0, int denominator = 1);
-
      Fraction(Fraction &toCopy);
-     
      std::string getValue();
-     
-     int getNumerator();
-     
-     int getDenominator();
-     
+     int getNumerator();     
+     int getDenominator();     
      Fraction& operator= (const Fraction& fract) {
          if (fract.denominator == 0) {
              throw - 1;
@@ -32,26 +27,30 @@ class Fraction {
          normalize();
          return *this;
      }
-
      Fraction operator+ (const Fraction& sum) {
-         Fraction result(this->numerator * sum.denominator + sum.numerator * this->denominator, this->denominator * sum.denominator);
+         int numer = numerator * sum.denominator + sum.numerator * denominator;
+         int denom = denominator * sum.denominator;
+         Fraction result(numer, denom);
          return result;
      }
-
      Fraction operator- (const Fraction& sub) {
-         Fraction result(this->numerator * sub.denominator - sub.numerator * this->denominator, this->denominator * sub.denominator);
+         int numer = numerator * sub.denominator - sub.numerator * denominator;
+         int denom = denominator * sub.denominator;
+         Fraction result(numer, denom);
          return result;
      }
-
      Fraction operator* (const Fraction& mult) {
-         Fraction result(this->numerator * mult.numerator, this->denominator * mult.denominator);
+         int numer = numerator * mult.numerator;
+         int denom = denominator * mult.denominator;
+         Fraction result( numer, denom);
          return result;
      }
-
      Fraction operator/ (const Fraction& div) {
-         Fraction result(this->numerator * div.denominator, this->denominator * div.numerator);
+         int numer = numerator * div.denominator;
+         int denom = denominator * div.numerator;
+         Fraction result( numer, denom);
          return result;
      }
 };
 
-#endif // !INCLUDE_FRACTION_H_
+#endif  // INCLUDE_FRACTION_H_
