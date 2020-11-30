@@ -4,7 +4,6 @@
 #define INCLUDE_FRACTION_H_
 
 
-#include <cassert>
 #include <string>
 
 class Fraction {
@@ -12,10 +11,7 @@ class Fraction {
     int numerator, denominator;
     void normalize();
  public:
-    explicit Fraction(int _numerator = 0, int _denominator = 1) :
-    numerator(_numerator), denominator(_denominator) {
-        denominator != 0 ? normalize() : throw std::runtime_error("DivisionByZero");
-    }
+    explicit Fraction(int _numerator = 0, int _denominator = 1);
     Fraction(const Fraction &fraction) :
     numerator(fraction.numerator), denominator(fraction.denominator) {}
     std::string getValue();

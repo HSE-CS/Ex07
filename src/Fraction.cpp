@@ -1,5 +1,6 @@
 // Copyright 2020 valvarl
 
+#include <stdexcept>
 #include "Fraction.h"
 
 void Fraction::normalize() {
@@ -29,6 +30,12 @@ void Fraction::normalize() {
             denominator = abs(denominator);
         }
     }
+}
+
+Fraction::Fraction(int _numerator, int _denominator) {
+    numerator = _numerator;
+    denominator = _denominator;
+    denominator != 0 ? normalize() : throw std::runtime_error("DivisionByZero");
 }
 
 std::string Fraction::getValue() {
