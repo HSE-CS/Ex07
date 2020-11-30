@@ -16,8 +16,9 @@ class Fraction {
     int numerator;
     int denominator;
     void normalize();
+
  public:
-    Fraction(int a = 0, int b = 1);
+    explicit Fraction(int a = 0, int b = 1);
 
     Fraction(Fraction&);
 
@@ -41,8 +42,7 @@ class Fraction {
         if (this->denominator == a.denominator) {
             result.numerator = this->numerator + a.numerator;
             result.denominator = this->denominator;
-        }
-        else {
+        } else {
             Fraction c;
             Fraction d;
             c.numerator = this->numerator * a.denominator;
@@ -64,8 +64,7 @@ class Fraction {
         if (this->denominator == a.denominator) {
             result.numerator = this->numerator - a.numerator;
             result.denominator = this->denominator;
-        }
-        else {
+        } else {
             Fraction c;
             Fraction d;
             c.numerator = this->numerator * a.denominator;
@@ -103,4 +102,4 @@ class Fraction {
     }
 };
 
-#endif // INCLUDE_FRACTION_H_
+#endif  // INCLUDE_FRACTION_H_
