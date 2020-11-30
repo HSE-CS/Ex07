@@ -35,13 +35,11 @@ std::string Fraction::getValue() {
     return str;
 }
 
-int Fraction::getNumerator() const{
-
+int Fraction::getNumerator() const {
     return numerator;
 }
 
-int Fraction::getDenominator() const{
-
+int Fraction::getDenominator() const {
     return denominator;
 }
 
