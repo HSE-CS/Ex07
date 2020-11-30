@@ -1,15 +1,17 @@
-// Copyright 2020 GN
+// Copyright 2020 BD
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
 #include <iostream>
 #include <string>
 #include <cmath>
 #include <sstream>
+
 class Fraction {
 private:
     int numerator;
     int denominator;
     void normalize();
+
 public:
     Fraction();
     explicit Fraction(int new_numerator, int new_denominator);
@@ -23,4 +25,4 @@ public:
     Fraction operator/(const Fraction& fc);
     Fraction operator=(const Fraction& fc);
 };
-#endif // INCLUDE_FRACTION_H_
+#endif  // INCLUDE_FRACTION_H_

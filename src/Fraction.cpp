@@ -1,3 +1,4 @@
+// Copyright 2020 BD
 #include "Fraction.h"
 void Fraction::normalize() {
     int a = abs(numerator);
@@ -33,26 +34,33 @@ std::string Fraction::getValue() {
     str += std::to_string(denominator);
     return str;
 }
+
 int Fraction::getNumerator() const{
     return numerator;
 }
+
 int Fraction::getDenominator() const{
     return denominator;
 }
+
 Fraction Fraction::operator+(const Fraction& fc) {
     return Fraction(numerator * fc.denominator +
         fc.numerator * denominator, denominator * fc.denominator);
 }
+
 Fraction Fraction::operator-(const Fraction& fc) {
     return Fraction(numerator * fc.denominator -
         fc.numerator * denominator, denominator * fc.denominator);
 }
+
 Fraction Fraction::operator*(const Fraction& fc) {
     return Fraction(numerator * fc.numerator, denominator * fc.denominator);
 }
+
 Fraction Fraction::operator/(const Fraction& fc) {
     return Fraction(numerator * fc.denominator, denominator * fc.numerator);
 }
+
 Fraction Fraction::operator=(const Fraction& fc) {
     numerator = fc.numerator;
     denominator = fc.denominator;
