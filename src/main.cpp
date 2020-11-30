@@ -3,8 +3,8 @@
 #include "Fraction.h"
 
 
-int main(){
-    Fraction a(1, 2); 
+int main() {
+    Fraction a(1, 2);
     Fraction b(a);
     Fraction c;
     std::cout << c.getValue() << std::endl;
@@ -48,5 +48,5 @@ int main(){
     Fraction number_19(number_18);
     std::cout << number_19.getNumerator() << std::endl;
     std::cout << number_19.getDenominator() << std::endl;
-	return 0;
+    return 0;
 }
