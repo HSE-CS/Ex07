@@ -1,6 +1,5 @@
 // Copyright 2020 test
-#include "../include/Fraction.h"
-//#include "Fraction.h"
+#include "Fraction.h"
 
 void Fraction::normalize() {
 	if (this->numerator == 0) {

@@ -1,6 +1,5 @@
 // Copyright 2020 test
-#include "../include/Fraction.h"
-//#include "Fraction.h"
+#include "Fraction.h"
 
 int main() {
 	Fraction a(-7, 3);
