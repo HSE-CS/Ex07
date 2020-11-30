@@ -1,6 +1,8 @@
+// Copyright 2020 sccc
 #include <string>
-#ifndef _INCLUDE_FRACTION_H_
-#define _INCLUDE_FRACTION_H_
+#ifndef INCLUDE_FRACTION_H_
+#define INCLUDE_FRACTION_H_
+
 class Fraction
 {
  private:
@@ -9,13 +11,13 @@ class Fraction
     void normalize();
  public:
     Fraction(int _numerator = 0, unsigned int denominator = 1);
-    Fraction(Fraction& fraction);
+    Fraction(const Fraction& fraction);
     std::string getValue();
-    int getNumerator();
-    unsigned int getDenominator();
-    Fraction operator+ (Fraction& fc);
-    Fraction operator- (Fraction& fc);
-    Fraction operator* (Fraction& fc);
-    Fraction operator/ (Fraction& fc);
+    int getNumerator() const;
+    unsigned int getDenominator() const;
+    Fraction operator+ (const Fraction& fc);
+    Fraction operator- (const Fraction& fc);
+    Fraction operator* (const Fraction& fc);
+    Fraction operator/ (const Fraction& fc);
 };
 #endif

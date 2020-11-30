@@ -1,8 +1,8 @@
+// Copyright 2020 sccc
 #include <iostream>
 #include <string>
 #include "Fraction.h"
-int main()
-{
+int main() {
     Fraction a(1, 2);
     Fraction b(a);
     Fraction c;
