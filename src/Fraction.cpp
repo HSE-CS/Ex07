@@ -14,7 +14,7 @@ void Fraction::normalize() {
 Fraction::Fraction(int num, int den)
   : numerator(num), denominator(den) {
     if (0 == den)
-      throw "Division by zero!";
+      throw std::runtime_error("Division by zero!");
     normalize();
 }
 
