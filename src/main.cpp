@@ -43,16 +43,16 @@ int main() {
     std::cout << "Check of correct working of operation overload" << std::endl;
 
     c = a + b;
-    std::cout << c.getValue()<<std::endl;
+    std::cout << c.getValue() << std::endl;
 
     c = a - b;
-    std::cout << c.getValue()<<std::endl;
+    std::cout << c.getValue() << std::endl;
 
     c = a * b;
-    std::cout << c.getValue()<<std::endl;
+    std::cout << c.getValue() << std::endl;
 
     c = a / b;
-    std::cout << c.getValue()<<std::endl;
+    std::cout << c.getValue() << std::endl;
 
     return 0;
 }

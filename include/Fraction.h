@@ -38,7 +38,7 @@ class Fraction {
             b.denominator = this->denominator;
         } else {
             b.denominator = this->denominator * a.denominator;
-            b.numerator = this->numerator * a.denominator + 
+            b.numerator = this->numerator * a.denominator +
                         a.numerator * this->denominator;
         }
         if (b.denominator == 0) {
@@ -56,7 +56,7 @@ class Fraction {
             b.denominator = this->denominator;
         } else {
             b.denominator = this->denominator * a.denominator;
-            b.numerator = this->numerator * a.denominator - 
+            b.numerator = this->numerator * a.denominator -
                         a.numerator * this->denominator;
         }
         if (b.denominator == 0) {
