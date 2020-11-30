@@ -48,27 +48,27 @@ int Fraction::getDenominator() {
 Fraction Fraction::operator+(const Fraction& b) {
   int num, den;
   num = numerator * b.getDenominator() + b.getNumerator() * denominator;
-	den = denominator * b.getDenominator();
-	return Fraction(num, den);
+  den = denominator * b.getDenominator();
+  return Fraction(num, den);
 }
 
 Fraction Fraction::operator-(const Fraction& b) {
   int num, den;
   num = numerator * b.getDenominator() - b.getNumerator() * denominator;
-	den = denominator * b.getDenominator();
-	return Fraction(num, den);
+  den = denominator * b.getDenominator();
+  return Fraction(num, den);
 }
 
 Fraction Fraction::operator*(const Fraction& b) {
-	int num, den;
-	num = numerator * b.getNumerator();
-	den = denominator * b.getDenominator();
-	return Fraction(num, den);
+  int num, den;
+  num = numerator * b.getNumerator();
+  den = denominator * b.getDenominator();
+  return Fraction(num, den);
 }
 
 Fraction Fraction::operator/(const Fraction& b) {
-	int num, den;
-	num = numerator * b.getDenominator();
-	den = denominator * b.getNumerator();
-	return Fraction(num, den);
+  int num, den;
+  num = numerator * b.getDenominator();
+  den = denominator * b.getNumerator();
+  return Fraction(num, den);
 }

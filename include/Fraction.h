@@ -1,4 +1,4 @@
-//Copyright 2020 Longa Bonga
+// Copyright 2020 Longa Bonga
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
 
@@ -19,4 +19,4 @@ class Fraction {
    Fraction operator/(const Fraction& b);
 };
 
-#endif
+#endif // INCLUDE_FRACTION_H_
