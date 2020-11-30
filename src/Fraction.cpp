@@ -36,10 +36,12 @@ std::string Fraction::getValue() {
 }
 
 int Fraction::getNumerator() const{
+
     return numerator;
 }
 
 int Fraction::getDenominator() const{
+
     return denominator;
 }
 
