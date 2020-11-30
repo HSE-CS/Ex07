@@ -1,31 +1,33 @@
-//
-// Created by freeb on 30.11.2020.
-//
+// Copyright 2020 valvarl
 
 #include "Fraction.h"
 
 void Fraction::normalize() {
-    int m, n, i;
-    while (true) {
-        m = std::min(numerator, denominator);
-        n = numerator;
-        for (i = 2; i <= m; i++) {
-            if (numerator % i == 0 and denominator % i == 0) {
-                numerator /= i;
-                denominator /= i;
+    if (numerator == 0) {
+        denominator = 1;
+    } else {
+        int m, n, i;
+        while (true) {
+            m = std::min(abs(numerator), abs(denominator));
+            n = numerator;
+            for (i = 2; i <= m; i++) {
+                if (numerator % i == 0 && denominator % i == 0) {
+                    numerator /= i;
+                    denominator /= i;
+                    break;
+                }
+            }
+            if (n == numerator) {
                 break;
             }
         }
-        if (n == numerator) {
-            break;
+        if (numerator * denominator < 0) {
+            numerator = -abs(numerator);
+            denominator = abs(denominator);
+        } else {
+            numerator = abs(numerator);
+            denominator = abs(denominator);
         }
-    }
-    if (numerator * denominator < 0) {
-        numerator = -abs(numerator);
-        denominator = abs(numerator);
-    } else {
-        numerator = abs(numerator);
-        denominator = abs(denominator);
     }
 }
 

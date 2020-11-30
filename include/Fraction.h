@@ -1,6 +1,4 @@
-//
-// Created by freeb on 30.11.2020.
-//
+// Copyright 2020 valvarl
 
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
@@ -14,11 +12,13 @@ class Fraction {
     int numerator, denominator;
     void normalize();
  public:
-    explicit Fraction(int _numerator=0, int _denominator=1) : numerator(_numerator), denominator(_denominator) {
+    explicit Fraction(int _numerator = 0, int _denominator = 1) :
+    numerator(_numerator), denominator(_denominator) {
         assert(denominator != 0);
         normalize();
     }
-    Fraction(const Fraction &fraction) : numerator(fraction.numerator), denominator(fraction.denominator) {};
+    Fraction(const Fraction &fraction) :
+    numerator(fraction.numerator), denominator(fraction.denominator) {}
     std::string getValue();
     int getNumerator();
     int getDenominator();
@@ -30,4 +30,4 @@ class Fraction {
 };
 
 
-#endif //INCLUDE_FRACTION_H_
+#endif  // INCLUDE_FRACTION_H_
