@@ -1,10 +1,10 @@
-﻿// Copyright 2020 BD
+  // Copyright 2020 BD
 #include <iostream>
 #include "Fraction.h"
 int main() {
     Fraction a(1, 10);
     std::cout << "Numerator a\n" << a.getNumerator();
-    std::cout << "\nDenominator a\n" << a.getDenominator() 
+    std::cout << "\nDenominator a\n" << a.getDenominator();
     std::cout << "\nValue a\n" << a.getValue();
     Fraction b(1, 5);
     std::cout << "\nNumerator b\n" << b.getNumerator();
