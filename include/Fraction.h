@@ -8,11 +8,13 @@
 
 class Fraction {
 private:
+
     int numerator;
     int denominator;
     void normalize();
 
 public:
+
     Fraction();
     explicit Fraction(int new_numerator, int new_denominator);
     Fraction(const Fraction& fraction);
@@ -24,5 +26,6 @@ public:
     Fraction operator*(const Fraction& fc);
     Fraction operator/(const Fraction& fc);
     Fraction operator=(const Fraction& fc);
+
 };
 #endif  // INCLUDE_FRACTION_H_
