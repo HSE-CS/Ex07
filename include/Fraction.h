@@ -1,3 +1,4 @@
+// Copyright 2020 GN
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
 #include <iostream>
@@ -22,4 +23,4 @@ public:
     Fraction operator/(const Fraction& fc);
     Fraction operator=(const Fraction& fc);
 };
-#endif
+#endif // INCLUDE_FRACTION_H_
