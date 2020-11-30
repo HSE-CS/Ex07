@@ -1,6 +1,6 @@
 // Copyright 2020 <Jiiijyyy>
-#ifndef FRACTION_H_
-#define FRACTION_H_
+#ifndef INCLUDE_FRACTION_H_
+#define INCLUDE_FRACTION_H_
 #include <cmath>
 #include <iostream>
 #include <string>
@@ -22,4 +22,4 @@ class Fraction {
     Fraction operator/(const Fraction&);
     Fraction& operator=(const Fraction&);
 };
-#endif   //   FRACTION_H 
+#endif 

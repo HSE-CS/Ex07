@@ -110,4 +110,4 @@ Fraction& Fraction::operator=(const Fraction& c) {
         throw;
     }
     return *this;
-} 
+}

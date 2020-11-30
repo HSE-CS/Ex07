@@ -3,7 +3,7 @@
 
 
 int main() {
-    Fraction num; //Создание элемента класса
+    Fraction num;
     std::cout << num.getValue() << std::endl;
     Fraction a(3, 9);
     std::cout << a.getNumerator() << std::endl;
@@ -61,4 +61,4 @@ int main() {
     std::cout << d.getValue() << std::endl;
     std::cout << std::endl;
     return 0;
-} 
+}
