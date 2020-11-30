@@ -22,4 +22,5 @@ class Fraction {
     Fraction operator/(const Fraction&);
     Fraction& operator=(const Fraction&);
 };
-#endif 
+#endif  // INCLUDE_FRACTION_H_
+
