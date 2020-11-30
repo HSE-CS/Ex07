@@ -1,3 +1,4 @@
+//Copyright 2020 <Copyright NikDemoShow>
 #include "Fraction.h"
 
 Fraction::Fraction() {
@@ -78,6 +79,8 @@ Fraction operator/(const Fraction& a, const Fraction& b){
 	den = a.getDenominator() * b.getNumerator();
 	return Fraction(num, den);
 }
+
+
 /*
 Fraction& Fraction::operator=(const Fraction& a) {
 	return Fraction(a.getNumerator(), a.getDenominator());
