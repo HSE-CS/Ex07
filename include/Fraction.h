@@ -14,8 +14,7 @@ class Fraction {
  public:
     explicit Fraction(int _numerator = 0, int _denominator = 1) :
     numerator(_numerator), denominator(_denominator) {
-        assert(denominator != 0);
-        normalize();
+        denominator != 0 ? normalize() : throw std::runtime_error("DivisionByZero");
     }
     Fraction(const Fraction &fraction) :
     numerator(fraction.numerator), denominator(fraction.denominator) {}

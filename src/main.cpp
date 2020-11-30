@@ -17,4 +17,5 @@ int main() {
     std::cout << b.getValue() << std::endl; // 13/40
     c = Fraction{14, 15} / Fraction{12, 25};
     std::cout << c.getValue() << std::endl; // 35/18*/
+    Fraction(0, 0);
 }
