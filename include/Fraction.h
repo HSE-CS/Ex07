@@ -4,13 +4,11 @@
 #include <string>
 
 class Fraction {
-private:
-
+ private:
     int numerator;
     int denominator;
     void normalize();
-public:
-
+ public:
     explicit Fraction(int num = 0, int den = 1)
         :numerator(num), denominator(den) {
         if (denominator == 0)
