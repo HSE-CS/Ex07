@@ -3,7 +3,7 @@
 
 int main() {
     Fraction a(1, 2);
-    Fraction b(-1, 3);
+    Fraction b(1, -3);
     Fraction c;
     c = a + b;
     std::cout << c.getValue() << "\n";
