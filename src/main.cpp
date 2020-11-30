@@ -3,8 +3,7 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
   Fraction fst(-7, 4);
   Fraction scnd(5, 3);
   std::cout << fst.getNumerator() << endl;

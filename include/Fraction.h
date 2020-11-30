@@ -1,5 +1,8 @@
-class Fraction
-{
+//Copyright 2020 Longa Bonga
+#ifndef INCLUDE_FRACTION_H_
+#define INCLUDE_FRACTION_H_
+
+class Fraction {
  private:
    int numerator, denominator;
  public:
@@ -10,8 +13,10 @@ class Fraction
    std::string getValue();
    int getNumerator();
    int getDenominator();
-   Fraction operator+(Fraction& b);
-   Fraction operator-(Fraction& b);
-   Fraction operator*(Fraction& b);
-   Fraction operator/(Fraction& b);
+   Fraction operator+(const Fraction& b);
+   Fraction operator-(const Fraction& b);
+   Fraction operator*(const Fraction& b);
+   Fraction operator/(const Fraction& b);
 };
+
+#endif

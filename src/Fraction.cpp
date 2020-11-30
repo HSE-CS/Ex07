@@ -2,22 +2,22 @@
 #include <iostream>
 #include "Fraction.h"
 
-Fraction::Fraction(){
+Fraction::Fraction() {
   numerator = 0;
   denominator = 1;
 }
 
-Fraction::Fraction(int a, int b){
+Fraction::Fraction(int a, int b) {
   numerator = a;
   denominator = b;
 }
 
-Fraction::Fraction(Fraction &a){
+Fraction::Fraction(Fraction &a) {
   numerator = a.numerator;
   denominator = a.denominator;
 }
 
-void Fraction::normalize(){
+void Fraction::normalize() {
   int a = numerator;
   int b = denominator;
   int c = 0;
@@ -37,36 +37,36 @@ std::string Fraction::getValue()
   return ans;
 }
 
-int Fraction::getNumerator(){
+int Fraction::getNumerator() {
   return numerator;
 }
 
-int Fraction::getDenominator(){
+int Fraction::getDenominator() {
   return denominator;
 }
 
-Fraction Fraction::operator+(Fraction& b){
+Fraction Fraction::operator+(const Fraction& b) {
   int num, den;
   num = numerator * b.getDenominator() + b.getNumerator() * denominator;
 	den = denominator * b.getDenominator();
 	return Fraction(num, den);
 }
 
-Fraction Fraction::operator-(Fraction& b){
+Fraction Fraction::operator-(const Fraction& b) {
   int num, den;
   num = numerator * b.getDenominator() - b.getNumerator() * denominator;
 	den = denominator * b.getDenominator();
 	return Fraction(num, den);
 }
 
-Fraction Fraction::operator*(Fraction& b){
+Fraction Fraction::operator*(const Fraction& b) {
 	int num, den;
 	num = numerator * b.getNumerator();
 	den = denominator * b.getDenominator();
 	return Fraction(num, den);
 }
 
-Fraction Fraction::operator/(Fraction& b){
+Fraction Fraction::operator/(const Fraction& b) {
 	int num, den;
 	num = numerator * b.getDenominator();
 	den = denominator * b.getNumerator();
