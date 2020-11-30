@@ -21,7 +21,7 @@ void Fraction::normalize() {
   int a = numerator;
   int b = denominator;
   int c = 0;
-  while(b){
+  while(b) {
     c = a % b;
     a = b;
     b = c;

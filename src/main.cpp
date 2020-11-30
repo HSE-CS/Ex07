@@ -1,7 +1,6 @@
+// Copyright 2020 Longa Bonga
 #include<iostream>
 #include "Fraction.h"
-
-
 
 int main() {
   Fraction fst(-7, 4);
