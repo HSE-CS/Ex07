@@ -1,6 +1,6 @@
 // Copyright 2020 Egor Buzanov
-#ifndef EX07_INCLUDE_FRACTION_H_
-#define EX07_INCLUDE_FRACTION_H_
+#ifndef INCLUDE_FRACTION_H_
+#define INCLUDE_FRACTION_H_
 
 #include <cmath>
 #include <iostream>
@@ -25,4 +25,4 @@ class Fraction {
   Fraction operator=(const Fraction &);
 };
 
-#endif  // EX07_INCLUDE_FRACTION_H_
+#endif  // INCLUDE_FRACTION_H_

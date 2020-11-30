@@ -42,9 +42,9 @@ std::string Fraction::getValue() {
   return result;
 }
 
-int Fraction::getNumerator() { return numerator; };
+int Fraction::getNumerator() { return numerator; }
 
-int Fraction::getDenominator() { return denominator; };
+int Fraction::getDenominator() { return denominator; }
 
 Fraction Fraction::operator+(const Fraction &frac) {
   return Fraction(numerator * frac.denominator + frac.numerator * denominator,
