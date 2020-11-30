@@ -30,7 +30,7 @@ Fraction::Fraction(int numerator, int denominator) {
     normalize();
 }
 
-Fraction::Fraction(Fraction& toCopy) {
+Fraction::Fraction(Fraction const &toCopy) {
     this->numerator = toCopy.numerator;
     this->denominator = toCopy.denominator;
     normalize();

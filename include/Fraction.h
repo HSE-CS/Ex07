@@ -16,8 +16,8 @@ class Fraction {
      explicit Fraction(int numerator = 0, int denominator = 1);
      Fraction(Fraction const &toCopy);
      std::string getValue();
-     int getNumerator();  
-     int getDenominator();    
+     int getNumerator();
+     int getDenominator();
      Fraction& operator= (const Fraction& fract) {
          if (fract.denominator == 0) {
              throw - 1;
