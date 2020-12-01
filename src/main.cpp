@@ -1,14 +1,13 @@
 // Copyright 2020 Smirnov Grigory
 #include "Fraction.h"
 
-int main()
-{
+int main() {
   Fraction a(2, 4);
   Fraction b(-2, 8);
-  cout << a.getValue() << endl << b.getValue() << endl;
+  std::cout << a.getValue() << std::endl << b.getValue() << std::endl;
   Fraction c = a - b;
-  cout << c.getValue() << endl;
+  std::cout << c.getValue() << std::endl;
   Fraction d = a * b * b - c;
-  cout << d.getValue() << endl << d.getNumerator();
+  std::cout << d.getValue() << std::endl << d.getNumerator();
   return 0;
 }

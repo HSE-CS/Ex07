@@ -20,11 +20,10 @@ void Fraction::normalize() {
 Fraction::Fraction(int num, int den) {
   if (den == 0)
     throw "Error: Division by 0";
-  else {
+  if (den != 0)
     numerator = num;
     denominator = den;
     normalize();
-  }
 }
 
 Fraction::Fraction(const Fraction& f) {
@@ -40,19 +39,21 @@ int Fraction::getDenominator() {
   return denominator;
 }
 
-string Fraction::getValue() {
+std::string Fraction::getValue() {
   if (denominator == 1)
-    return to_string(numerator);
+    return std::to_string(numerator);
   else
-    return to_string(numerator) + "\\" + to_string(denominator);
+    return std::to_string(numerator) + "\\" + std::to_string(denominator);
 }
 
 Fraction Fraction::operator+(const Fraction& f) {
-  return Fraction(numerator * f.denominator + f.numerator * denominator, denominator * f.denominator);
+  return Fraction(numerator * f.denominator + f.numerator * denominator,
+    denominator * f.denominator);
 }
 
 Fraction Fraction::operator-(const Fraction& f) {
-  return Fraction(numerator * f.denominator - f.numerator * denominator, denominator * f.denominator);
+  return Fraction(numerator * f.denominator - f.numerator * denominator,
+    denominator * f.denominator);
 }
 
 Fraction Fraction::operator*(const Fraction& f) {
