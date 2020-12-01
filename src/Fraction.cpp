@@ -23,8 +23,9 @@ void Fraction::normalize() {
 //+
 std::string Fraction::getValue() {
     normalize();
-    if (this->denominator == 1)
+    if (this->denominator == 1){
         return std::to_string(this->numerator);
+    }
     else {
         std::string fff = std::to_string(this->numerator)+"/";
         fff += std::to_string(this->denominator);
