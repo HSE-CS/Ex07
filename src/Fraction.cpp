@@ -38,7 +38,7 @@ int Fraction::getDenominator() const {
 std::string Fraction::getValue() const {
   if (denominator == 1 || numerator == 0)
     return std::to_string(this->numerator);
-  return std::to_string(getNumerator()) + '/' 
+  return std::to_string(getNumerator()) + '/'
          + std::to_string(getDenominator());
 }
 
