@@ -1,10 +1,13 @@
+// Copyright 2020 Khoroshavina Ekaterina
 #include "Fraction.h"
 #include <string>
 
 int nod(int a, int b) {
     while (a != b && a != 0 && b != 0) {
-        if (a > b) a = a - b;
-        else b = b - a;
+        if (a > b) 
+            a = a - b;
+        else 
+            b = b - a;
     }
     return b;
 }
@@ -26,20 +29,23 @@ int Fraction::getNumerator() {
 
 std::string Fraction::getValue() {
     normalize();
-    std::string res = std::to_string(this->numerator) + "\/" + std::to_string(this->denominator);
+    std::string res = std::to_string(this->numerator) 
+        + "\/" + std::to_string(this->denominator);
     return res;
 }
 
 Fraction Fraction::operator+(const Fraction& fr) {
-    int a = this->numerator * fr.denominator + fr.numerator * this->denominator;
+    int a = this->numerator * fr.denominator 
+        + fr.numerator * this->denominator;
     int b = this->denominator * fr.denominator;
-    Fraction temp = Fraction(a,b);
+    Fraction temp = Fraction(a, b);
     temp.normalize();
     return temp;
 }
 
 Fraction Fraction::operator-(const Fraction& fr) {
-    int a = this->numerator * fr.denominator - fr.numerator * this->denominator;
+    int a = this->numerator * fr.denominator 
+        - fr.numerator * this->denominator;
     int b = this->denominator * fr.denominator;
     Fraction temp = Fraction(a, b);
     temp.normalize();
