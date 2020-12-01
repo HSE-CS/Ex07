@@ -23,7 +23,7 @@ std::string Fraction::getValue() {
   ans.normalize();
   if (ans.denominator != 1) {
     return std::to_string(ans.numerator) + '/' +
-    std::to_string(ans.denominator);
+        std::to_string(ans.denominator);
   } else {
     return std::to_string(ans.numerator);
   }
@@ -39,25 +39,29 @@ int Fraction::getDenominator() const {
 
 Fraction Fraction::operator+(const Fraction &num) {
   Fraction ans =
-      Fraction(numerator * num.getDenominator() + num.getNumerator() * denominator, denominator * num.getDenominator());
+      Fraction(numerator * num.getDenominator() +
+          num.getNumerator() * denominator, denominator * num.getDenominator());
   return ans.normalize();
 }
 
 Fraction Fraction::operator-(const Fraction &num) {
   Fraction ans =
-      Fraction(numerator * num.getDenominator() - num.getNumerator() * denominator, denominator * num.getDenominator());
+      Fraction(numerator * num.getDenominator() -
+          num.getNumerator() * denominator, denominator * num.getDenominator());
   return ans.normalize();
 }
 
 Fraction Fraction::operator*(const Fraction &num) {
   Fraction ans =
-      Fraction(numerator * num.getNumerator(), denominator * num.getDenominator());
+      Fraction(numerator * num.getNumerator(), denominator *
+          num.getDenominator());
   return ans.normalize();
 }
 
 Fraction Fraction::operator/(const Fraction &num) {
   Fraction ans =
-      Fraction(numerator * num.getDenominator(), denominator * num.getNumerator());
+      Fraction(numerator * num.getDenominator(), denominator *
+          num.getNumerator());
   return ans.normalize();
 }
 
