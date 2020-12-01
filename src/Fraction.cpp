@@ -1,5 +1,6 @@
 // Copyright 2020 GHA Test Team
 #include "Fraction.h"
+#include <string>
 
 
 void Fraction::check_minus() {
@@ -28,7 +29,8 @@ Fraction::Fraction(int numerator, int denominator) {
 	normalize();
 }
 
-Fraction::Fraction(Fraction& f) : numerator(f.numerator), denominator(f.denominator) {
+Fraction::Fraction(Fraction& f) : numerator(f.numerator),
+denominator(f.denominator) {
 	check_minus();
 	check_denominator();
 	normalize();
@@ -52,13 +54,9 @@ void Fraction::normalize() {
 
 std::string Fraction::getValue() const {
 	std::string result = "";
-	char num1[100] = { '\0' };
-	char num2[100] = { '\0' };
-	_itoa_s(numerator, num1, 10);
-	_itoa_s(denominator, num2, 10);
-	result += num1;
+	result += std::to_string(numerator);
 	result += '/';
-	result += num2;
+	result += std::to_string(denominator);
 	return result;
 }
 
@@ -78,7 +76,8 @@ Fraction& Fraction::operator=(const Fraction& f) {
 
 Fraction Fraction::operator+(const Fraction& f) {
 	Fraction temp;
-	int num1(numerator), num2(f.numerator), denum1(denominator), denum2(f.denominator);
+	int num1(numerator), num2(f.numerator);
+	int denum1(denominator), denum2(f.denominator);
 	if (denum1 != denum2) {
 		num1 *= denum2;
 		num2 *= denum1;
@@ -92,7 +91,8 @@ Fraction Fraction::operator+(const Fraction& f) {
 
 Fraction Fraction::operator-(const Fraction& f) {
 	Fraction temp;
-	int num1(numerator), num2(f.numerator), denum1(denominator), denum2(f.denominator);
+	int num1(numerator), num2(f.numerator);
+	int denum1(denominator), denum2(f.denominator);
 	if (denum1 != denum2) {
 		num1 *= denum2;
 		num2 *= denum1;
