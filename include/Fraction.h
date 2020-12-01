@@ -2,12 +2,11 @@
 #include <iostream>
 #include <string>
 
-#ifndef EX07_FRACTION_H
-#define EX07_FRACTION_H
+#ifndef INCLUDE_FRACTION_H_
+#define INCLUDE_FRACTION_H_
 
 class Fraction {
 private:
-
     int numerator, denominator;
 
     // закрытый метод нормировки (сокращения дроби 2/4 -> 1/2).
@@ -62,4 +61,4 @@ public:
 
 int NOD(int, int);
 
-#endif  // EX07_FRACTION_H
+#endif  // INCLUDE_FRACTION_H_

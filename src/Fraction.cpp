@@ -40,9 +40,19 @@ int Fraction::getDenominator() const {
 }
 
 Fraction Fraction::operator+(Fraction &f) {
-    int nnum = this->numerator*f.denominator+this->denominator*f.numerator;
-    int nden = this->denominator * f.numerator;
-    return Fraction(nnum, nden);
+    if (this->denominator != f.denominator)
+    {
+        int nnum = this->numerator*f.denominator+this->denominator*f.numerator;
+        int nden = this->denominator * f.numerator;
+        return Fraction(nnum, nden);
+    }
+    else
+    {
+        int nnum = this->numerator+f.numerator;
+        int nden = this->denominator;
+        return Fraction(nnum, nden);
+    }
+
 }
 
 Fraction Fraction::operator-(Fraction &f) {
@@ -66,5 +76,6 @@ Fraction Fraction::operator/(Fraction &f) {
 Fraction &Fraction::operator=(const Fraction &f) {
     this->numerator = f.numerator;
     this->denominator = f.denominator;
+    normalize();
     return *this;
 }
