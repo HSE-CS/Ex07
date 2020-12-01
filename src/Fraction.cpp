@@ -8,8 +8,8 @@ Fraction::Fraction(int n, int d) {
     if (d == 0) {
         throw "Div by zero";
     } else {
-	    numerator = n;
-	    denominator = d;
+        numerator = n;
+        denominator = d;
     }
     this->normalize();
 }
@@ -38,10 +38,10 @@ std::string Fraction::getValue() {
       res = std::to_string(numerator);
     } else {
         std::string num = std::to_string(numerator);
-	    std::string den = std::to_string(denominator);
-	    res += num;
-	    res += '/';
-	    res += den;
+        std::string den = std::to_string(denominator);
+        res += num;
+        res += '/';
+        res += den;
     }
     return res;
 }
@@ -59,9 +59,9 @@ Fraction Fraction::operator+(const Fraction& frac) {
     int n = numerator * frac.denominator + frac.numerator * denominator;
     int d = frac.denominator * denominator;
     if (n == 0) {
-	    c = Fraction(0, 1);
+        c = Fraction(0, 1);
     } else {
-         c = Fraction(n, d);
+        c = Fraction(n, d);
     }
   return c;
 }
