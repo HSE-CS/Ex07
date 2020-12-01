@@ -1,10 +1,11 @@
+// Copyright 2020 GHA Test Team
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
 
 #include <string>
 
 class Fraction {
-private:
+ private:
   int numerator, denominator;
   void normalize();
  public:
@@ -20,4 +21,4 @@ private:
   Fraction &operator=(const Fraction &fr);
 };
 
-#endif
+#endif  // INCLUDE_FRACTION_H_

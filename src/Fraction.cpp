@@ -1,8 +1,9 @@
+// Copyright 2020 GHA Test Team
 #include "Fraction.h"
 #include <algorithm>
 
 void Fraction::normalize() {
-  if(denominator < 0) {
+  if (denominator < 0) {
     denominator *= -1;
     numerator *= -1;
   }
@@ -23,7 +24,7 @@ Fraction::Fraction(const Fraction &fr) {
 }
 
 std::string Fraction::getValue() {
-  if(denominator != 1)
+  if (denominator != 1)
     return std::to_string(numerator) + "/" + std::to_string(denominator);
   return std::to_string(numerator);
 }
@@ -37,11 +38,13 @@ int Fraction::getDenominator() {
 }
 
 Fraction Fraction::operator+(const Fraction &fr) {
-  return Fraction(numerator * fr.denominator + fr.numerator * denominator, fr.denominator * denominator);
+  return Fraction(numerator * fr.denominator + fr.numerator * denominator,
+   fr.denominator * denominator);
 }
 
 Fraction Fraction::operator-(const Fraction &fr) {
-  return Fraction(numerator * fr.denominator - fr.numerator * denominator, fr.denominator * denominator);
+  return Fraction(numerator * fr.denominator - fr.numerator * denominator,
+   fr.denominator * denominator);
 }
 
 Fraction Fraction::operator*(const Fraction &fr) {
