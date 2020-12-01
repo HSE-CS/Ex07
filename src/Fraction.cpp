@@ -22,12 +22,16 @@ void Fraction::normalize() {
     if (this->numerator == 0) {
         this->denominator = 1;
     } else {
-        for (int i = std::min(this->numerator, this->denominator); i > 1; i--) {
+        for (int i = std::max(this->numerator, this->denominator); i > 1; i--) {
             if ((this->numerator % i == 0) && (this->denominator % i == 0)) {
                 this->numerator = this->numerator / i;
                 this->denominator = this->denominator / i;
             }
         }
+    }
+    if (this->denominator < 0) {
+        this->denominator *= -1;
+        this->numerator *= -1;
     }
 }
 
