@@ -4,11 +4,10 @@
 //
 
 #ifndef INCLUDE_FRACTION_H_
-#define INCLUDE_FRACTION_H
+#define INCLUDE_FRACTION_H_
 
 #include <cstring>
 #include <string>
-
 
 class Fraction {
  private:
@@ -75,6 +74,4 @@ class Fraction {
 };
 
 
-
 #endif // INCLUDE_FRACTION_H_
-
