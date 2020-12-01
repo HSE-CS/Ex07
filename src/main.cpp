@@ -49,3 +49,4 @@ int main() {
   std::cout << c9.getNumerator() << " - 2 "
 	  << c9.getDenominator() << " - 5" << std::endl;
 }
+
