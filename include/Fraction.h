@@ -4,7 +4,7 @@
 #include <cstring>
 #include <string>
 
-class Fraction 
+class Fraction
 {
 private:
     int numerator, denominator;
@@ -80,4 +80,4 @@ public:
     }
 };
 
-#endif
+#endif // INCLUDE_FRACTION_H_
