@@ -21,10 +21,10 @@ Fraction Fraction::normalize() {
 }
 
 Fraction::Fraction(int numerator, int denumenator) {
-  if (denumerator == 0)
+  if (denuminator == 0)
     throw "Division by zero";
   this->numerator = numerator;
-  this->denumimator = denumenator;
+  this->denuminator = denumenator;
 }
 
 Fraction::Fraction(const Fraction& fr) {
