@@ -3,8 +3,7 @@
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
 
-#include <iostream>
-#include <string.h>
+#include <string>
 
 class Fraction {
  private:
@@ -12,7 +11,7 @@ class Fraction {
   int denominator;
   void normalize();
  public:
-  Fraction(int = 0, int = 1);
+  explicit Fraction(int = 0, int = 1);
   Fraction(Fraction&);
   Fraction operator+(const Fraction&);
   Fraction operator-(const Fraction&);

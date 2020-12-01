@@ -4,7 +4,7 @@
 #include <iostream>
 #include "Fraction.h"
 
-int check_nod(int num, int den){
+int check_nod(int num, int den) {
   if (num < 0)
     num *= -1;
   if (den < 0)
@@ -26,7 +26,7 @@ int check_nod(int num, int den){
   return div;
 }
 
-Fraction::Fraction(int num, int den){
+Fraction::Fraction(int num, int den) {
   this->numerator = num;
   this->denominator = den;
   normalize();
@@ -36,17 +36,18 @@ Fraction::Fraction(Fraction& fract): numerator(fract.numerator), denominator(fra
   normalize();
 }
 
-void Fraction::normalize(){
+void Fraction::normalize() {
   // check zero denominator
-  try{
-    if(this->denominator == 0)
+  try {
+    if (this->denominator == 0)
       throw -1;
   }
   catch (int){
     exit(-1);
   }
   // handle the minus
-  if((this->denominator < 0 && this->numerator < 0) || (this->denominator < 0 && this->numerator > 0)){
+  if ((this->denominator < 0 && this->numerator < 0)
+      || (this->denominator < 0 && this->numerator > 0)){
     this->numerator *= -1;
     this->denominator *= -1;
   }
@@ -54,6 +55,9 @@ void Fraction::normalize(){
   int nod = check_nod(this->numerator, this->denominator);
   this->numerator /= nod;
   this->denominator /= nod;
+  // zero num
+  if (this->numerator == 0)
+    this->denominator = 1;
 }
 
 std::string Fraction::getValue() const {
@@ -101,12 +105,14 @@ Fraction Fraction::operator-(const Fraction& frac) {
 }
 
 Fraction Fraction::operator*(const Fraction& frac) {
-  Fraction temp_frac(this->numerator * frac.numerator, this->denominator * frac.denominator);
+  Fraction temp_frac(this->numerator * frac.numerator,
+                     this->denominator * frac.denominator);
   return temp_frac;
 }
 
 Fraction Fraction::operator/(const Fraction& frac) {
-  Fraction temp_frac(this->numerator * frac.denominator, this->denominator * frac.numerator);
+  Fraction temp_frac(this->numerator * frac.denominator,
+                     this->denominator * frac.numerator);
   return temp_frac;
 }
 
