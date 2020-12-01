@@ -1,36 +1,34 @@
+// Copyright 2020 ArtyomLavrov
+//
+
+
 #include <iostream>
 #include <cstring>
 #include <string>
 #include "Fraction.h"
 
-int findNOD(int a, int b) 
-{
-    while (a != 0 && b != 0) 
-    {
-        if (a > b) 
-        {
+
+int findNOD(int a, int b) {
+    while (a != 0 && b != 0) {
+        if (a > b) {
             a = a % b;
         }
-        else 
-        {
+        else {
             b = b % a;
         }
     }
     return (a + b);
 }
 
-int Fraction::getNumerator() 
-{
+int Fraction::getNumerator() {
     return numerator;
 }
 
-int Fraction::getDenominator() 
-{
+int Fraction::getDenominator() {
     return denominator;
 }
 
-void Fraction::normalize() 
-{
+void Fraction::normalize() {
     int NOD = findNOD(numerator, denominator);
     numerator /= NOD;
     denominator /= NOD;

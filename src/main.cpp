@@ -1,9 +1,12 @@
-﻿#include <iostream>
+﻿// Copyright 2020 ArtyomLavrov
+//
+
+
+#include <iostream>
 #include <cstring>
 #include "Fraction.h"
 
-int main() 
-{
+int main() {
     /*Fraction a(20,40);
     Fraction b(a);
     Fraction c = a / b;
@@ -21,5 +24,4 @@ int main()
 
     c = a / b;
     std::cout << c.getNumerator() << "\t" << c.getDenominator();
-    return 0;
 }
