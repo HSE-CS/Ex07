@@ -20,18 +20,18 @@ int Fraction::getGCD() const {
 void Fraction::normalize() {
     int GCD = getGCD();
     if (GCD != 0) {
-        num /= GCD;
+        numer /= GCD;
         denom /= GCD;
     }
 }
 
 std::string Fraction::getValue() const {
-    if (denom == 1 || num == 0) {
-        return std::to_string(num);
+    if (denom == 1 || numer == 0) {
+        return std::to_string(numer);
     } else {
         std::string str;
 
-        str += std::to_string(num);
+        str += std::to_string(numer);
         str += '/';
         str += std::to_string(denom);
 
@@ -40,7 +40,7 @@ std::string Fraction::getValue() const {
 }
 
 int Fraction::getNumerator() const {
-    return num;
+    return numer;
 }
 
 int Fraction::getDenominator() const {
@@ -48,23 +48,23 @@ int Fraction::getDenominator() const {
 }
 
 Fraction Fraction::operator*(const Fraction &f) const {
-    return Fraction(num * f.num, denom * f.denom);
+    return Fraction(numer * f.numer, denom * f.denom);
 }
 
 Fraction Fraction::operator/(const Fraction &f) const {
-    return Fraction(num * f.denom, denom * f.num);
+    return Fraction(numer * f.denom, denom * f.numer);
 }
 
 Fraction Fraction::operator+(const Fraction &f) const {
-    return Fraction((num * f.denom) + (denom * f.num), denom * f.denom);
+    return Fraction((numer * f.denom) + (denom * f.numer), denom * f.denom);
 }
 
 Fraction Fraction::operator-(const Fraction &f) const {
-    return Fraction((num * f.denom) - (denom * f.num), denom * f.denom);
+    return Fraction((numer * f.denom) - (denom * f.numer), denom * f.denom);
 }
 
 Fraction& Fraction::operator=(const Fraction &f) {
-    this->num = f.num;
+    this->numer = f.numer;
     this->denom = f.denom;
     return *this;
 }
