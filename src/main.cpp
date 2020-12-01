@@ -15,7 +15,7 @@ int main() {
     c = a - b;
     std::cout << c.getValue() << std::endl;
 
-	c = a * b;
+    c = a * b;
     std::cout << c.getValue() << std::endl;
 
 	c = a / b;
