@@ -14,7 +14,7 @@ class Fraction {
   void normalize();
  public:
   explicit Fraction(int = 0, int = 1);
-  Fraction(const Fraction&);
+  Fraction(const Fraction&) = default;
   [[nodiscard]] std::string getValue() const;
   [[nodiscard]] int getNumerator() const;
   [[nodiscard]] int getDenominator() const;

@@ -24,10 +24,6 @@ Fraction::Fraction(int num, int den) : numer(num), denom(den) {
   normalize();
 }
 
-Fraction::Fraction(const Fraction &f) : numer(f.numer), denom(f.denom) {
-  normalize();
-}
-
 void Fraction::normalize() {
   if (denom == 0) {
     throw std::runtime_error("Divide by zero Exception!");
