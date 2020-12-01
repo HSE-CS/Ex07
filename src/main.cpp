@@ -23,6 +23,6 @@ int main() {
   Fraction b3(1, 2);
   Fraction c3;
   c3 = a3 - b3;
-  std::cout << c3.getNumerator() << c3.getDenominator() << std::endl; // 0 1
+  std::cout << c3.getNumerator() << c3.getDenominator() << std::endl;  // 0 1
   return 0;
 }

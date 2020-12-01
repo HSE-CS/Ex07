@@ -9,8 +9,9 @@ class Fraction {
 
  public:
   explicit Fraction(int num = 0, int den = 1) {
-    if (den == 0)
+    if (den == 0) {
       throw "arithmetic_error::divide_by_zero";
+    }
     else {
       this->numerator = num;
       this->denominator = den;
@@ -19,7 +20,7 @@ class Fraction {
   }
 
   Fraction(const Fraction &fr)
-      : numerator(fr.numerator), denominator(fr.denominator){}
+      : numerator(fr.numerator), denominator(fr.denominator) {}
   void normalize();
   std::string getValue();
   int getNumerator();
