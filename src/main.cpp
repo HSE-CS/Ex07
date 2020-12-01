@@ -5,7 +5,7 @@
 #include "Fraction.h"
 
 int main() {
-    try{
+    try {
         Fraction a(1, 5);
         Fraction b(2, 4);
         Fraction c;
@@ -16,8 +16,7 @@ int main() {
         std::cout << b.getValue() << std::endl;
         std::cout << a.getValue() << std::endl;
     }
-    catch (std::exception& e)
-    {
+    catch (std::exception& e) {
         std::cerr << e.what() << std::endl;
     }
     return 0;

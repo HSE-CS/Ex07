@@ -10,7 +10,8 @@ int gcd(int a, int b) {
     b = abs(b);
     while (b > 0 && a > 0) {
         if (a > b) a = a % b;
-        else b = b = b % a;
+        else 
+            b = b = b % a;
     }
     return a + b;
 }
@@ -36,14 +37,15 @@ Fraction::Fraction(const Fraction& other) {
     denominator = other.getDenominator();
 }
 int Fraction::getNumerator() const { 
-    return numerator; 
+    return numerator;
 }
 int Fraction::getDenominator() const {
     return denominator;
 }
 std::string Fraction::getValue() const {
     std::string result;
-    result = std::to_string(getNumerator()) + "/" + std::to_string(getDenominator());
+    result = std::to_string(getNumerator())
+        + "/" + std::to_string(getDenominator());
     return result;
 }
 Fraction Fraction::normalize() {
@@ -53,21 +55,25 @@ Fraction Fraction::normalize() {
     return *this;
 }
 Fraction Fraction::operator+(const Fraction& other) {
-    return { other.getDenominator() * getNumerator() + getDenominator() * other.getNumerator(),
+    return { other.getDenominator() * getNumerator() 
+        + getDenominator() * other.getNumerator(),
         getDenominator() * other.getDenominator() };
 }
 Fraction Fraction::operator-(const Fraction& other) {
-    return { other.getDenominator() * getNumerator() - getDenominator() * other.getNumerator(),
+    return { other.getDenominator() * getNumerator()
+        - getDenominator() * other.getNumerator(),
         getDenominator() * other.getDenominator() };
 }
 Fraction Fraction::operator*(const Fraction& other) {
-    return { getNumerator() * other.getNumerator(), getDenominator() * other.getDenominator() };
+    return { getNumerator() * other.getNumerator(),
+        getDenominator() * other.getDenominator() };
 }
 Fraction Fraction::operator/(const Fraction& other) {
     if (other.getNumerator() == 0) {
         throw std::domain_error("Division by zero");
     }
-    return { getNumerator() * other.getDenominator(), getDenominator() * other.getNumerator() };
+    return { getNumerator() * other.getDenominator(),
+        getDenominator() * other.getNumerator() };
 }
 Fraction Fraction::operator=(const Fraction& other) {
     numerator = other.getNumerator();
