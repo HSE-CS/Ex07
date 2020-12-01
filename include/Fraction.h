@@ -13,7 +13,6 @@ class Fraction {
     void normalize();
 
  public:
-
     explicit Fraction(int n = 0, int d = 1);
 
     Fraction(const Fraction &a);
@@ -35,4 +34,4 @@ class Fraction {
     Fraction operator-(const Fraction &);
 };
 
-#endif // INCLUDE_FRACTION_H_
+#endif  // INCLUDE_FRACTION_H_

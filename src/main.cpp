@@ -29,5 +29,4 @@ int main() {
 
     std::cout << z.getNumerator() << std::endl;
     std::cout << z.getDenominator() << std::endl;
-
 }
