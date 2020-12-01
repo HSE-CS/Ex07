@@ -30,7 +30,7 @@ int Fraction::getNumerator() {
 std::string Fraction::getValue() {
     normalize();
     std::string res = std::to_string(this->numerator)
-        + "\/" + std::to_string(this->denominator);
+        + "/" + std::to_string(this->denominator);
     return res;
 }
 
