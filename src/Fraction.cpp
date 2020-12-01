@@ -1,4 +1,4 @@
-// Copyrigth 2020 Lukicheva Polina
+// Copyright 2020 Lukicheva Polina
 #include "Fraction.h"
 
 int NOD(int num, int den) {
@@ -47,12 +47,14 @@ int Fraction::getDenuminator() {
 }
 
 Fraction Fraction::operator+(const Fraction& fr) {
-  return Fraction(this->numerator * fr.denuminator + fr.numerator * this->denuminator,
+  return 
+    Fraction(this->numerator * fr.denuminator + fr.numerator * this->denuminator,
     this->denuminator * fr.denuminator).normalize();
 }
 
 Fraction Fraction::operator-(const Fraction& fr) {
-  return Fraction(this->numerator * fr.denuminator - fr.numerator * this->denuminator,
+  return 
+    Fraction(this->numerator * fr.denuminator - fr.numerator * this->denuminator,
     this->denuminator * fr.denuminator).normalize();
 }
 
@@ -66,8 +68,7 @@ Fraction Fraction::operator/(const Fraction& fr) {
     this->denuminator / fr.denuminator).normalize();
 }
 
-Fraction Fraction::operator=(const Fraction& fr)
-{
+Fraction Fraction::operator=(const Fraction& fr) {
   return Fraction(this->numerator = fr.numerator,
     this->denuminator = fr.denuminator);
 }
