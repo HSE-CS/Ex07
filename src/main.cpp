@@ -4,9 +4,9 @@
 
 
 int main() {
-  Fraction a(-1, 2), b(3, 4), c;
-  //std::cout << a.getNumerator() << std::endl;
-  //std::cout << a.getDenominator() << std::endl;
+  Fraction a(1, 2), b(-1, 2), c;
+  // std::cout << a.getNumerator() << std::endl;
+  // std::cout << a.getDenominator() << std::endl;
   std::cout << "a: " << a.getValue() << std::endl;
   std::cout << "b: " << b.getValue() << std::endl;
   // plus
