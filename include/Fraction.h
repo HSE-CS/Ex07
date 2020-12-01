@@ -5,7 +5,7 @@
 
 #include <iostream>
 #include <string>
-#include <ñmath>
+#include <cmath>
 
 class Fraction {
  private:
