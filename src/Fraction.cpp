@@ -66,3 +66,4 @@ Fraction Fraction::operator=(const Fraction& obj) {
   this->denominator =  obj.denominator;
   return *this;
 }
+
