@@ -60,7 +60,8 @@ Fraction Fraction::operator*(const Fraction &dop) {
 }
 
 Fraction Fraction::operator-(const Fraction &dop) {
-    Fraction nw(numerator * dop.denominator - dop.numerator * denominator, denominator * dop.denominator);
+    Fraction nw(numerator * dop.denominator - dop.numerator * denominator,
+            denominator * dop.denominator);
     return nw;
 }
 
