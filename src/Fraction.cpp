@@ -2,68 +2,68 @@
 #include "Fraction.h"
 
 int NOD(int num, int den) {
-	num = abs(num);
-	den = abs(den);
-	while (num * den != 0) {
-		if (num > den)
-			num -= den;
-		else
-			den -= num;
-	}
-	return den + num;
+  num = abs(num);
+  den = abs(den);
+  while (num * den != 0) {
+    if (num > den)
+      num -= den;
+    else
+      den -= num;
+  }
+  return den + num;
 }
 
 Fraction Fraction::normalize() {
-	int nod = NOD(this->numerator, this->denumerator);
-	this->numerator = this->numerator / nod;
-	this->denumerator = this->denumerator / nod;
-	return *this;
+  int nod = NOD(this->numerator, this->denuminator);
+  this->numerator = this->numerator / nod;
+  this->denuminator = this->denuminator / nod;
+  return *this;
 }
 
-Fraction::Fraction(int numerator, int denumerator) {
-	if (denumerator == 0)
-		throw "Division by zero";
-	this->numerator = numerator;
-	this->denumerator = denumerator;
+Fraction::Fraction(int numerator, int denumenator) {
+  if (denumerator == 0)
+    throw "Division by zero";
+  this->numerator = numerator;
+  this->denumimator = denumenator;
 }
 
 Fraction::Fraction(const Fraction& fr) {
-	this->numerator = fr.numerator;
-	this->denumerator = fr.denumerator;
+  this->numerator = fr.numerator;
+  this->denuminator = fr.denuminator;
 }
 
 std::string Fraction::getValue() {
-	if (this->denumerator == 1)
-		return std::to_string(numerator);
-	return std::to_string(numerator) + "/" + std::to_string(denumerator);
+  if (this->denuminator == 1)
+    return std::to_string(numerator);
+  return std::to_string(numerator) + "/" + std::to_string(denuminator);
 }
 
 int Fraction::getNumerator() {
-	return this->numerator;
+  return this->numerator;
 }
 
-int Fraction::getDenumerator() {
-	return this->denumerator;
+int Fraction::getDenuminator() {
+  return this->denuminator;
 }
 
 Fraction Fraction::operator+(Fraction& fr) {
 
-	return Fraction(this->numerator * fr.denumerator + fr.numerator * this->denumerator, this->denumerator * fr.denumerator).normalize();
+  return Fraction(this->numerator * fr.denuminator + fr.numerator * this->denuminator, this->denuminator * fr.denuminator).normalize();
 }
 
 Fraction Fraction::operator-(Fraction& fr) {
-	return Fraction(this->numerator * fr.denumerator - fr.numerator * this->denumerator, this->denumerator * fr.denumerator).normalize();
+  return Fraction(this->numerator * fr.denuminator - fr.numerator * this->denuminator, this->denuminator * fr.denuminator).normalize();
 }
 
 Fraction Fraction::operator*(Fraction& fr) {
-	return Fraction(this->numerator * fr.numerator, this->denumerator * fr.denumerator).normalize();
+  return Fraction(this->numerator * fr.numerator, this->denuminator * fr.denuminator).normalize();
 }
 
 Fraction Fraction::operator/(Fraction& fr) {
-	return Fraction(this->numerator * fr.numerator, this->denumerator / fr.denumerator).normalize();
+  return Fraction(this->numerator * fr.numerator, this->denuminator / fr.denuminator).normalize();
 }
 
 Fraction Fraction::operator=(Fraction& fr)
 {
-	return Fraction(this->numerator = fr.numerator, this->denumerator = fr.denumerator);
+  return Fraction(this->numerator = fr.numerator, this->denuminator = fr.denuminator);
 }
