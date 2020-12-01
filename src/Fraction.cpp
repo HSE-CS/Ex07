@@ -57,11 +57,29 @@ int Fraction::getDenominator() {
 }
 
 Fraction Fraction::operator+(const Fraction& frac) {
-	return Fraction(numerator * frac.denominator + frac.numerator * denominator, frac.denominator * denominator);
+	Fraction c;
+	int n = numerator * frac.denominator + frac.numerator * denominator;
+	int d = frac.denominator * denominator;
+	if (n == 0) {
+		c = Fraction(0, 1);
+	}
+	else {
+		c = Fraction(n, d);
+	}
+	return c;
 }
 
 Fraction Fraction::operator-(const Fraction& frac) {
-	return Fraction(numerator * frac.denominator - frac.numerator * denominator, frac.denominator * denominator);
+	Fraction c;
+	int n = numerator * frac.denominator - frac.numerator * denominator;
+	int d = frac.denominator * denominator;
+	if (n == 0) {
+		c = Fraction(0, 1);
+	}
+	else {
+		c = Fraction(n, d);
+	}
+	return c;
 }
 
 Fraction Fraction::operator*(const Fraction& frac) {
