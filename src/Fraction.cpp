@@ -21,17 +21,16 @@ Fraction::Fraction(int n, int d) : numerator{ n }, denominator{ d } {
     normalize();
 }
 
-Fraction::Fraction(const Fraction& fr) 
+Fraction::Fraction(const Fraction& fr)
     : numerator(fr.numerator), denominator(fr.denominator) {}
 
 std::string Fraction::getValue() const {
     std::string s;
     s += std::to_string(numerator);
-    if (denominator != 1)
-	{
-		s += '/';
-		s += std::to_string(denominator);
-	}
+    if (denominator != 1) {
+        s += '/';
+        s += std::to_string(denominator);
+    }
     return s;
 }
 
