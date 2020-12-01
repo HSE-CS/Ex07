@@ -8,20 +8,20 @@
 
 class Fraction {
  private:
-	 int numerator;
-	 int denominator;
-	 void normalize();
+    int numerator;
+    int denominator;
+    void normalize();
  public:
-	 explicit Fraction(int numerator = 0, int denominator = 1);// constructor with two parameters
-	 Fraction(const Fraction &fraction);// copy constructor
-	 int getNumerator() const;// numerator return function
-	 int getDenominator() const;// denumerator return function
-	 std::string getValue() const;// fraction return function
-	 Fraction operator+(const Fraction& fraction);// overload +
-	 Fraction operator-(const Fraction& fraction);// overload -
-	 Fraction operator*(const Fraction& fraction);// overload *
-	 Fraction operator/(const Fraction& fraction);// overload /
-	 Fraction operator=(const Fraction& fraction);// overload =
+    explicit Fraction(int numerator = 0, int denominator = 1);
+    Fraction(const Fraction &fraction);
+    int getNumerator() const;
+    int getDenominator() const;
+    std::string getValue() const;
+    Fraction operator+(const Fraction& fraction);
+    Fraction operator-(const Fraction& fraction);
+    Fraction operator*(const Fraction& fraction);
+    Fraction operator/(const Fraction& fraction);
+    Fraction operator=(const Fraction& fraction);
 };
 
-#endif // INCLUDE_FRACTION_H_
+#endif  // INCLUDE_FRACTION_H_
