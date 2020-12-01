@@ -1,3 +1,5 @@
+// Copyright 2020 JGMAx
+
 #include <iostream>
 #include "Fraction.h"
 
@@ -8,6 +10,5 @@ int main() {
     c = a / b;
     std::cout << c.getNumerator() << std::endl;
     std::cout << c.getDenominator() << std::endl;
-    //std::cout << "Hello, World!" << std::endl;
     return 0;
 }

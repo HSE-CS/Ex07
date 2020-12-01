@@ -1,32 +1,27 @@
-//
-// Created by jmax on 01.12.2020.
-//
-
-#ifndef EX_07_FRACTION_H
-#define EX_07_FRACTION_H
+// Copyright 2020 JGMAx
+#ifndef INCLUDE_FRACTION_H_
+#define INCLUDE_FRACTION_H_
 
 #include <string>
 
 class Fraction {
- private:
-    int numerator;
-    int denominator;
 
-    int getGCD();
+ private:
+    int num;
+    int denom;
+
+    int getGCD() const;
     void normalize();
  public:
-    Fraction(int numerator = 0, int denominator = 1) {
+    explicit Fraction(int numerator = 0, int denominator = 1) {
         if (denominator == 0)
             throw "Denominator is zero";
-        this->numerator = numerator;
-        this->denominator = denominator;
+        this->num = numerator;
+        this->denom = denominator;
         normalize();
     }
 
-    Fraction(const Fraction& f) {
-        this->numerator = f.numerator;
-        this->denominator = f.denominator;
-    }
+    Fraction(const Fraction& f): num(f.num), denom(f.denom) {}
 
     std::string getValue() const;
     int getNumerator() const;
@@ -37,4 +32,5 @@ class Fraction {
     Fraction operator/(const Fraction&) const;
     Fraction& operator=(const Fraction&);
 };
-#endif //EX_07_FRACTION_H
+
+#endif // INCLUDE_FRACTION_H_

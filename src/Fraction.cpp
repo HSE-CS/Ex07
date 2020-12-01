@@ -1,12 +1,9 @@
-//
-// Created by jmax on 01.12.2020.
-//
-
+// Copyright 2020 JGMAx
 #include "Fraction.h"
 
-int Fraction::getGCD() {
-    int num = abs(numerator);
-    int den = abs(denominator);
+int Fraction::getGCD() const {
+    int num = abs(num);
+    int den = abs(denom);
 
     while (num != 0 && den != 0) {
         if (num > den)
@@ -14,7 +11,7 @@ int Fraction::getGCD() {
         else
             den %= num;
     }
-    if (denominator < 0)
+    if (denom < 0)
         return -(num + den);
     else
         return num + den;
@@ -23,51 +20,51 @@ int Fraction::getGCD() {
 void Fraction::normalize() {
     int GCD = getGCD();
     if (GCD != 0) {
-        numerator /= GCD;
-        denominator /= GCD;
+        num /= GCD;
+        denom /= GCD;
     }
 }
 
 std::string Fraction::getValue() const {
-    if (denominator == 1 || numerator == 0)
-        return std::to_string(numerator);
-    else {
+    if (denom == 1 || num == 0) {
+        return std::to_string(num);
+    } else {
         std::string str;
 
-        str += std::to_string(numerator);
+        str += std::to_string(num);
         str += '/';
-        str += std::to_string(denominator);
+        str += std::to_string(denom);
 
         return str;
     }
 }
 
 int Fraction::getNumerator() const {
-    return numerator;
+    return num;
 }
 
 int Fraction::getDenominator() const {
-    return denominator;
+    return denom;
 }
 
 Fraction Fraction::operator*(const Fraction &f) const {
-    return Fraction(numerator * f.numerator, denominator * f.denominator);
+    return Fraction(num * f.num, denom * f.denom);
 }
 
 Fraction Fraction::operator/(const Fraction &f) const {
-    return Fraction(numerator * f.denominator, denominator * f.numerator);
+    return Fraction(num * f.denom, denom * f.num);
 }
 
 Fraction Fraction::operator+(const Fraction &f) const {
-    return Fraction((numerator * f.denominator) + (denominator * f.numerator), denominator * f.denominator);
+    return Fraction((num * f.denom) + (denom * f.num), denom * f.denom);
 }
 
 Fraction Fraction::operator-(const Fraction &f) const {
-    return Fraction((numerator * f.denominator) - (denominator * f.numerator), denominator * f.denominator);
+    return Fraction((num * f.denom) - (denom * f.num), denom * f.denom);
 }
 
 Fraction& Fraction::operator=(const Fraction &f) {
-    this->numerator = f.numerator;
-    this->denominator = f.denominator;
+    this->num = f.num;
+    this->denom = f.denom;
     return *this;
 }
