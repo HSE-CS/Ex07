@@ -18,7 +18,22 @@ Fraction::Fraction(const Fraction& fr) {
 }
 
 void Fraction::normalize() {
-	//TODO
+	int min = 0;
+	if (abs(numerator) <= abs(denominator)) {
+		min = numerator;
+	}
+	else {
+		min = denominator;
+	}
+
+	int n = 1;
+	for (int i = 1; i <= min; ++i) {
+		if ((numerator % i == 0) && (denominator % i == 0) && (i > n)) {
+			n = i;
+		}
+	}
+	numerator /= n;
+	denominator /= n;
 }
 
 std::string Fraction::getValue() {
