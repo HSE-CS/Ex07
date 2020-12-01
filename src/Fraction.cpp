@@ -28,11 +28,11 @@ int GCD(int a, int b) {
 
 std::string Fraction::getValue() {
   std::string numer;
-  numer = to_string(numerator);
+  numer =std::to_string(numerator);
   if (numerator == 0) {
     return numer;
   }
-  std::string denom = to_string(denominator);
+  std::string denom = std::to_string(denominator);
   std::string val = numer + "/" + denom;
   return val;
 }
@@ -63,12 +63,12 @@ Fraction Fraction::operator+(const Fraction& frac) {
 }
 
 Fraction Fraction::operator*(const Fraction& frac) {
-  return Fraction(numerator * frac.numerator, 
+  return Fraction(numerator * frac.numerator,
     denominator * frac.denominator);
 }
 
 Fraction Fraction::operator/(const Fraction& frac) {
-  return Fraction(numerator * frac.denominator, 
+  return Fraction(numerator * frac.denominator,
     denominator * frac.numerator);
 }
 

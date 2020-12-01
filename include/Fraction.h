@@ -5,13 +5,12 @@
 #include <string>
 
 class Fraction {
-
-private:
+ private:
   int denominator = 0;
   int numerator = 0;
   void normalize();
 
-public:
+ public:
   explicit Fraction(int numer = 0, int denom = 1);
   Fraction(const Fraction& frac);
   int getNumerator();
@@ -23,7 +22,6 @@ public:
   Fraction operator-(const Fraction&);
   Fraction operator*(const Fraction&);
   Fraction operator/(const Fraction&);
-
 };
 
 #endif  // INCLUDE_FRACTION_H_
