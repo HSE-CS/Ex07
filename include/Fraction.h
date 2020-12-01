@@ -1,3 +1,4 @@
+// Copyright 2020 Lupehina
 #include <iostream>
 #include <string>
 
@@ -6,7 +7,7 @@
 
 class Fraction {
 private:
-    
+
     int numerator, denominator;
 
     // закрытый метод нормировки (сокращения дроби 2/4 -> 1/2).
