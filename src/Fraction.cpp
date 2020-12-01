@@ -2,7 +2,7 @@
 #include "Fraction.h"
 
 int Fraction::getGCD() const {
-    int num = abs(num);
+    int num = abs(numer);
     int den = abs(denom);
 
     while (num != 0 && den != 0) {
