@@ -23,5 +23,5 @@ private:
 	int denominator;
 };
 int gcd(int, int);
-#endif
+#endif // INCLUDE_FRACTION_H_
 
