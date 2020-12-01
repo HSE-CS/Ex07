@@ -4,10 +4,10 @@
 #include <string>
 
 class Fraction {
-private:
+ private:
   int numerator = 0, denominator = 0;
 
-public:
+ public:
   explicit Fraction(int num = 0, int den = 1) {
     if (den == 0)
       throw "arithmetic_error::divide_by_zero";
@@ -18,8 +18,8 @@ public:
     normalize();
   }
 
-  Fraction(Fraction &fr)
-      : numerator(fr.numerator), denominator(fr.denominator){};
+  Fraction(const Fraction &fr)
+      : numerator(fr.numerator), denominator(fr.denominator){}
   void normalize();
   std::string getValue();
   int getNumerator();
