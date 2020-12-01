@@ -14,8 +14,9 @@ int Nod(int a, int b) {
             b -= a;
         }
         return a;
-    } else
+    } else {
         return 1;
+    }
 }
 
 Fraction Fraction::normalize() {
@@ -62,27 +63,27 @@ int Fraction::getDenominator() {
 }
 
 Fraction Fraction::operator+(const Fraction& fract) {
-    Fraction new_frac(this->numerator * fract.denominator + 
-        fract.numerator * this->denominator, 
+    Fraction new_frac(this->numerator * fract.denominator +
+        fract.numerator * this->denominator,
         this->denominator * fract.denominator);
     return new_frac.normalize();
 }
 
 Fraction Fraction::operator-(const Fraction& fract) {
-    Fraction new_frac(this->numerator * fract.denominator - 
+    Fraction new_frac(this->numerator * fract.denominator -
         fract.numerator * this->denominator, 
         this->denominator * fract.denominator);
     return new_frac.normalize();
 }
 
 Fraction Fraction::operator*(const Fraction& fract) {
-    Fraction new_frac(this->numerator * fract.numerator, 
+    Fraction new_frac(this->numerator * fract.numerator,
         this->denominator * fract.denominator);
     return new_frac.normalize();
 }
 
 Fraction Fraction::operator/(const Fraction& fract) {
-    Fraction new_frac(this->numerator * fract.denominator, 
+    Fraction new_frac(this->numerator * fract.denominator,
         this->denominator * fract.numerator);
     return new_frac.normalize();
 }
