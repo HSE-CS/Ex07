@@ -17,7 +17,7 @@ Fraction::Fraction(int numerator, int denominator) {
     this->denominator = denominator;
     if (this->denominator == 0) {
         throw "Denominator cannot be zero.";
-    }else {
+    } else {
         normalize();
     }
 }
@@ -66,7 +66,8 @@ Fraction Fraction::operator*(const Fraction& fraction) {
 }
 
 Fraction Fraction::operator/(const Fraction& fraction) {
-    return Fraction(numerator * fraction.denominator, denominator * fraction.numerator);
+    return Fraction(numerator * fraction.denominator,
+        denominator * fraction.numerator);
 }
 
 Fraction Fraction::operator=(const Fraction& fraction) {

@@ -2,7 +2,7 @@
 
 #include "Fraction.h"
 
-int main(){
+int main() {
     Fraction a;
     std::cout << a.getValue()<< std::endl;
     Fraction b(50, 100);
