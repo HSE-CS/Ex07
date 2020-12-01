@@ -1,4 +1,4 @@
-//Copyright 2020 Smirnov Grigory
+// Copyright 2020 Smirnov Grigory
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
 #include<iostream>
