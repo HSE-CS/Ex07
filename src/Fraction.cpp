@@ -1,4 +1,4 @@
-//Copyright 2020 Uskova
+// Copyright 2020 Uskova
 #include "Fraction.h"
 
 #include <string>
@@ -14,8 +14,7 @@ int Nod(int a, int b) {
             b -= a;
         }
         return a;
-    }
-    else
+    } else
         return 1;
 }
 
@@ -46,10 +45,11 @@ Fraction::Fraction(const Fraction& new_frac) {
 }
 
 std::string Fraction::getValue() {
-    if(this->denominator == 1)
+    if (this->denominator == 1) {
         return std::to_string(this->numerator);
-    else {
-        return std::to_string(this->numerator) + '/' + std::to_string(this->denominator);
+    } else {
+        return std::to_string(this->numerator) + '/' 
+            + std::to_string(this->denominator);
     }
 }
 
@@ -62,22 +62,28 @@ int Fraction::getDenominator() {
 }
 
 Fraction Fraction::operator+(const Fraction& fract) {
-    Fraction new_frac(this->numerator * fract.denominator + fract.numerator * this->denominator, this->denominator * fract.denominator);
+    Fraction new_frac(this->numerator * fract.denominator + 
+        fract.numerator * this->denominator, 
+        this->denominator * fract.denominator);
     return new_frac.normalize();
 }
 
 Fraction Fraction::operator-(const Fraction& fract) {
-    Fraction new_frac(this->numerator - fract.denominator + fract.numerator * this->denominator, this->denominator * fract.denominator);
+    Fraction new_frac(this->numerator * fract.denominator - 
+        fract.numerator * this->denominator, 
+        this->denominator * fract.denominator);
     return new_frac.normalize();
 }
 
 Fraction Fraction::operator*(const Fraction& fract) {
-    Fraction new_frac(this->numerator * fract.numerator, this->denominator * fract.denominator);
+    Fraction new_frac(this->numerator * fract.numerator, 
+        this->denominator * fract.denominator);
     return new_frac.normalize();
 }
 
 Fraction Fraction::operator/(const Fraction& fract) {
-    Fraction new_frac(this->numerator * fract.denominator, this->denominator * fract.numerator);
+    Fraction new_frac(this->numerator * fract.denominator, 
+        this->denominator * fract.numerator);
     return new_frac.normalize();
 }
 
