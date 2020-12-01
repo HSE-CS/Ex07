@@ -6,16 +6,16 @@
 
 class Fraction {
  private:
-  int numerator, denuminator;
+  int numerator, denominator;
   Fraction normalize();
  public:
   explicit Fraction(
     int numerator = 0,
-    int denuminator = 1);
+    int denominator = 1);
   Fraction(const Fraction& fr);
   std::string getValue();
   int getNumerator();
-  int getDenuminator();
+  int getDenominator();
   Fraction operator+(const Fraction&);
   Fraction operator-(const Fraction&);
   Fraction operator*(const Fraction&);

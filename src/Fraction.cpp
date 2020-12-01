@@ -14,61 +14,61 @@ int NOD(int num, int den) {
 }
 
 Fraction Fraction::normalize() {
-  int nod = NOD(this->numerator, this->denuminator);
+  int nod = NOD(this->numerator, this->denominator);
   this->numerator = this->numerator / nod;
-  this->denuminator = this->denuminator / nod;
+  this->denominator = this->denominator / nod;
   return *this;
 }
 
-Fraction::Fraction(int numerator, int denumenator) {
-  if (denuminator == 0)
+Fraction::Fraction(int numerator, int denominator) {
+  if (denominator == 0)
     throw "Division by zero";
   this->numerator = numerator;
-  this->denuminator = denumenator;
+  this->denominator = denominator;
 }
 
 Fraction::Fraction(const Fraction& fr) {
   this->numerator = fr.numerator;
-  this->denuminator = fr.denuminator;
+  this->denominator = fr.denominator;
 }
 
 std::string Fraction::getValue() {
   if (this->denuminator == 1)
     return std::to_string(numerator);
-  return std::to_string(numerator) + "/" + std::to_string(denuminator);
+  return std::to_string(numerator) + "/" + std::to_string(denominator);
 }
 
 int Fraction::getNumerator() {
   return this->numerator;
 }
 
-int Fraction::getDenuminator() {
-  return this->denuminator;
+int Fraction::getDenominator() {
+  return this->denominator;
 }
 
 Fraction Fraction::operator+(const Fraction& fr) {
-  return 
-    Fraction(this->numerator * fr.denuminator + fr.numerator * this->denuminator,
-    this->denuminator * fr.denuminator).normalize();
+  return
+    Fraction(this->numerator * fr.denominator + fr.numerator * this->denominator,
+    this->denominator * fr.denominator).normalize();
 }
 
 Fraction Fraction::operator-(const Fraction& fr) {
-  return 
-    Fraction(this->numerator * fr.denuminator - fr.numerator * this->denuminator,
-    this->denuminator * fr.denuminator).normalize();
+  return
+    Fraction(this->numerator * fr.denominator - fr.numerator * this->denominator,
+    this->denominator * fr.denominator).normalize();
 }
 
 Fraction Fraction::operator*(const Fraction& fr) {
   return Fraction(this->numerator * fr.numerator,
-    this->denuminator * fr.denuminator).normalize();
+    this->denominator * fr.denominator).normalize();
 }
 
 Fraction Fraction::operator/(const Fraction& fr) {
   return Fraction(this->numerator * fr.numerator,
-    this->denuminator / fr.denuminator).normalize();
+    this->denominator / fr.denominator).normalize();
 }
 
 Fraction Fraction::operator=(const Fraction& fr) {
   return Fraction(this->numerator = fr.numerator,
-    this->denuminator = fr.denuminator);
+    this->denominator = fr.denominator);
 }
