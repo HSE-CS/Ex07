@@ -1,4 +1,4 @@
-//Copyright 2020 dash
+// Copyright 2020 dash
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
 
@@ -27,4 +27,4 @@ class Fraction {
 };
 
 
-#endif //INCLUDE_FRACTION_H_
+#endif  // INCLUDE_FRACTION_H_
