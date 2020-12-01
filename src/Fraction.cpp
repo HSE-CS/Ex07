@@ -4,10 +4,10 @@
 Fraction::Fraction(int a, int b) {
     if (b == 0) {
         throw "zero denom";
-    }else if (a == 0) {
+    } else if (a == 0) {
         numerator = a;
         denominator = 1;
-    }else {
+    } else {
         numerator = a;
         denominator = b;
     }
@@ -23,7 +23,7 @@ void Fraction::normalize() {
     int min = 0;
     if (abs(numerator) <= abs(denominator)) {
         min = numerator;
-    }else {
+    } else {
         min = denominator;
     }
 
@@ -40,7 +40,7 @@ void Fraction::normalize() {
 std::string Fraction::getValue() {
     if (denominator == 1) {
         return std::to_string(numerator);
-    }else {
+    } else {
         return std::to_string(numerator) + "/" + std::to_string(denominator);
     }
 }
@@ -76,7 +76,7 @@ Fraction Fraction::operator*(const Fraction&fr) {
 
 Fraction Fraction::operator/(const Fraction&fr) {
     int num = fr.denominator * numerator;
-    int den = fr.numerator * denominator; 
+    int den = fr.numerator * denominator;
     Fraction res(num, den);
     return res;
 }
