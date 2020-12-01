@@ -11,8 +11,7 @@ class Fraction {
   explicit Fraction(int num = 0, int den = 1) {
     if (den == 0) {
       throw "arithmetic_error::divide_by_zero";
-    }
-    else {
+    } else {
       this->numerator = num;
       this->denominator = den;
     }
