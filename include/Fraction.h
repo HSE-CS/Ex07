@@ -6,21 +6,21 @@
 
 class Fraction {
 public:
-	Fraction();
-	Fraction(int, int);
-	Fraction(const Fraction&);
-	std::string getValue() const;
-	int getNumerator() const;
-	int getDenominator() const;
-	Fraction operator+ (const Fraction&);
-	Fraction operator- (const Fraction&);
-	Fraction operator* (const Fraction&);
-	Fraction operator/ (const Fraction&);
-	Fraction operator= (const Fraction&);
+    Fraction();
+    Fraction(int, int);
+    Fraction(const Fraction&);
+    std::string getValue() const;
+    int getNumerator() const;
+    int getDenominator() const;
+    Fraction operator+ (const Fraction&);
+    Fraction operator- (const Fraction&);
+    Fraction operator* (const Fraction&);
+    Fraction operator/ (const Fraction&);
+    Fraction operator= (const Fraction&);
 private:
-	Fraction normalize();
-	int numerator;
-	int denominator;
+    Fraction normalize();
+    int numerator;
+    int denominator;
 };
 int gcd(int, int);
 #endif // INCLUDE_FRACTION_H_
