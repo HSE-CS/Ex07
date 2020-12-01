@@ -4,9 +4,9 @@
 
 int nod(int a, int b) {
     while (a != b && a != 0 && b != 0) {
-        if (a > b) 
+        if (a > b)
             a = a - b;
-        else 
+        else
             b = b - a;
     }
     return b;
@@ -29,13 +29,13 @@ int Fraction::getNumerator() {
 
 std::string Fraction::getValue() {
     normalize();
-    std::string res = std::to_string(this->numerator) 
+    std::string res = std::to_string(this->numerator)
         + "\/" + std::to_string(this->denominator);
     return res;
 }
 
 Fraction Fraction::operator+(const Fraction& fr) {
-    int a = this->numerator * fr.denominator 
+    int a = this->numerator * fr.denominator
         + fr.numerator * this->denominator;
     int b = this->denominator * fr.denominator;
     Fraction temp = Fraction(a, b);
@@ -44,7 +44,7 @@ Fraction Fraction::operator+(const Fraction& fr) {
 }
 
 Fraction Fraction::operator-(const Fraction& fr) {
-    int a = this->numerator * fr.denominator 
+    int a = this->numerator * fr.denominator
         - fr.numerator * this->denominator;
     int b = this->denominator * fr.denominator;
     Fraction temp = Fraction(a, b);
