@@ -1,3 +1,4 @@
+// Copyright 2020 Lupehina
 #include "Fraction.h"
 
 //+
@@ -25,7 +26,7 @@ std::string Fraction::getValue() {
     if (this->denominator == 1)
         return std::to_string(this->numerator);
     else
-        return (std::to_string(this->numerator) + "/" + std::to_string(this->denominator));
+        return (std::to_string(this->numerator)+"/"+std::to_string(this->denominator));
 }
 
 //+
@@ -39,7 +40,7 @@ int Fraction::getDenominator() const {
 }
 
 Fraction Fraction::operator+(Fraction &f) {
-    int nnum = this->numerator * f.denominator + this->denominator * f.numerator;
+    int nnum = this->numerator*f.denominator+this->denominator*f.numerator;
     int nden = this->denominator * f.numerator;
     return Fraction(nnum, nden);
 }
