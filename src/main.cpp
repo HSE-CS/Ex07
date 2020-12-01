@@ -1,3 +1,4 @@
+// Copyright 2020 SharunovEvgenya
 //
 // Created by sharg on 01.12.2020.
 //
@@ -6,14 +7,15 @@
 
 int main() {
     Fraction firstFr;
-    cout << firstFr.getNumerator() << " " << firstFr.getDenominator() << " Value=" << firstFr.getValue() << endl;
+    std::cout << firstFr.getNumerator() << " " << firstFr.getDenominator() << " Value=" << firstFr.getValue()
+              << std::endl;
     Fraction secondFr(2, 4);
     Fraction threeFr(firstFr);
     firstFr = secondFr + threeFr;
-    cout << firstFr.getValue() << endl;
+    std::cout << firstFr.getValue() << std::endl;
     threeFr = firstFr * secondFr;
-    cout << threeFr.getValue() << endl;
+    std::cout << threeFr.getValue() << std::endl;
     threeFr = secondFr / threeFr;
-    cout << threeFr.getValue() << endl;
+    std::cout << threeFr.getValue() << std::endl;
     return 0;
 }

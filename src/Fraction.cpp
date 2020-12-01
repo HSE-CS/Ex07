@@ -1,9 +1,9 @@
+// Copyright 2020 SharunovEvgenya
 //
 // Created by sharg on 01.12.2020.
 //
 #include "Fraction.h"
 
-using namespace std;
 
 int getNOD(int firstNumber, int secondNumber) {
     while (firstNumber != 0 && secondNumber != 0) {
@@ -24,12 +24,12 @@ int Fraction::getDenominator() const {
     return denominator;
 }
 
-string Fraction::getValue() {
+std::string Fraction::getValue() {
     normalize();
     if (denominator == 1)
-        return to_string(numerator);
+        return std::to_string(numerator);
     else
-        return to_string(numerator) + "/" + to_string(denominator);
+        return std::to_string(numerator) + "/" + std::to_string(denominator);
 }
 
 void Fraction::normalize() {
@@ -39,21 +39,25 @@ void Fraction::normalize() {
 }
 
 Fraction Fraction::operator+(const Fraction &valueFraction) const {
-    return Fraction(numerator * valueFraction.denominator + valueFraction.numerator * denominator,
+    return Fraction(numerator * valueFraction.denominator +
+                    valueFraction.numerator * denominator,
                     denominator * valueFraction.denominator);
 }
 
 Fraction Fraction::operator-(const Fraction &valueFraction) const {
-    return Fraction(numerator * valueFraction.denominator - valueFraction.numerator * denominator,
+    return Fraction(numerator * valueFraction.denominator
+                    - valueFraction.numerator * denominator,
                     denominator * valueFraction.denominator);
 }
 
 Fraction Fraction::operator*(const Fraction &valueFraction) const {
-    return Fraction(numerator * valueFraction.numerator, denominator * valueFraction.denominator);
+    return Fraction(numerator * valueFraction.numerator,
+                    denominator * valueFraction.denominator);
 }
 
 Fraction Fraction::operator/(const Fraction &valueFraction) const {
-    return Fraction(numerator * valueFraction.denominator, denominator * valueFraction.numerator);
+    return Fraction(numerator * valueFraction.denominator,
+                    denominator * valueFraction.numerator);
 }
 
 Fraction &Fraction::operator=(const Fraction &valueFraction) = default;
