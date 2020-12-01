@@ -1,12 +1,13 @@
+// Copyright 2020 Khoroshavina Ekaterina
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
 #include <string>
 
 class Fraction {
-private:
+ private:
     int numerator, denominator;
     void normalize();
-public:
+ public:
     explicit Fraction(int numerator = 0, int denominator = 1) {
         this->numerator = numerator;
         this->denominator = denominator;
@@ -25,4 +26,4 @@ public:
     Fraction& operator=(const Fraction& fr);
 };
 
-#endif
+#endif  // INCLUDE_FRACTION_H_
