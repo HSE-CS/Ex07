@@ -15,7 +15,7 @@ int find_nod(int numer, int denom) {
   if (numer < 0) {
     return 1;
   }
-  while (numer != 0 and denom != 0) {
+  while (numer != 0 && denom != 0) {
     if (numer > denom) {
       numer %= denom;
     } else {
@@ -52,24 +52,26 @@ int Fraction::getDenominator() const {
 }
 
 Fraction Fraction::operator+(const Fraction &fr) {
-  Fraction rez =
-      Fraction(numerator * fr.denominator + fr.numerator * denominator, denominator * fr.denominator).normalize();
+  Fraction rez = Fraction(numerator * fr.denominator + fr.numerator * denominator,
+               denominator * fr.denominator).normalize();
   return rez;
 }
 
 Fraction Fraction::operator-(const Fraction &fr) {
-  Fraction
-      rez = Fraction(numerator * fr.denominator - fr.numerator * denominator, denominator * fr.denominator).normalize();
+  Fraction rez = Fraction(numerator * fr.denominator - fr.numerator * denominator,
+                     denominator * fr.denominator).normalize();
   return rez;
 }
 
 Fraction Fraction::operator*(const Fraction &fr) {
-  Fraction rez = Fraction(numerator * fr.numerator, denominator * fr.denominator).normalize();
+  Fraction rez = Fraction(numerator * fr.numerator,
+                          denominator * fr.denominator).normalize();
   return rez;
 }
 
 Fraction Fraction::operator/(const Fraction &fr) {
-  Fraction rez = Fraction(numerator * fr.denominator, fr.numerator * denominator).normalize();
+  Fraction rez = Fraction(numerator * fr.denominator,
+                          fr.numerator * denominator).normalize();
   return rez;
 }
 
