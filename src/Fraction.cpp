@@ -1,5 +1,6 @@
 // Copyright 2020 Ryzhova
 #include "Fraction.h"
+
 #include <stdexcept>
 
 int common_divisor(int num, int den) {
