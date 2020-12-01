@@ -18,15 +18,15 @@ void Fraction::normalize() {
 }
 
 Fraction::Fraction(int num, int den) {
-  if (den == 0)
+  if (den == 0) {
     throw "Error: Division by 0";
-  else if (den != 0 && num != 0) {
+  } else if (den != 0 && num != 0) {
     numerator = num;
     denominator = den;
     normalize();
-  }
-  else if (num == 0)
+  } else if (num == 0) {
     denominator = 1;
+    }
 }
 
 Fraction::Fraction(const Fraction& f) {
