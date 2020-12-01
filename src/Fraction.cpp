@@ -25,8 +25,7 @@ std::string Fraction::getValue() {
     normalize();
     if (this->denominator == 1)
         return std::to_string(this->numerator);
-    else
-    {
+    else{
         std::string fff = std::to_string(this->numerator)+"/";
         fff += std::to_string(this->denominator);
         return fff;
@@ -43,8 +42,7 @@ int Fraction::getDenominator() const {
 }
 
 Fraction Fraction::operator+(Fraction &f) {
-    if (this->denominator != f.denominator)
-    {
+    if (this->denominator != f.denominator){
         int nnum = this->numerator*f.denominator+this->denominator*f.numerator;
         int nden = this->denominator * f.numerator;
         return Fraction(nnum, nden);

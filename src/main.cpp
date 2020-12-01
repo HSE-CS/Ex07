@@ -6,8 +6,8 @@ int main() {
     // test 1 +
 
     Fraction a;
-    a.getNumerator();   //0
-    a.getDenominator(); //1
+    a.getNumerator();   // 0
+    a.getDenominator();  // 1
     std::cout << a.getNumerator() << " // 0" << std::endl;
     std::cout << a.getDenominator() << " // 1" << std::endl;
     std::cout << a.getValue() << " // 0" << std::endl; //0
