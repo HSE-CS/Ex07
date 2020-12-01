@@ -21,7 +21,7 @@ Fraction::Fraction() {
 	}
 Fraction::Fraction(int new_numerator, int new_denominator) {
 	if (new_denominator == 0) {
-		throw std::invalid_argument::invalid_argument("Division by zero");
+		throw std::invalid_argument("Division by zero");
 	}
 	numerator = new_numerator;
 	denominator = new_denominator;
@@ -65,7 +65,7 @@ Fraction Fraction::operator*(const Fraction& other) {
 }
 Fraction Fraction::operator/(const Fraction& other) {
 	if (other.getNumerator() == 0) {
-		throw std::domain_error::domain_error("Division by zero");
+		throw std::domain_error("Division by zero");
 	}
 	return { getNumerator() * other.getDenominator(), getDenominator() * other.getNumerator() };
 }
