@@ -11,8 +11,7 @@ void Fraction::normalize() {
     }
     int k = 1;
     for (int i = 1; i <= min; ++i) {
-        if ((numerator % i == 0) &&
-		(denominator % i == 0) && (i > k)) {
+        if ((numerator % i == 0) && (denominator % i == 0) && (i > k)) {
             k = i;
         }
     }
