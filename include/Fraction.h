@@ -3,7 +3,7 @@
 // Created by vladimir on 01.12.2020.
 //
 
-#ifndef INCLUDE_FRACTION_H
+#ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H
 
 #include <cstring>
@@ -11,12 +11,12 @@
 
 
 class Fraction {
-private:
+ private:
     int numerator;
     int denominator;
     void normalize();
 
-public:
+ public:
     explicit Fraction(int new_num = 0, int new_den = 1) {
         if (denominator == 0) {
             throw "den is equal to NULL";
@@ -76,5 +76,5 @@ public:
 
 
 
-#endif // INCLUDE_FRACTION_H
+#endif // INCLUDE_FRACTION_H_
 
