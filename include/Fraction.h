@@ -43,13 +43,13 @@ public:
     Fraction operator+(Fraction &f);
 
     // operator- - вычитание
-    Fraction operator-(Fraction &f);
+    Fraction operator-(const Fraction &f);
 
     // operator* - умножение
-    Fraction operator*(Fraction &f);
+    Fraction operator*(const Fraction &f);
 
     // operator/ - деление
-    Fraction operator/(Fraction &f);
+    Fraction operator/(const Fraction &f);
 
     // operator= - присваивание
     Fraction &operator=(const Fraction &f);
