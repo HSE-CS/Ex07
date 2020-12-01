@@ -1,10 +1,10 @@
-//Copyright 2020 VladimirUspensky
+// Copyright 2020 VladimirUspensky
 //
 // Created by vladimir on 01.12.2020.
 //
 
-#ifndef EX7_FRACTION_H
-#define EX7_FRACTION_H
+#ifndef INCLUDE_FRACTION_H
+#define INCLUDE_FRACTION_H
 
 #include <cstring>
 #include <string>
@@ -35,7 +35,7 @@ public:
     int getNumerator();
     int getDenominator();
 
-    Fraction operator+(const Fraction &frac) const{
+    Fraction operator+(const Fraction &frac) const {
         int new_den = denominator * frac.denominator;
         int first = numerator * frac.denominator;
         int second = frac.numerator * denominator;
@@ -44,27 +44,27 @@ public:
         return new_frac;
     }
 
-    Fraction operator*(const Fraction &frac) const{
+    Fraction operator*(const Fraction &frac) const {
         int new_den = denominator * frac.denominator;
         int new_num = numerator * frac.numerator;
         Fraction new_frac(new_num, new_den);
         return new_frac;
     }
 
-    Fraction operator/(const Fraction &frac) const{
+    Fraction operator/(const Fraction &frac) const {
         int new_den = denominator * frac.numerator;
         int new_num = numerator * frac.denominator;
         Fraction new_frac(new_num, new_den);
         return new_frac;
     }
 
-    Fraction operator=(const Fraction &frac){
+    Fraction operator=(const Fraction &frac) {
         numerator = frac.numerator;
         denominator = frac.denominator;
         return *this;
     }
 
-    Fraction operator-(const Fraction &frac) const{
+    Fraction operator-(const Fraction &frac) const {
         int new_den = denominator * frac.denominator;
         int first = numerator * frac.denominator;
         int second = frac.numerator * denominator;
@@ -76,5 +76,5 @@ public:
 
 
 
-#endif //EX7_FRACTION_H
+#endif // INCLUDE_FRACTION_H
 

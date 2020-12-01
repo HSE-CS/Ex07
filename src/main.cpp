@@ -1,4 +1,4 @@
-//Copyright 2020 VladimirUspensky
+// Copyright 2020 VladimirUspensky
 
 #include <iostream>
 #include "Fraction.h"
