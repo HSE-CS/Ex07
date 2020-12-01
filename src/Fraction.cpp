@@ -31,20 +31,20 @@ int Fraction::getNumerator() const {
 std::string Fraction::getValue() {
   Fraction obj = normalize();
   std::string res = std::to_string(obj.numerator) +
-	  "\\" + std::to_string(obj.denominator);
+  "\\" + std::to_string(obj.denominator);
   return res;
 }
 
 Fraction Fraction::operator+(const Fraction& obj) {
   int num = this->numerator * obj.denominator +
-	  this->denominator * obj.numerator;
+  this->denominator * obj.numerator;
   int denom = this->denominator * obj.denominator;
   return Fraction(num, denom).normalize();
 }
 
 Fraction Fraction::operator-(const Fraction& obj) {
   int num = this->numerator * obj.denominator -
-	  this->denominator * obj.numerator;
+  this->denominator * obj.numerator;
   int denom = this->denominator * obj.denominator;
   return Fraction(num, denom).normalize();
 }
