@@ -10,7 +10,7 @@ int gcd(int a, int b) {
     b = abs(b);
     while (b > 0 && a > 0) {
         if (a > b) a = a % b;
-        else 
+        else
             b = b = b % a;
     }
     return a + b;
@@ -36,7 +36,7 @@ Fraction::Fraction(const Fraction& other) {
     numerator = other.getNumerator();
     denominator = other.getDenominator();
 }
-int Fraction::getNumerator() const { 
+int Fraction::getNumerator() const {
     return numerator;
 }
 int Fraction::getDenominator() const {
@@ -55,7 +55,7 @@ Fraction Fraction::normalize() {
     return *this;
 }
 Fraction Fraction::operator+(const Fraction& other) {
-    return { other.getDenominator() * getNumerator() 
+    return { other.getDenominator() * getNumerator()
         + getDenominator() * other.getNumerator(),
         getDenominator() * other.getDenominator() };
 }
