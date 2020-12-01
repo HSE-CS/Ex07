@@ -4,7 +4,7 @@
 #include <cstring>
 #include <string>
 
-class Fraction
+class Fraction 
 {
 private:
     int numerator, denominator;

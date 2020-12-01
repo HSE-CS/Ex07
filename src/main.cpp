@@ -21,5 +21,5 @@ int main()
 
     c = a / b;
     std::cout << c.getNumerator() << "\t" << c.getDenominator();
-
+    return 0;
 }
