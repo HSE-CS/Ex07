@@ -25,4 +25,4 @@ class Fraction {
   Fraction normalize();
 };
 
-#endif // INCLUDE_FRACTION_H_
+#endif  // INCLUDE_FRACTION_H_
