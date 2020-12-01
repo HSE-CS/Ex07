@@ -27,4 +27,4 @@ class Fraction {
     Fraction& operator=(const Fraction&);
 };
 
-#endif // FRACTION_H
+#endif  // FRACTION_H
