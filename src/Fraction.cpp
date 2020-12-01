@@ -28,7 +28,7 @@ int GCD(int a, int b) {
 
 std::string Fraction::getValue() {
   std::string numer;
-  numer =std::to_string(numerator);
+  numer = std::to_string(numerator);
   if (numerator == 0) {
     return numer;
   }
