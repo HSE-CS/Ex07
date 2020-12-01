@@ -9,11 +9,11 @@
 #include <string>
 
 class Fraction {
-private:
+ private:
     int numerator, denominator;
     void normalize();
 
-public:
+ public:
     explicit Fraction(int num = 0, int denom = 1) {
         numerator = num;
         denominator = denom;
