@@ -1,5 +1,7 @@
+// Copyright 2020 Kar Mashanova
 #include <iostream>
 #include "Fraction.h"
+
 int main() {
 	Fraction fr3;
 	std::cout << fr3.getNumerator() << '\n';
@@ -31,4 +33,5 @@ int main() {
 	std::cout << c1.getNumerator() << '\n';
 	std::cout << c1.getDenominator() << '\n';
 	return 0;
+
 }

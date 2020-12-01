@@ -1,4 +1,6 @@
+// Copyright 2020 Kar Mashanova
 #include "Fraction.h"
+
 Fraction::Fraction(int num, int denom) {
 	if (denom == 0) {
 		throw "Div by zero";
@@ -13,6 +15,7 @@ Fraction::Fraction(int num, int denom) {
 	}
 	this->normalize();
 }
+
 Fraction::Fraction(const Fraction& fr) {
 	numerator = fr.numerator;
 	denominator = fr.denominator;
@@ -22,8 +25,7 @@ void Fraction::normalize() {
 	if (abs(numerator) < abs(denominator)) {
 		min = abs(numerator);
 	}
-	if ((abs(numerator) > abs(denominator)) ||
-		(abs(numerator) == abs(denominator))) {
+	if ((abs(numerator) > abs(denominator)) || (abs(numerator) == abs(denominator))) {
 		min = abs(denominator);
 	}
 	int gcd = 1;
@@ -35,6 +37,7 @@ void Fraction::normalize() {
 	numerator /= gcd;
 	denominator /= gcd;
 }
+
 std::string Fraction::getValue() {
 	std::string str;
 	str += std::to_string(numerator);
@@ -42,28 +45,34 @@ std::string Fraction::getValue() {
 	str += std::to_string(denominator);
 	return str;
 }
+
 int Fraction::getNumerator() {
 	return numerator;
 }
 int Fraction::getDenominator() {
 	return denominator;
 }
+
 Fraction Fraction::operator+(const Fraction& fr) {
 	return Fraction(numerator * fr.denominator +
 		fr.numerator * denominator, denominator * fr.denominator);
 }
+
 Fraction Fraction::operator-(const Fraction& fr) {
 	return Fraction(numerator * fr.denominator -
 		fr.numerator * denominator, denominator * fr.denominator);
 }
+
 Fraction Fraction::operator*(const Fraction& fr) {
 	return Fraction(numerator * fr.numerator, denominator * fr.denominator);
 }
 Fraction Fraction::operator/(const Fraction& fr) {
 	return Fraction(numerator * fr.denominator, denominator * fr.numerator);
 }
+
 Fraction Fraction::operator=(const Fraction& fr) {
 	numerator = fr.numerator;
 	denominator = fr.denominator;
 	return *this;
+
 }
