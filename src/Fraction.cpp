@@ -49,7 +49,7 @@ std::string Fraction::getValue() {
     if (this->denominator == 1) {
         return std::to_string(this->numerator);
     } else {
-        return std::to_string(this->numerator) + '/' 
+        return std::to_string(this->numerator) + '/'
             + std::to_string(this->denominator);
     }
 }
@@ -71,7 +71,7 @@ Fraction Fraction::operator+(const Fraction& fract) {
 
 Fraction Fraction::operator-(const Fraction& fract) {
     Fraction new_frac(this->numerator * fract.denominator -
-        fract.numerator * this->denominator, 
+        fract.numerator * this->denominator,
         this->denominator * fract.denominator);
     return new_frac.normalize();
 }
