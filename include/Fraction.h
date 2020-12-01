@@ -43,23 +43,27 @@ public:
         Fraction new_frac(new_num, new_den);
         return new_frac;
     }
+
     Fraction operator*(const Fraction &frac) const{
         int new_den = denominator * frac.denominator;
         int new_num = numerator * frac.numerator;
         Fraction new_frac(new_num, new_den);
         return new_frac;
     }
+
     Fraction operator/(const Fraction &frac) const{
         int new_den = denominator * frac.numerator;
         int new_num = numerator * frac.denominator;
         Fraction new_frac(new_num, new_den);
         return new_frac;
     }
+
     Fraction operator=(const Fraction &frac){
         numerator = frac.numerator;
         denominator = frac.denominator;
         return *this;
     }
+
     Fraction operator-(const Fraction &frac) const{
         int new_den = denominator * frac.denominator;
         int first = numerator * frac.denominator;

@@ -1,4 +1,5 @@
 //Copyright 2020 VladimirUspensky
+
 //
 // Created by vladimir on 01.12.2020.
 //
@@ -9,7 +10,7 @@
 int find_nod(int first, int second) {
     while (first != 0 && second != 0) {
         if (first > second) {
-            first= first % second;
+            first = first % second;
         } else {
             second = second % first;
         }
