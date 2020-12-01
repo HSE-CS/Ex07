@@ -3,7 +3,8 @@
 #include "Fraction.h"
 
 void Fraction::normalize() {
-    for (int i = this->numerator; i > 0; i--) {
+    int maximum = fmax(this->numerator, this->denominator);
+    for (int i = maximum; i > 0; i--) {
         if ((this->numerator % i == 0) && (this->denominator % i == 0)) {
             this->numerator = this->numerator / i;
             this->denominator = this->denominator / i;
