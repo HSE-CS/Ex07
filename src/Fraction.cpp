@@ -41,7 +41,7 @@ int Fraction::getDenominator() const {
     return denominator;
 }
 
-Fraction Fraction::operator+(Fraction &f) {
+Fraction Fraction::operator+(const Fraction &f) {
     if (this->denominator != f.denominator) {
         int nnum = this->numerator*f.denominator+this->denominator*f.numerator;
         int nden = this->denominator * f.numerator;
