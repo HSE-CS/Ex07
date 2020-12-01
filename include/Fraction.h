@@ -3,6 +3,7 @@
 #define INCLUDE_FRACTION_H_
 
 #include <iostream>
+#include <string>
 
 class Fraction {
  private:
@@ -21,6 +22,5 @@ class Fraction {
     Fraction operator/(const Fraction&);
     Fraction& operator=(const Fraction&);
 };
-
 
 #endif  // INCLUDE_FRACTION_H_
