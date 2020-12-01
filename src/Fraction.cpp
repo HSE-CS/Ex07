@@ -66,5 +66,7 @@ Fraction Fraction::operator/(const Fraction& fraction) {
 }
 
 Fraction Fraction::operator=(const Fraction& fraction) {
-	return Fraction(fraction.numerator, fraction.denominator);
+	numerator = fraction.numerator;
+	denominator = fraction.denominator;
+	return Fraction(numerator, denominator);
 }
