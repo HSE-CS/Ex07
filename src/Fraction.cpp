@@ -6,7 +6,7 @@
 
 Fraction::Fraction(int n, int d) {
   if (d == 0) {
-	throw "Div by zero";
+    throw "Div by zero";
   } else {
 	numerator = n;
 	denominator = d;
@@ -24,8 +24,9 @@ void Fraction::normalize() {
   int b = abs(denominator);
   int gcd = 1;
   for (int i = 1; i <= fmin(a, b); i++) {
-	if ((a % i == 0) && (b % i == 0))
-	  gcd = i;
+      if ((a % i == 0) && (b % i == 0)) {
+        gcd = i;
+      }
   }
   numerator /= gcd;
   denominator /= gcd;
@@ -36,11 +37,11 @@ std::string Fraction::getValue() {
   if (denominator == 1) {
     res = std::to_string(numerator);
   } else {
-	  std::string num = std::to_string(numerator);
-	  std::string den = std::to_string(denominator);
-	  res += num;
-	  res += '/';
-	  res += den;
+    std::string num = std::to_string(numerator);
+	std::string den = std::to_string(denominator);
+	res += num;
+	res += '/';
+	res += den;
   }
   return res;
 }
@@ -59,8 +60,10 @@ Fraction Fraction::operator+(const Fraction& frac) {
   int d = frac.denominator * denominator;
   if (n == 0) {
 	c = Fraction(0, 1);
-  } else
-	  c = Fraction(n, d);
+  }
+  else {
+  c = Fraction(n, d);
+  }
   return c;
 }
 
@@ -70,8 +73,10 @@ Fraction Fraction::operator-(const Fraction& frac) {
   int d = frac.denominator * denominator;
   if (n == 0) {
     c = Fraction(0, 1);
-  } else
-	c = Fraction(n, d);
+  }
+  else {
+  c = Fraction(n, d);
+  }
   return c;
 }
 
