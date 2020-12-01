@@ -18,4 +18,5 @@ int main()
 	Fraction fraction3 = fraction2;
 	std::cout << "F3 = F2 = " << fraction3.getValue() << std::endl;
 
+	return 0;
 }
