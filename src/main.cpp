@@ -1,22 +1,23 @@
+// Copyright 2020 Lupehina
 #include <iostream>
 #include "Fraction.h"
 
 int main() {
-    //test 1
+    // test 1
     /*
     Fraction a;
     a.getNumerator();   //0
     a.getDenominator(); //1
     */
 
-    //test 2
+    // test 2
     /*
     Fraction a(1, 2);
     a.getNumerator();   //1
     a.getDenominator(); //2
     */
 
-    //test 3
+    // test 3
     /*
     Fraction a(1, 2);
     Fraction b(a);
@@ -24,7 +25,7 @@ int main() {
     b.getDenominator(); //2
     */
 
-    //test 4
+    // test 4
     /*
     Fraction a(1, 2);
     Fraction b(a);
@@ -34,7 +35,7 @@ int main() {
     c.getDenominator();//1
     */
 
-    //test 5
+    // test 5
     /*
     Fraction a(1, 2);
     Fraction b(-1, 2);
@@ -44,7 +45,7 @@ int main() {
     c.getDenominator();//1
     */
 
-    //test 6
+    // test 6
     /*
     Fraction a(1, 2);
     Fraction b(1, 2);
@@ -54,7 +55,7 @@ int main() {
     c.getDenominator());//1
     */
 
-    //test 7
+    // test 7
     /*
     Fraction a(1, 3);
     Fraction b(2, 3);
@@ -64,7 +65,7 @@ int main() {
     c.getDenominator();//1
     */
 
-    //test 8
+    // test 8
     /*
     Fraction a(1, 2);
     Fraction b(1, 2);
@@ -74,7 +75,7 @@ int main() {
     c.getDenominator();//4
      */
 
-    //test 9
+    // test 9
     /*
     Fraction a(1, 5);
     Fraction b(1, 2);
@@ -88,10 +89,10 @@ int main() {
     Fraction a(1, 2); // 1/2
     Fraction b(a);
     Fraction c;
-    //std::cout << c.getValue(); // 0
-    //c = a + b;
-    //std::cout << c.getValue(); // 1
-    //...
+    // std::cout << c.getValue(); // 0
+    //  = a + b;
+    // std::cout << c.getValue(); // 1
+    // ...
 */
 }
 
