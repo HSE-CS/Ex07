@@ -7,11 +7,11 @@
 #include <string>
 
 class Fraction {
-private:
-	int numerator;
-	int denominator;
+ private:
+    int numerator;
+    int denominator;
 
-public:
+ public:
 	explicit Fraction(int a = 0, int b = 1);
 	Fraction(const Fraction&);
 
