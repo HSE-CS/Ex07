@@ -7,7 +7,6 @@
 int getGCD(int a, int b);
 
 class Fraction {
-
 public:
     explicit Fraction(int numerator = 0, int denominator = 1);
     Fraction(const Fraction& fraction);
@@ -26,4 +25,4 @@ private:
     void normalize();
 };
 
-#endif
+#endif  // INCLUDE_FRACTION_H_ 
