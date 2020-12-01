@@ -5,6 +5,9 @@ Fraction::Fraction(int a, int b) {
 	if (b == 0) {
 		throw "zero denom";
 	}
+	else if (a == 0) {
+		denominator = 1;
+	}
 	else {
 		numerator = a;
 		denominator = b;
