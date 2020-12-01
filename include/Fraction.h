@@ -1,3 +1,4 @@
+// Copyright 2020 Shelby Ltd.
 #pragma once
 
 #include <string>

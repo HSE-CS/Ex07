@@ -1,3 +1,4 @@
+// Copyright 2020 Shelby Ltd.
 #include <iostream>
 #include "Fraction.h"
 
@@ -13,7 +14,6 @@ int main() {
   f4 = f3 * f2;
   std::cout << f4.getValue() << std::endl;
   f4 = f3 / f2;
-  std::cout << f4.getValue() << std::endl;
-  
+  std::cout << f4.getValue() << std::endl;  
   return 0;
 }

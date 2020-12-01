@@ -1,3 +1,4 @@
+// Copyright 2020 Shelby Ltd.
 #include "Fraction.h"
 #include <cmath>
 #include <stdexcept>
