@@ -17,6 +17,7 @@ class Fraction {
 	Fraction operator-(const Fraction& b);
 	Fraction operator*(const Fraction& b);
 	Fraction operator/(const Fraction& b);
+	Fraction operator=(const Fraction& b);
 };
 
 #endif  // INCLUDE_FRACTION_H_
