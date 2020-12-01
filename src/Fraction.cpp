@@ -1,6 +1,22 @@
 // Copyright 2020 Pasmanik Irina
 #include "Fraction.h"
 
+Fraction::Fraction(int a, int b) {
+	if (b == 0) {
+		throw "zero denom";
+	}
+	else {
+		numerator = a;
+		denominator = b;
+	}
+	this->normalize();
+}
+
+Fraction::Fraction(const Fraction& fr) {
+	numerator = fr.numerator;
+	denominator = fr.denominator;
+}
+
 void Fraction::normalize() {
 	//TODO
 }
@@ -23,21 +39,34 @@ int Fraction::getDenominator() {
 }
 
 Fraction Fraction::operator+(const Fraction&fr) {
-	//TODO
+	int num = fr.denominator * numerator + fr.numerator * denominator;
+	int den = denominator * fr.denominator;
+	Fraction res(num, den);
+	return res;
 }
 
 Fraction Fraction::operator-(const Fraction&fr) {
-	//TODO
+	int num = fr.denominator * numerator - fr.numerator * denominator;
+	int den = denominator * fr.denominator;
+	Fraction res(num, den);
+	return res;
 }
 
 Fraction Fraction::operator*(const Fraction&fr) {
-	//TODO
+	int num = fr.numerator * numerator;
+	int den = denominator * fr.denominator;
+	Fraction res(num, den);
+	return res;
 }
 
 Fraction Fraction::operator/(const Fraction&fr) {
-	//TODO
+	int num = fr.numerator * denominator;
+	int den = fr.denominator * numerator;
+	Fraction res(num, den);
+	return res;
 }
 
 Fraction& Fraction::operator=(const Fraction&fr) {
-	//TODO
+	Fraction res(fr.numerator, fr.denominator);
+	return res;
 }
