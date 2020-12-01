@@ -32,7 +32,7 @@ Fraction::Fraction(int num, int den){
   normalize();
 }
 
-Fraction::Fraction(Fraction& fract): numerator(fract.numerator), denominator(fract.numerator){
+Fraction::Fraction(Fraction& fract): numerator(fract.numerator), denominator(fract.denominator){
   normalize();
 }
 
