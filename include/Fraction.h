@@ -5,7 +5,7 @@
 
 class Fraction {
  private:
-   int numerator, denominator;
+    int numerator, denominator;
  public:
     Fraction();
     explicit Fraction(int a, int b);
