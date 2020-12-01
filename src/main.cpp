@@ -1,4 +1,5 @@
 // Copyright 2020 Pasmanik Irina
+#include "Fraction.h"
 
 int main() {
     Fraction a(1, 2);
