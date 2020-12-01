@@ -23,7 +23,8 @@ Fraction::Fraction(int num, int den) {
   if (den != 0) {
     numerator = num;
     denominator = den;
-    normalize();
+    if (num != 0)
+      normalize();
   }
 }
 
