@@ -1,8 +1,8 @@
+// Copyright 2020 OsmanovIslam
 #include <iostream>
 #include "Fraction.h"
 
-int main()
-{
+int main() {
   Fraction a1(-1, 2);
   Fraction a2(3, 10);
   Fraction a3;

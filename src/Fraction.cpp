@@ -4,16 +4,16 @@
 #include <cmath>
 #include "Fraction.h"
 
-int Fraction::getDenominator(){
+int Fraction::getDenominator() {
   return this->denominator;
 }
 
-int Fraction::getNumerator(){
+int Fraction::getNumerator() {
   return this->numerator;
 }
 
-int GCD(int a, int b){
-  if (a % b == 0){
+int GCD(int a, int b) {
+  if (a % b == 0) {
     return b;
   }
   if (b % a == 0) {
@@ -29,14 +29,11 @@ int GCD(int a, int b){
 std::string Fraction::getValue() {
   std::string numer;
   numer = to_string(numerator);
-  
   if (numerator == 0) {
     return numer;
   }
-
   std::string denom = to_string(denominator);
   std::string val = numer + "/" + denom;
-
   return val;
 }
 
@@ -46,7 +43,7 @@ void Fraction::normalize() {
   denominator = denominator / divisor;
 }
 
-Fraction::Fraction(int numer, int denom){
+Fraction::Fraction(int numer, int denom) {
   if (denom != 0) {
   this->numerator = numer;
   this->denominator = denom;
@@ -54,18 +51,18 @@ Fraction::Fraction(int numer, int denom){
   }
 }
 
-Fraction::Fraction(const Fraction& frac){
+Fraction::Fraction(const Fraction& frac) {
   this->numerator = frac.numerator;
   this->denominator = frac.denominator;
   this->normalize();
 }
 
-Fraction Fraction::operator+(const Fraction& frac){
+Fraction Fraction::operator+(const Fraction& frac) {
   return Fraction(frac.denominator * numerator + frac.numerator * denominator,
     denominator * frac.denominator);
 }
 
-Fraction Fraction::operator*(const Fraction& frac){
+Fraction Fraction::operator*(const Fraction& frac) {
   return Fraction(numerator * frac.numerator, 
     denominator * frac.denominator);
 }
