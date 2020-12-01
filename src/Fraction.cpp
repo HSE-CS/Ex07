@@ -26,12 +26,13 @@ void Fraction::normalize() {
             numerator = abs(numerator);
             denominator = abs(denominator);
         }
-        int min = abs(numerator) > abs(denominator) ? abs(denominator) : abs(numerator);
+        int min = abs(numerator) > abs(denominator) ?
+                  abs(denominator) : abs(numerator);
         for (int i = 1; i <= min; ++i) {
             if (numerator % i == 0 && denominator % i == 0) {
                 numerator /= i;
                 denominator /= i;
-                i=1;
+                i = 1;
             }
         }
     }
@@ -43,7 +44,8 @@ std::string Fraction::getValue() {
         return "1";
     else if (getNumerator() == 0)
         return "0";
-    else if (getNumerator() < 0 && getDenominator() > 0 || getNumerator() > 0 && getDenominator() < 0)
+    else if (getNumerator() < 0 && getDenominator() > 0 ||
+             getNumerator() > 0 && getDenominator() < 0)
         buffer += "-";
     buffer += std::to_string(std::abs(getNumerator())) + "/"
               + std::to_string(std::abs(getDenominator()));
@@ -60,7 +62,8 @@ int Fraction::getDenominator() {
 
 Fraction Fraction::operator+(const Fraction &fraction) {
     Fraction result(numerator * fraction.denominator +
-                    denominator * fraction.numerator, fraction.denominator * denominator);
+                    denominator * fraction.numerator,
+                    fraction.denominator * denominator);
     if (result.denominator == 0) {
         throw;
     }
@@ -70,7 +73,8 @@ Fraction Fraction::operator+(const Fraction &fraction) {
 
 Fraction Fraction::operator-(const Fraction &fraction) {
     Fraction result(numerator * fraction.denominator -
-                  denominator * fraction.numerator, fraction.denominator * denominator);
+                    denominator * fraction.numerator,
+                    fraction.denominator * denominator);
     if (result.denominator == 0) {
         throw;
     }
@@ -80,7 +84,7 @@ Fraction Fraction::operator-(const Fraction &fraction) {
 
 Fraction Fraction::operator*(const Fraction &fraction) {
     Fraction result(numerator * fraction.numerator,
-                  fraction.denominator * denominator);
+                    fraction.denominator * denominator);
     if (result.denominator == 0) {
         throw;
     }
