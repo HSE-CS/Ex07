@@ -79,8 +79,8 @@ Fraction Fraction::operator*(const Fraction&fr) {
 }
 
 Fraction Fraction::operator/(const Fraction&fr) {
-	int num = fr.numerator * denominator;
-	int den = fr.denominator * numerator;
+	int num = fr.denominator * numerator;
+	int den = fr.numerator * denominator; 
 	Fraction res(num, den);
 	return res;
 }
