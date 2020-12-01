@@ -4,7 +4,7 @@
 #include "Fraction.h"
 
 int main() {
-  Fraction a(1, 2); 
+  Fraction a(1, 2);
   Fraction b(a);
   Fraction c;
   std::cout << c.getValue() << '\n';

@@ -9,7 +9,7 @@ class Fraction {
  private:
   int numerator, denominator;
   void normalize();
- public: 
+ public:
   Fraction();
   explicit Fraction(int a, int b);
   Fraction(const Fraction&);
