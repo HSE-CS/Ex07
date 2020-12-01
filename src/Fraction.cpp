@@ -14,13 +14,11 @@ int check_nod(int num, int den) {
     return num;
   if (num == 0)
     return 1;
-  
   int diff = num - den;
-  if (diff < 0){
+  if (diff < 0) {
     diff *= -1;
     div = check_nod(num, diff);
-  }
-  else
+  } else
     div = check_nod(den, diff);
 
   return div;
@@ -32,7 +30,7 @@ Fraction::Fraction(int num, int den) {
   normalize();
 }
 
-Fraction::Fraction(Fraction& fract): numerator(fract.numerator), denominator(fract.denominator){
+Fraction::Fraction(Fraction& fract): numerator(fract.numerator), denominator(fract.denominator) {
   normalize();
 }
 
@@ -42,12 +40,12 @@ void Fraction::normalize() {
     if (this->denominator == 0)
       throw -1;
   }
-  catch (int){
+  catch (int) {
     exit(-1);
   }
   // handle the minus
   if ((this->denominator < 0 && this->numerator < 0)
-      || (this->denominator < 0 && this->numerator > 0)){
+      || (this->denominator < 0 && this->numerator > 0)) {
     this->numerator *= -1;
     this->denominator *= -1;
   }
