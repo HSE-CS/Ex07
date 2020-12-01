@@ -1,3 +1,4 @@
+// Copyright 2020 PolinaP
 #include <string>
 #include <iostream>
 #include "Fraction.h"
@@ -59,19 +60,23 @@ int Fraction::getDenominator() const {
 }
 
 Fraction Fraction::operator+(const Fraction& b) {
-    return Fraction(numerator * b.getDenominator() + b.getNumerator() * denominator, denominator * b.getDenominator());
+    return Fraction(numerator * b.getDenominator() + b.getNumerator() * denominator, 
+        denominator * b.getDenominator());
 }
 
 Fraction Fraction::operator-(const Fraction& b) {
-    return Fraction(numerator * b.getDenominator() - b.getNumerator() * denominator, denominator * b.getDenominator());
+    return Fraction(numerator * b.getDenominator() - b.getNumerator() * denominator, 
+        denominator * b.getDenominator());
 }
 
 Fraction Fraction::operator*(const Fraction& b) {
-    return Fraction(numerator * b.getNumerator(), denominator * b.getDenominator());
+    return Fraction(numerator * b.getNumerator(), 
+        denominator * b.getDenominator());
 }
 
 Fraction Fraction::operator/(const Fraction& b) {
-    return Fraction(numerator * b.getDenominator(), denominator * b.getNumerator());
+    return Fraction(numerator * b.getDenominator(), 
+        denominator * b.getNumerator());
 }
 Fraction Fraction::operator=(const Fraction& b) {
     numerator = b.numerator;
