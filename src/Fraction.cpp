@@ -49,17 +49,17 @@ Fraction Fraction::operator+(const Fraction& fr) {
 
 Fraction Fraction::operator-(const Fraction& fr) {
     return Fraction{ numerator * fr.denominator - fr.numerator * denominator,
-	                 fr.denominator * denominator };
+                     fr.denominator * denominator };
 }
 
 Fraction Fraction::operator*(const Fraction& fr) {
     return Fraction{ numerator * fr.numerator,
-	                 fr.denominator * denominator };
+                     fr.denominator * denominator };
 }
 
 Fraction Fraction::operator/(const Fraction& fr) {
     return Fraction{ numerator * fr.denominator,
-	                 fr.numerator * denominator };
+                     fr.numerator * denominator };
 }
 
 Fraction& Fraction::operator=(const Fraction& fr) {
