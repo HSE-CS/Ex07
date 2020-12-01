@@ -1,6 +1,6 @@
 ﻿// Copyright 2020 Nikolaev Ivan
 
-
+  
 #include <iostream>
 #include "Fraction.h"
 
@@ -24,4 +24,4 @@ int main() {
     std::cout << "F3 = F2 = " << fraction3.getValue() << std::endl;
 
     return 0;
-} 
+}
