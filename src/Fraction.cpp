@@ -68,8 +68,8 @@ Fraction Fraction::operator*(const Fraction& fr) {
 }
 
 Fraction Fraction::operator/(const Fraction& fr) {
-  return Fraction(this->numerator / fr.numerator,
-    this->denominator / fr.denominator).normalize();
+  return Fraction(this->numerator * fr.denominator,
+    this->denominator * fr.numerator).normalize();
 }
 
 Fraction Fraction::operator=(const Fraction& fr) {
