@@ -49,14 +49,14 @@ int Fraction::getDenominator() {
 Fraction Fraction::operator+(const Fraction& fr) {
   Fraction
     res = Fraction(this->numerator * fr.denominator + fr.numerator * this->denominator,
-    this->denominator * fr.denominator).normalize();
+      this->denominator * fr.denominator).normalize();
   return res;
 }
 
 Fraction Fraction::operator-(const Fraction& fr) {
   Fraction
     res = Fraction(this->numerator * fr.denominator - fr.numerator * this->denominator,
-    this->denominator * fr.denominator).normalize();
+      this->denominator * fr.denominator).normalize();
   return res;
 }
 
@@ -66,7 +66,7 @@ Fraction Fraction::operator*(const Fraction& fr) {
 }
 
 Fraction Fraction::operator/(const Fraction& fr) {
-  return Fraction(this->numerator * fr.numerator,
+  return Fraction(this->numerator / fr.numerator,
     this->denominator / fr.denominator).normalize();
 }
 
