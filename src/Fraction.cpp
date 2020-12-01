@@ -1,4 +1,4 @@
-//Copyrigth 2020 Lukicheva Polina
+// Copyrigth 2020 Lukicheva Polina
 #include "Fraction.h"
 
 int NOD(int num, int den) {
@@ -46,24 +46,28 @@ int Fraction::getDenuminator() {
   return this->denuminator;
 }
 
-Fraction Fraction::operator+(Fraction& fr) {
-
-  return Fraction(this->numerator * fr.denuminator + fr.numerator * this->denuminator, this->denuminator * fr.denuminator).normalize();
+Fraction Fraction::operator+(const Fraction& fr) {
+  return Fraction(this->numerator * fr.denuminator + fr.numerator * this->denuminator,
+    this->denuminator * fr.denuminator).normalize();
 }
 
-Fraction Fraction::operator-(Fraction& fr) {
-  return Fraction(this->numerator * fr.denuminator - fr.numerator * this->denuminator, this->denuminator * fr.denuminator).normalize();
+Fraction Fraction::operator-(const Fraction& fr) {
+  return Fraction(this->numerator * fr.denuminator - fr.numerator * this->denuminator,
+    this->denuminator * fr.denuminator).normalize();
 }
 
-Fraction Fraction::operator*(Fraction& fr) {
-  return Fraction(this->numerator * fr.numerator, this->denuminator * fr.denuminator).normalize();
+Fraction Fraction::operator*(const Fraction& fr) {
+  return Fraction(this->numerator * fr.numerator,
+    this->denuminator * fr.denuminator).normalize();
 }
 
-Fraction Fraction::operator/(Fraction& fr) {
-  return Fraction(this->numerator * fr.numerator, this->denuminator / fr.denuminator).normalize();
+Fraction Fraction::operator/(const Fraction& fr) {
+  return Fraction(this->numerator * fr.numerator,
+    this->denuminator / fr.denuminator).normalize();
 }
 
-Fraction Fraction::operator=(Fraction& fr)
+Fraction Fraction::operator=(const Fraction& fr)
 {
-  return Fraction(this->numerator = fr.numerator, this->denuminator = fr.denuminator);
+  return Fraction(this->numerator = fr.numerator,
+    this->denuminator = fr.denuminator);
 }
