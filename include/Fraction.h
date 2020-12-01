@@ -6,6 +6,7 @@
 class Fraction {
  private:
   int numerator = 0, denominator = 0;
+  void normalize();
 
  public:
   explicit Fraction(int num = 0, int den = 1) {
@@ -20,7 +21,6 @@ class Fraction {
 
   Fraction(const Fraction &fr)
       : numerator(fr.numerator), denominator(fr.denominator) {}
-  void normalize();
   std::string getValue();
   int getNumerator();
   int getDenominator();

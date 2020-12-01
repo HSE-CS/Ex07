@@ -17,7 +17,6 @@ int main() {
   c1 = a1 / b1;
   std::cout << c1.getValue() << std::endl;  // 2/5
   Fraction a2(-5, 2);
-  a2.normalize();
   std::cout << a2.getValue() << std::endl;  // -1/2
   Fraction a3(1, 2);
   Fraction b3(1, 2);
