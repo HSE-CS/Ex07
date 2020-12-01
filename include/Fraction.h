@@ -1,6 +1,6 @@
 // Copyright 2020 Ozhiganova Polina
-#ifndef KPO__FRACTION_H_
-#define KPO__FRACTION_H_
+#ifndef INCLUDE_FRACTION_H_
+#define INCLUDE_FRACTION_H_
 
 #include <string>
 
@@ -25,4 +25,4 @@ class Fraction {
   Fraction normalize();
 };
 
-#endif //KPO__FRACTION_H_
+#endif // INCLUDE_FRACTION_H_
