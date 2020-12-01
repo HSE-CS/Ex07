@@ -1,8 +1,7 @@
 #include <iostream>
 #include "Fraction.h"
 
-int main()
-{
+int main() {
     //test 1
     /*
     Fraction a;
