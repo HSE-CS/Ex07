@@ -21,4 +21,4 @@ class Fraction {
   Fraction &operator=(const Fraction &fr);
 };
 
-#endif
+#endif  // INCLUDE_FRACTION_H_
