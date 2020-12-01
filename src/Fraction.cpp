@@ -52,7 +52,7 @@ Fraction Fraction::operator*(const Fraction &fr) {
 }
 
 Fraction Fraction::operator/(const Fraction &fr) {
-  return Fraction(numerator * fr.numerator, denominator * fr.numerator);
+  return Fraction(numerator * fr.denominator, denominator * fr.numerator);
 }
 
 Fraction& Fraction::operator=(const Fraction &fr) {
