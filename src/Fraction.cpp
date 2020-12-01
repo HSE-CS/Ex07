@@ -11,7 +11,7 @@ Fraction::Fraction(const Fraction &new_fr) {
   this->denominator = new_fr.denominator;
 }
 
-int find_nod(int numer, int denom) { // additional func
+int find_nod(int numer, int denom) {
   if (numer < 0) {
     return 1;
   }
@@ -34,7 +34,7 @@ Fraction Fraction::normalize() {
   return *this;
 }
 
-std::string Fraction::getValue() {      // Дробь с единичным знаменателем выводится как целое число.
+std::string Fraction::getValue() {
   normalize();
   if (this->denominator != 1) {
     return std::to_string(this->numerator) + '/' + std::to_string(this->denominator);
@@ -43,7 +43,7 @@ std::string Fraction::getValue() {      // Дробь с единичным зн
   }
 }
 
-int Fraction::getNumerator() const {   // вернуть числитель.
+int Fraction::getNumerator() const {
   return this->numerator;
 }
 
