@@ -5,23 +5,22 @@
 
 #include <string>
 
-class Fraction
-{
+class Fraction {
  private:
-	int  numerator, denominator;
-	void normalize();
+  int numerator, denominator;
+  void normalize();
  public: 
-	Fraction();
-	explicit Fraction(int a, int b);
-	Fraction(const Fraction&);
-	std::string getValue();
-	int getNumerator() const;
-	int getDenominator() const;
-	Fraction operator+(const Fraction& b);
-	Fraction operator-(const Fraction& b);
-	Fraction operator*(const Fraction& b);
-	Fraction operator/(const Fraction& b);
-	Fraction& operator=(const Fraction& b);
+  Fraction();
+  explicit Fraction(int a, int b);
+  Fraction(const Fraction&);
+  std::string getValue();
+  int getNumerator() const;
+  int getDenominator() const;
+  Fraction operator+(const Fraction& b);
+  Fraction operator-(const Fraction& b);
+  Fraction operator*(const Fraction& b);
+  Fraction operator/(const Fraction& b);
+  Fraction& operator=(const Fraction& b);
 };
 
 #endif  // INCLUDE_FRACTION_H_
