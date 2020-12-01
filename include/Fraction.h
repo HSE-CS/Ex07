@@ -30,3 +30,4 @@ class Fraction {
 };
 
 #endif  // INCLUDE_FRACTION_H_
+
