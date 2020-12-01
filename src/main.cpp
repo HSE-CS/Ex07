@@ -1,4 +1,4 @@
-//Copyright 2020 mkhorosh
+// Copyright 2020 mkhorosh
 #include "Fraction.h"
 #include <iostream>
 
@@ -9,6 +9,6 @@ int main() {
   Fraction b(10, 11);
   std::cout << b.getValue() << std::endl;
   Fraction c;
-  c = a;
+  c = a + b;
   std::cout << c.getValue() << std::endl;
 }

@@ -1,4 +1,4 @@
-//Copyright 2020 mkhorosh
+// Copyright 2020 mkhorosh
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
 
@@ -10,6 +10,7 @@ class Fraction {
   int numerator;
   int denominator;
   Fraction normalize();
+
  public:
   explicit Fraction(int n = 0, int d = 1) {
     if (d == 0) {
@@ -18,19 +19,19 @@ class Fraction {
       numerator = n;
       denominator = d;
     }
-  };
-  Fraction(Fraction &num) {
+  }
+  Fraction(const Fraction &num) {
     numerator = num.getNumerator();
     denominator = num.getDenominator();
-  };
+  }
   std::string getValue();
   int getNumerator() const;
   int getDenominator() const;
-  Fraction operator+(Fraction &num);
-  Fraction operator-(Fraction &num);
-  Fraction operator*(Fraction &num);
-  Fraction operator/(Fraction &num);
-  Fraction operator=(Fraction &num);
+  Fraction operator+(const Fraction &);
+  Fraction operator-(const Fraction &);
+  Fraction operator*(const Fraction &);
+  Fraction operator/(const Fraction &);
+  Fraction operator=(const Fraction &);
 };
 
-#endif
+#endif  // INCLUDE_FRACTION_H_
