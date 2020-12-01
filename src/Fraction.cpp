@@ -29,7 +29,7 @@ std::string Fraction::getValue() {
     if (this->denominator == 1)
         return "1";
     else
-        return std::to_string(this->numerator) + 
+        return std::to_string(this->numerator) +
                "/" + std::to_string(this->denominator);
 }
 
@@ -42,24 +42,24 @@ int Fraction::getDenominator() {
 }
 
 Fraction Fraction::operator+(const Fraction& fraction) {
-    return Fraction(numerator * fraction.denominator + 
+    return Fraction(numerator * fraction.denominator +
                     denominator * fraction.numerator,
-		            denominator * fraction.denominator);
+                    denominator * fraction.denominator);
 }
 
 Fraction Fraction::operator-(const Fraction& fraction) {
-    return Fraction(numerator * fraction.denominator - 
+    return Fraction(numerator * fraction.denominator -
                     denominator * fraction.numerator,
                     denominator * fraction.denominator);
 }
 
 Fraction Fraction::operator*(const Fraction& fraction) {
-    return Fraction(numerator * fraction.numerator, 
-		            denominator * fraction.denominator);
+    return Fraction(numerator * fraction.numerator,
+                    denominator * fraction.denominator);
 }
 
 Fraction Fraction::operator/(const Fraction& fraction) {
-    return Fraction(numerator * fraction.denominator, 
+    return Fraction(numerator * fraction.denominator,
                     denominator * fraction.numerator);
 }
 
@@ -73,4 +73,4 @@ void Fraction::normalize() {
     int gdc = getGDC(abs(this->numerator), abs(this->denominator));
     this->numerator = this->numerator / gdc;
     this->denominator = this->denominator / gdc;
-} 
+}
