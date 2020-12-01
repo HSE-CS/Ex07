@@ -1,3 +1,4 @@
+// Copyright 2020 Khoroshavina Ekaterina
 #include "Fraction.h"
 #include <iostream>
 #include <string>
