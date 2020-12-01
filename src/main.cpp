@@ -1,6 +1,6 @@
-﻿// Copyright 2020 Nikolaev Ivan
+﻿  // Copyright 2020 Nikolaev Ivan
 
-  
+
 #include <iostream>
 #include "Fraction.h"
 
