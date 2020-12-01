@@ -5,9 +5,9 @@
 int nod(int x, int y) {
   while (x != y && x != 0 && y != 0) {
     if (x > y)
-		x = x - y;
+      x = x - y;
     else
-		y = y - x;
+      y = y - x;
   }
   return y;
 }
