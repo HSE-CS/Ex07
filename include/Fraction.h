@@ -15,10 +15,10 @@ class Fraction {
     explicit Fraction(int a = 0, int b = 1);
     Fraction(const Fraction&);
 
-    void normalize();	// закрытый метод сокращения дроби
-    std::string getValue();	// метод, возвращающий изображение дроби
-    int getNumerator();		// вернуть числитель
-    int getDenominator();	// вернуть знаменатель
+    void normalize();
+    std::string getValue();
+    int getNumerator();
+    int getDenominator();
 
     Fraction operator+(const Fraction&);
     Fraction operator-(const Fraction&);
