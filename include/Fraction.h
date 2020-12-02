@@ -10,8 +10,7 @@ class Fraction {
      explicit Fraction(int valueNumerator = 0, int valueDenominator = 1) {
          if (valueDenominator == 0) {
              throw "error denominator is zero";
-         }
-         else {
+         } else {
              numerator = valueNumerator;
              denominator = valueDenominator;
          }
