@@ -2,18 +2,18 @@
 #include "Fraction.h"
 
 int getGDC(int a, int b) {
-    while (a != b) {
-        if (a > b)
-            a -= b;
-        else
-            b -= a;
+    int i = a;
+    for (; i > 0; i--)
+    {
+        if (a % i == 0 && b % i == 0)
+            break;
     }
-    return a;
+    return i;
 }
 
 Fraction::Fraction(int numerator, int denominator) {
     this->denominator = denominator;
-    if (this->denominator == 0) {
+    if (denominator == 0) {
         throw "Divide by 0";
     }
     this->numerator = numerator;
