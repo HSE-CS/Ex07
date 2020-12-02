@@ -14,15 +14,6 @@ int getGDC(int a, int b) {
     return result;
 }
 
-Fraction::Fraction(int numerator, int denominator) {
-    this->numerator = numerator;
-    this->denominator = denominator;
-    if (denominator == 0) {
-        throw "Divide by 0";
-    }
-    normalize();
-}
-
 Fraction::Fraction(const Fraction& fraction) {
     this->denominator = fraction.denominator;
     this->numerator = fraction.numerator;

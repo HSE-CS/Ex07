@@ -7,7 +7,16 @@
 
 class Fraction {
  public:
-    explicit Fraction(int numerator = 0, int denominator = 1);
+     explicit Fraction(int valueNumerator = 0, int valueDenominator = 1) {
+         if (valueDenominator == 0) {
+             throw "error denominator is zero";
+         }
+         else {
+             numerator = valueNumerator;
+             denominator = valueDenominator;
+         }
+         normalize();
+     }
     Fraction(const Fraction& fraction);
     std::string getValue();
     int getNumerator();
