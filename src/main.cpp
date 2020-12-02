@@ -1,21 +1,11 @@
-﻿  // Copyright 2020 Nikolaev Ivan
-
-
+﻿// Copyright 2020 Nikolaev Ivan
 #include <iostream>
 #include "Fraction.h"
-
 int main() {
-    Fraction fraction1(3, 5);
-    Fraction fraction2(3, 15);
-
-    std::cout << "F1 = " << fraction1.getValue() << std::endl;
-    std::cout << "F2 = " << fraction2.getValue() << std::endl;
-
-    std::cout << "F1 + F2 = " << (fraction1 + fraction2).getValue()
-        << std::endl;
-    std::cout << "F1 - F2 = " << (fraction1 - fraction2).getValue()
-        << std::endl;
-
-
-    return 0;
+    Fraction newFraction = Fraction(20, 5);
+    std::cout << newFraction.getValue() << "\n";
+    Fraction newFraction2 = Fraction(11, 2);
+    std::cout << newFraction2.getValue() << "\n";
+    newFraction2 = newFraction2 - newFraction;
+    std::cout << newFraction2.getValue() << "\n";
 }
