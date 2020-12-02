@@ -15,7 +15,7 @@ int main() {
         << std::endl;
     std::cout << "F1 - F2 = " << (fraction1 - fraction2).getValue()
         << std::endl;
-    
+
 
     return 0;
 }
