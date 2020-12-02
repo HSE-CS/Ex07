@@ -4,13 +4,13 @@
 #include <stdexcept>
 
 int common_divisor(int num, int den) {
-  while (num != den) {
+  while (num * den != 0) {
     if (num > den)
-      num = num - den;
+      num -= den;
     else
-      den = den - num;
+      den -= num;
   }
-  return num;
+  return den + num;
 }
 
 Fraction::Fraction(int numerator, int denominator) {
