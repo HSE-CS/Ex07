@@ -2,20 +2,21 @@
 #include "Fraction.h"
 
 int getGDC(int a, int b) {
-    int i = a;
-    for (; i > 0; i--) {
+    int result = 0;
+    for (int i = a; i > 0; i--) {
         if (a % i == 0 && b % i == 0)
+            result = i;
             break;
     }
-    return i;
+    return result;
 }
 
 Fraction::Fraction(int numerator, int denominator) {
+    this->numerator = numerator;
     this->denominator = denominator;
     if (denominator == 0) {
         throw "Divide by 0";
     }
-    this->numerator = numerator;
     normalize();
 }
 
@@ -41,25 +42,29 @@ int Fraction::getDenominator() {
 }
 
 Fraction Fraction::operator+(const Fraction& fraction) {
-    return Fraction(numerator * fraction.denominator +
+    Fraction result(numerator * fraction.denominator +
                     denominator * fraction.numerator,
                     denominator * fraction.denominator);
+    return result;
 }
 
 Fraction Fraction::operator-(const Fraction& fraction) {
-    return Fraction(numerator * fraction.denominator -
+    Fraction result(numerator * fraction.denominator -
                     denominator * fraction.numerator,
                     denominator * fraction.denominator);
+    return result;
 }
 
 Fraction Fraction::operator*(const Fraction& fraction) {
-    return Fraction(numerator * fraction.numerator,
+    Fraction result(numerator * fraction.numerator,
                     denominator * fraction.denominator);
+    return result;
 }
 
 Fraction Fraction::operator/(const Fraction& fraction) {
-    return Fraction(numerator * fraction.denominator,
+    Fraction result(numerator * fraction.denominator,
                     denominator * fraction.numerator);
+    return result;
 }
 
 Fraction Fraction::operator=(const Fraction& fraction) {
