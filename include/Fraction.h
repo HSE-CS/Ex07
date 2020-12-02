@@ -1,10 +1,9 @@
 // Copyright 2020 Nikolaev Ivan
+
+
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
-
 #include <string>
-
-int getGCD(int a, int b);
 
 class Fraction {
  public:

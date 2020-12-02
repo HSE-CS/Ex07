@@ -1,4 +1,6 @@
 // Copyright 2020 Nikolaev Ivan
+
+
 #include "Fraction.h"
 
 int getGDC(int a, int b) {
