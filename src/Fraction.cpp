@@ -4,9 +4,10 @@
 int getGDC(int a, int b) {
     int result = 0;
     for (int i = a; i > 0; i--) {
-        if (a % i == 0 && b % i == 0)
+        if (a % i == 0 && b % i == 0) {
             result = i;
             break;
+        }
     }
     return result;
 }
