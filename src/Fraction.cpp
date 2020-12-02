@@ -3,8 +3,7 @@
 
 int getGDC(int a, int b) {
     int i = a;
-    for (; i > 0; i--)
-    {
+    for (; i > 0; i--) {
         if (a % i == 0 && b % i == 0)
             break;
     }
