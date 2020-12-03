@@ -13,8 +13,7 @@ int NOD(int n1, int n2) {
   if (d < 0) {
   d = -d;
   div = NOD(n1, d);
-  }
-  else
+  } else
   div = NOD(n2, d);
   return div;
 }
@@ -24,8 +23,7 @@ void Fraction::normalize() {
   if (nod == 0) {
   this->numerator = 0;
   this->denominator = 1;
-  }
-  else {
+  } else {
   this->numerator = this->numerator / nod;
   this->denominator = this->denominator / nod;
   }
@@ -40,9 +38,7 @@ string Fraction::getValue() {
   str = to_string(numerator);
   str += "/";
   str += to_string(denominator);
-  }
-  else 
-  if ( numerator * denominator >= 0 ) {
+  } else if ( numerator * denominator >= 0 ) {
   str = to_string(numerator);
   str += "/" ;
   str += to_string(denominator);
@@ -64,8 +60,7 @@ Fraction Fraction::operator+(Fraction x)
   if (this->denominator == x.denominator) {
   sum.numerator = this->numerator + x.numerator;
   sum.denominator = x.denominator;
-  }
-  else {
+  } else {
   sum.denominator = this->denominator * x.denominator;
   sum.numerator = x.denominator*this->numerator + x.numerator*this->denominator;
   }
@@ -76,7 +71,7 @@ Fraction Fraction::operator+(Fraction x)
 Fraction Fraction::operator-(Fraction x) {
   Fraction v;
   v.denominator = x.denominator * this->denominator;
-  v.numerator=x.denominator*this->numerator-this->denominator*x.numerator;
+  v.numerator = x.denominator*this->numerator-this->denominator*x.numerator;
   v.normalize();
   return v;
 }
