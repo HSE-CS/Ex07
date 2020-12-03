@@ -2,37 +2,37 @@
 #include<cstring>
 using namespace std;
 
-int NOD(int n1, int n2){
- int div;
- if (n1 == 0 || n2 == 0 || n1 == 0 && n2 == 0) return 0;
- if (n1 < 0) n1 *= -1;
- if (n2 < 0) n2 *= -1;
- if (n1 == n2)   // åñëè ÷èñëà ðàâíû, ÍÎÄ íàéäåí
- return n1;
- int d = n1 - n2; // Íàõîäèì ðàçíîñòü ÷èñåë
- if (d < 0)       // åñëè ðàçíîñòü îòðèöàòåëüíàÿ,
+int NOD(int n1, int n2) {
+  int div;
+  if (n1 == 0 || n2 == 0 || n1 == 0 && n2 == 0) return 0;
+  if (n1 < 0) n1 *= -1;
+  if (n2 < 0) n2 *= -1;
+  if (n1 == n2)   // åñëè ÷èñëà ðàâíû, ÍÎÄ íàéäåí
+  return n1;
+  int d = n1 - n2; // Íàõîäèì ðàçíîñòü ÷èñåë
+  if (d < 0)       // åñëè ðàçíîñòü îòðèöàòåëüíàÿ,
   {
-   d = -d;     // ìåíÿåì çíàê
-   div = NOD(n1, d); // âûçûâàåì ôóíêöèþ NOD() äëÿ äâóõ íàèìåíüøèõ ÷èñåë
-  }
-  else      // åñëè ðàçíîñòü n1-n2 ïîëîæèòåëüíàÿ
-   {
-     div = NOD(n2, d); // âûçûâàåì ôóíêöèþ NOD() äëÿ äâóõ íàèìåíüøèõ ÷èñåë
+    d = -d;     // ìåíÿåì çíàê
+    div = NOD(n1, d); // âûçûâàåì ôóíêöèþ NOD() äëÿ äâóõ íàèìåíüøèõ ÷èñåë
    }
-return div;
+  else      // åñëè ðàçíîñòü n1-n2 ïîëîæèòåëüíàÿ
+  {
+    div = NOD(n2, d); // âûçûâàåì ôóíêöèþ NOD() äëÿ äâóõ íàèìåíüøèõ ÷èñåë
+  }
+  return div;
 }
 
 void Fraction::normalize(){
- int nod = NOD(this->numerator, this->denominator);
- if (nod == 0) {
+  int nod = NOD(this->numerator, this->denominator);
+  if (nod == 0) {
   this->numerator = 0;
   this->denominator = 1;
- }
- else
- {
+  }
+  else
+  {
   this->numerator = this->numerator / nod;
   this->denominator = this->denominator / nod;
- }
+  }
 }
 
  string Fraction::getValue(){
@@ -55,64 +55,60 @@ void Fraction::normalize(){
  return str;
  }
 
-int Fraction:: getNumerator(){
-return this->numerator;
+int Fraction:: getNumerator() {
+  return this->numerator;
 }
-int Fraction:: getDenominator(){
-return this->denominator;
+int Fraction:: getDenominator() {
+  return this->denominator;
 }
 Fraction Fraction::operator+(Fraction x)
 {
- Fraction sum;
- if (this->denominator == x.denominator) {
+  Fraction sum;
+  if (this->denominator == x.denominator) {
   sum.numerator = this->numerator + x.numerator;
   sum.denominator = x.denominator;
- }
- else
- {
+  }
+  else
+  {
   sum.denominator = this->denominator * x.denominator;
   sum.numerator = x.denominator * this->numerator + x.numerator  * this->denominator;
- }
+  }
   sum.normalize();
   return sum;
 }
 
-Fraction Fraction::operator-(Fraction x)
-{
- Fraction v;
- v.denominator = x.denominator * this->denominator;
- //if (x.denominator * this->numerator > this->denominator * x.numerator )
- //{
- v.numerator = x.denominator * this->numerator - this->denominator * x.numerator;
- //}
- //else
- //v.numerator = -1 * (this->denominator * x.numerator - x.denominator * this->numerator);
- v.normalize();
- return v;	  
+Fraction Fraction::operator-(Fraction x) {
+  Fraction v;
+  v.denominator = x.denominator * this->denominator;
+  //if (x.denominator * this->numerator > this->denominator * x.numerator )
+  //{
+  v.numerator = x.denominator * this->numerator - this->denominator * x.numerator;
+  //}
+  //else
+  //v.numerator = -1 * (this->denominator * x.numerator - x.denominator * this->numerator);
+  v.normalize();
+  return v;	  
 }
 
-Fraction Fraction::operator*(Fraction x)
-{
- Fraction t;
- t.numerator = this->numerator * x.numerator;
- t.denominator = this->denominator * x.denominator;
- t.normalize();
- return t;
+Fraction Fraction::operator*(Fraction x) {
+  Fraction t;
+  t.numerator = this->numerator * x.numerator;
+  t.denominator = this->denominator * x.denominator;
+  t.normalize();
+  return t;
 }
 
-Fraction Fraction :: operator/(Fraction x)
-{
- Fraction t;
- t.numerator = this->numerator * x.denominator;
- t.denominator = this->denominator * x.numerator;
- t.normalize();
- return t;
+Fraction Fraction :: operator/(Fraction x) {
+  Fraction t;
+  t.numerator = this->numerator * x.denominator;
+  t.denominator = this->denominator * x.numerator;
+  t.normalize();
+  return t;
 }
 
-Fraction Fraction::operator=(Fraction x)
-{
- this->numerator = x.numerator;
- this->denominator = x.denominator;
- this->normalize();
- return *this;
+Fraction Fraction::operator=(Fraction x) {
+  this->numerator = x.numerator;
+  this->denominator = x.denominator;
+  this->normalize();
+  return *this;
 }
