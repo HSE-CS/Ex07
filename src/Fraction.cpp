@@ -19,6 +19,11 @@ int NOD(int n1, int n2) {
   return div;
 }
 
+Fraction::Fraction() {
+ numerator = 0;
+ denominator = 1;
+}
+
 void Fraction::normalize() {
   int nod = NOD(this->numerator, this->denominator);
   if (nod == 0) {
