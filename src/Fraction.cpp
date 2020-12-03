@@ -1,0 +1,118 @@
+#include"Fraction.h"
+#include<cstring>
+using namespace std;
+
+int NOD(int n1, int n2)
+{
+	int div;
+	if (n1 == 0 || n2 == 0 || n1 == 0 && n2 == 0) return 0;
+	if (n1 < 0) n1 *= -1;
+	if (n2 < 0) n2 *= -1;
+	if (n1 == n2)   // если числа равны, НОД найден
+		return n1;
+	int d = n1 - n2; // Находим разность чисел
+	if (d < 0)       // если разность отрицательная,
+	{
+		d = -d;     // меняем знак
+		div = NOD(n1, d); // вызываем функцию NOD() для двух наименьших чисел
+	}
+	else      // если разность n1-n2 положительная
+	{
+		div = NOD(n2, d); // вызываем функцию NOD() для двух наименьших чисел
+	}
+	return div;
+}
+
+void Fraction::normalize()
+{
+	int nod = NOD(this->numerator, this->denominator);
+	if (nod == 0) {
+		this->numerator = 0;
+		this->denominator = 0;
+	}
+	else
+	{
+		this->numerator = this->numerator / nod;
+		this->denominator = this->denominator / nod;
+	}
+}
+
+string Fraction::getValue()
+{
+	string str;
+	//char t = '-';
+	//char* t_k = &t;
+	if (numerator < 0 || denominator < 0)
+	{
+		str += "-";
+		str = to_string(numerator);
+		str += "/";
+		str += to_string(denominator);
+	}
+	else if (numerator <= 0 && denominator <= 0 || numerator >= 0 && denominator >= 0)
+	{
+		str = to_string(numerator);
+		str += "/" ;
+		str += to_string(denominator);
+	}
+	return str;
+}
+int Fraction:: getNumerator()
+{
+	return this->numerator;
+}
+int Fraction:: getDenominator()
+{
+	return this->denominator;
+}
+Fraction Fraction::operator+(Fraction x)
+{
+	Fraction sum;
+	if (this->denominator == x.denominator) {
+		sum.numerator = this->numerator + x.numerator;
+		sum.denominator = x.denominator;
+	}
+	else
+	{
+		sum.denominator = this->denominator * x.denominator;
+		sum.numerator = x.denominator * this->numerator + x.numerator  * this->denominator;
+	}
+	sum.normalize();
+	return sum;
+}
+Fraction Fraction::operator-(Fraction x)
+{
+	Fraction v;
+	v.denominator = x.denominator * this->denominator;
+	//if (x.denominator * this->numerator > this->denominator * x.numerator )
+	//{
+		v.numerator = x.denominator * this->numerator - this->denominator * x.numerator;
+	//}
+	//else
+		//v.numerator = -1 * (this->denominator * x.numerator - x.denominator * this->numerator);
+	v.normalize();
+	return v;	  
+}
+Fraction Fraction::operator*(Fraction x)
+{
+	Fraction t;
+	t.numerator = this->numerator * x.numerator;
+	t.denominator = this->denominator * x.denominator;
+	t.normalize();
+	return t;
+}
+Fraction Fraction :: operator/(Fraction x)
+{
+	Fraction t;
+	t.numerator = this->numerator * x.denominator;
+	t.denominator = this->denominator * x.numerator;
+	t.normalize();
+	return t;
+}
+Fraction Fraction::operator=(Fraction x)
+{
+	this->numerator = x.numerator;
+	this->denominator = x.denominator;
+	this->normalize();
+	return *this;
+}
