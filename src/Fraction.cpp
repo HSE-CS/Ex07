@@ -13,8 +13,9 @@ int NOD(int n1, int n2) {
   if (d < 0) {
   d = -d;
   div = NOD(n1, d);
-  } else
+  } else {
   div = NOD(n2, d);
+  }
   return div;
 }
 
@@ -40,7 +41,7 @@ string Fraction::getValue() {
   str += to_string(denominator);
   } else if ( numerator * denominator >= 0 ) {
   str = to_string(numerator);
-  str += "/" ;
+  str += "/";
   str += to_string(denominator);
   }
   return str;
@@ -54,8 +55,7 @@ int Fraction:: getDenominator() {
   return this->denominator;
 }
 
-Fraction Fraction::operator+(Fraction x)
-{
+Fraction Fraction::operator+(Fraction x) {
   Fraction sum;
   if (this->denominator == x.denominator) {
   sum.numerator = this->numerator + x.numerator;
