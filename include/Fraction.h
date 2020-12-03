@@ -24,7 +24,7 @@ class Fraction{
   denominator = b;
   }
   }
-  string getValue();
+  std::string getValue();
   int getNumerator();
   int  getDenominator();
   Fraction operator+(Fraction x);
