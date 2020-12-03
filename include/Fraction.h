@@ -1,15 +1,17 @@
+// Copyright 2020 Tatsenko Ilya
+
 #pragma once
 #include<iostream>
 #include<string>
-using namespace std;
+
 class Fraction{
  private:
   int numerator, denominator;
   void normalize();
  public:
   Fraction() {
-   numerator = 0; 
-   denominator = 1;
+  numerator = 0;
+  denominator = 1;
   }
   Fraction(const Fraction& x) {
   this->numerator = x.numerator;
@@ -17,7 +19,7 @@ class Fraction{
   }
   Fraction(int a, int b) {
   if (b == 0 && a != 0) throw "Error";
-  else{
+  else {
   numerator = a;
   denominator = b;
   }
