@@ -31,18 +31,18 @@ void Fraction::normalize() {
 }
 
 string Fraction::getValue() {
-  string str;
+  std::string str;
   //  char t = '-';
   //  char* t_k = &t;
   if (numerator < 0 || denominator < 0) {
   str += "-";
-  str = to_string(numerator);
+  str = std::to_string(numerator);
   str += "/";
-  str += to_string(denominator);
+  str += std::to_string(denominator);
   } else if ( numerator * denominator >= 0 ) {
-  str = to_string(numerator);
+  str = std::to_string(numerator);
   str += "/";
-  str += to_string(denominator);
+  str += std::to_string(denominator);
   }
   return str;
 }
