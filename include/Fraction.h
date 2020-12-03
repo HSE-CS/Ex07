@@ -9,6 +9,7 @@ class Fraction{
   int numerator, denominator;
   void normalize();
  public:
+
   Fraction() {
   numerator = 0;
   denominator = 1;
@@ -18,8 +19,9 @@ class Fraction{
   this->denominator = x.denominator;
   }
   Fraction(int a, int b) {
-  if (b == 0 && a != 0) throw "Error";
-  else {
+  if (b == 0 && a != 0) {
+  throw "Error";
+  } else {
   numerator = a;
   denominator = b;
   }
