@@ -7,15 +7,15 @@ class Fraction{
   int numerator, denominator;
   void normalize();
  public:
-  Fraction(){
+  Fraction() {
    numerator = 0; 
    denominator = 1;
   }
-  Fraction(const Fraction& x){
+  Fraction(const Fraction& x) {
   this->numerator = x.numerator;
   this->denominator = x.denominator;
   }
-  Fraction(int a, int b){
+  Fraction(int a, int b) {
   if (b == 0 && a != 0) throw "Error";
   else{
   numerator = a;
