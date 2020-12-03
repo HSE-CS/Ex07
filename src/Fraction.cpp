@@ -20,8 +20,8 @@ int NOD(int n1, int n2) {
 }
 
 Fraction::Fraction() {
- numerator = 0;
- denominator = 1;
+  numerator = 0;
+  denominator = 1;
 }
 
 void Fraction::normalize() {
