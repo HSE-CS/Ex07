@@ -3,21 +3,22 @@
 #define FRACTION_FRACTION_H
 
 #include <iostream>
+#include <string>
 
 class Fraction {
- private:
+private:
     int numerator, denominator;
     void normalize();
- public:
+public:
     explicit Fraction(int _numerator = 0, int _denominator = 1);
     Fraction(const Fraction &_fraction);
     std::string getValue();
     int getNumerator();
     int getDenominator();
-    Fraction operator+(Fraction &_fraction);
-    Fraction operator-(Fraction &_fraction);
+    Fraction operator+(const Fraction &_fraction);
+    Fraction operator-(const Fraction &_fraction);
     Fraction& operator=(const Fraction &_fraction);
-    Fraction operator*(Fraction &_fraction);
-    Fraction operator/(Fraction &_fraction);
+    Fraction operator*(const Fraction &_fraction);
+    Fraction operator/(const Fraction &_fraction);
 };
-#endif //FRACTION_FRACTION_H
+#endif // FRACTION_FRACTION_H
