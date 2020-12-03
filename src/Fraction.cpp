@@ -26,7 +26,7 @@ void Fraction::normalize(){
  int nod = NOD(this->numerator, this->denominator);
  if (nod == 0) {
   this->numerator = 0;
-  this->denominator = 0;
+  this->denominator = 1;
  }
  else
  {
