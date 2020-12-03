@@ -1,3 +1,4 @@
+//Copyright 2020 Tatsenko Ilya
 #include"Fraction.h"
 #include<cstring>
 using namespace std;
@@ -10,19 +11,18 @@ int NOD(int n1, int n2) {
   if (n1 == n2)   // åñëè ÷èñëà ðàâíû, ÍÎÄ íàéäåí
   return n1;
   int d = n1 - n2; // Íàõîäèì ðàçíîñòü ÷èñåë
-  if (d < 0)       // åñëè ðàçíîñòü îòðèöàòåëüíàÿ,
-  {
-    d = -d;     // ìåíÿåì çíàê
-    div = NOD(n1, d); // âûçûâàåì ôóíêöèþ NOD() äëÿ äâóõ íàèìåíüøèõ ÷èñåë
-   }
+  if (d < 0) {
+  d = -d;     // ìåíÿåì çíàê
+  div = NOD(n1, d); // âûçûâàåì ôóíêöèþ NOD() äëÿ äâóõ íàèìåíüøèõ ÷èñåë
+  }
   else      // åñëè ðàçíîñòü n1-n2 ïîëîæèòåëüíàÿ
   {
-    div = NOD(n2, d); // âûçûâàåì ôóíêöèþ NOD() äëÿ äâóõ íàèìåíüøèõ ÷èñåë
+  div = NOD(n2, d); // âûçûâàåì ôóíêöèþ NOD() äëÿ äâóõ íàèìåíüøèõ ÷èñåë
   }
   return div;
 }
 
-void Fraction::normalize(){
+void Fraction::normalize() {
   int nod = NOD(this->numerator, this->denominator);
   if (nod == 0) {
   this->numerator = 0;
@@ -35,32 +35,32 @@ void Fraction::normalize(){
   }
 }
 
- string Fraction::getValue(){
- string str;
- //char t = '-';
- //char* t_k = &t;
- if (numerator < 0 || denominator < 0)
- {
+string Fraction::getValue() {
+  string str;
+  // char t = '-';
+  // char* t_k = &t;
+  if (numerator < 0 || denominator < 0) {
   str += "-";
   str = to_string(numerator);
   str += "/";
   str += to_string(denominator);
- }
- else if (numerator <= 0 && denominator <= 0 || numerator >= 0 && denominator >= 0)
- {
+  }
+  else if (numerator <= 0 && denominator <= 0 || numerator >= 0 && denominator >= 0) {
   str = to_string(numerator);
   str += "/" ;
   str += to_string(denominator);
- }
- return str;
- }
+  }
+  return str;
+  }
 
 int Fraction:: getNumerator() {
   return this->numerator;
 }
+
 int Fraction:: getDenominator() {
   return this->denominator;
 }
+
 Fraction Fraction::operator+(Fraction x)
 {
   Fraction sum;
@@ -80,12 +80,12 @@ Fraction Fraction::operator+(Fraction x)
 Fraction Fraction::operator-(Fraction x) {
   Fraction v;
   v.denominator = x.denominator * this->denominator;
-  //if (x.denominator * this->numerator > this->denominator * x.numerator )
-  //{
+  // if (x.denominator * this->numerator > this->denominator * x.numerator )
+  // {
   v.numerator = x.denominator * this->numerator - this->denominator * x.numerator;
-  //}
-  //else
-  //v.numerator = -1 * (this->denominator * x.numerator - x.denominator * this->numerator);
+  // }
+  // else
+  // v.numerator = -1 * (this->denominator * x.numerator - x.denominator * this->numerator);
   v.normalize();
   return v;	  
 }
