@@ -9,11 +9,7 @@ class Fraction{
   int numerator, denominator;
   void normalize();
  public:
-
-  Fraction() {
-  numerator = 0;
-  denominator = 1;
-  }
+  Fraction();
   Fraction(const Fraction& x) {
   this->numerator = x.numerator;
   this->denominator = x.denominator;
