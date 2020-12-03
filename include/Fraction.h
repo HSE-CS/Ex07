@@ -18,16 +18,16 @@ class Fraction{
   Fraction(int a, int b){
   if (b == 0 && a != 0) throw "Error";
   else{
-   numerator = a;
-   denominator = b;
+  numerator = a;
+  denominator = b;
   }
   }
- string getValue();
- int getNumerator();
- int  getDenominator();
- Fraction operator+(Fraction x);
- Fraction operator-(Fraction x);
- Fraction operator*(Fraction x);
- Fraction operator/(Fraction x);
- Fraction operator=(Fraction x);
+  string getValue();
+  int getNumerator();
+  int  getDenominator();
+  Fraction operator+(Fraction x);
+  Fraction operator-(Fraction x);
+  Fraction operator*(Fraction x);
+  Fraction operator/(Fraction x);
+  Fraction operator=(Fraction x);
 };
