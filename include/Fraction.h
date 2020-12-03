@@ -8,18 +8,18 @@ class Fraction{
  void normalize();
 public:
  Fraction(){
-  int numerator = 0; 
-  int denominator = 1;
+ int numerator = 0; 
+ int denominator = 1;
  }
  Fraction(const Fraction& x){
-  this->numerator = x.numerator;
-  this->denominator = x.denominator;
+ this->numerator = x.numerator;
+ this->denominator = x.denominator;
  }
  Fraction(int a, int b){
-  if (b == 0 && a != 0) throw "Error";
-  else{
-   numerator = a;
-   denominator = b;
+ if (b == 0 && a != 0) throw "Error";
+ else{
+ numerator = a;
+  denominator = b;
   }
   }
  string getValue();
