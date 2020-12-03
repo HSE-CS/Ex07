@@ -30,7 +30,7 @@ void Fraction::normalize() {
   }
 }
 
-string Fraction::getValue() {
+std::string Fraction::getValue() {
   std::string str;
   //  char t = '-';
   //  char* t_k = &t;
