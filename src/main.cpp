@@ -1,17 +1,15 @@
-// Created by Ksuvot on 03.12.2020.
+//  Copyright © 2020 Ksuvot. All rights reserved.
 #include "Fraction.h"
 
 int main() {
   Fraction fraction_1;
-  cout << fraction_1.getNumerator() << endl;
-  cout << fraction_1.getDenominator() << endl;
+  std::cout << fraction_1.getNumerator() << std::endl;
+  std::cout << fraction_1.getDenominator() << std::endl;
 
   Fraction fraction_2(10, 11);
-  cout << fraction_2.getValue() << endl;
+  std::cout << fraction_2.getValue() << std::endl;
 
   Fraction fraction_3;
   fraction_3 = fraction_1 + fraction_2;
-  std::cout << fraction_3.getValue() << endl;
-
-  return 0;
+  std::cout << fraction_3.getValue() << std::endl;
 }

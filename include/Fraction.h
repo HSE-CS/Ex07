@@ -1,13 +1,11 @@
-// Created by Ksuvot on 03.12.2020.
-#ifndef EX07_INCLUDE_FRACTION_H_
-#define EX07_INCLUDE_FRACTION_H_
+//  Copyright © 2020 Ksuvot. All rights reserved.
+#ifndef INCLUDE_FRACTION_H_
+#define INCLUDE_FRACTION_H_
 
 #include <stdexcept>
 #include <string>
 #include <stdio.h>
 #include <iostream>
-
-using namespace std;
 
 class Fraction {
  private:
@@ -16,7 +14,7 @@ class Fraction {
  public:
   explicit Fraction(int numerator = 0, int denominator = 1) {
     if (denominator == 0) {
-      throw invalid_argument("it's not good to divide by zero");
+      throw std::invalid_argument("it's not good to divide by zero");
     }
     this->numerator = numerator;
     this->denominator = denominator;
@@ -31,9 +29,9 @@ class Fraction {
   Fraction operator*(const Fraction&);
   Fraction operator/(const Fraction&);
   Fraction& operator=(const Fraction&);
-  string getValue() const;
+  std::string getValue() const;
   int getNumerator() const;
   int getDenominator() const;
 };
 
-#endif //EX07_INCLUDE_FRACTION_H_
+#endif  // INCLUDE_FRACTION_H_

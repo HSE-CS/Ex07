@@ -1,4 +1,4 @@
-// Created by Ksuvot on 03.12.2020.
+//  Copyright © 2020 Ksuvot. All rights reserved.
 #include "Fraction.h"
 
 int commonDivisor(int numerator, int denominator) {
@@ -19,13 +19,15 @@ void Fraction::normalize() {
 }
 
 Fraction Fraction::operator+(const Fraction& temp) {
-  return Fraction(this->numerator * temp.denominator + temp.numerator * this->denominator,
-                  this->denominator * temp.denominator);
+  return Fraction(this->numerator * temp.denominator
+  + temp.numerator * this->denominator,
+  this->denominator * temp.denominator);
 }
 
 Fraction Fraction::operator-(const Fraction& temp) {
-  return Fraction(this->numerator * temp.denominator - temp.numerator * this->denominator,
-                  this->denominator * temp.denominator);
+  return Fraction(this->numerator * temp.denominator
+  - temp.numerator * this->denominator,
+  this->denominator * temp.denominator);
 }
 
 Fraction Fraction::operator*(const Fraction& temp) {
@@ -44,11 +46,11 @@ Fraction& Fraction::operator=(const Fraction& temp) {
   return *this;
 }
 
-string Fraction::getValue() const {
+std::string Fraction::getValue() const {
   if (this->denominator == 1 || this->numerator == 0)
-    return to_string(this->numerator);
-  return to_string(getNumerator()) + '/'
-      + to_string(getDenominator());
+    return std::to_string(this->numerator);
+  return std::to_string(getNumerator()) + '/'
+      + std::to_string(getDenominator());
 }
 
 int Fraction::getNumerator() const {
