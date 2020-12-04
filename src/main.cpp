@@ -4,7 +4,7 @@
 #include <iostream>
 
 int main() {
-    Fraction _drob1(4, 4);
+    Fraction _drob1(1, 2);
     Fraction _drob2(1, -8);
     Fraction _drob3;
     _drob3 = _drob2 + _drob1;
