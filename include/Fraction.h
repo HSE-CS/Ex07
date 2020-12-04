@@ -1,7 +1,7 @@
 // Copyright 2020 GHA Frac Team
 
-#ifndef INCLUDE_FRACTION_H
-#define INCLUDE_FRACTION_H
+#ifndef INCLUDE_FRACTION_H_
+#define INCLUDE_FRACTION_H_
 
 #include <string>
 
@@ -21,5 +21,4 @@ class Fraction {
     Fraction operator*(const Fraction &_fraction);
     Fraction operator/(const Fraction &_fraction);
 };
-
-#endif // INCLUDE_FRACTION_H
+#endif  // INCLUDE_FRACTION_H_
