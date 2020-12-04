@@ -1,4 +1,5 @@
 // Copyright 2020 GHA Main Team
+
 #include "Fraction.h"
 
 #include <iostream>

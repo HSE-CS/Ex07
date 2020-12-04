@@ -1,4 +1,5 @@
 // Copyright 2020 GHA Fraction Team
+
 #include "Fraction.h"
 
 Fraction::Fraction(int _numerator, int _denominator) {
@@ -37,41 +38,43 @@ std::string Fraction::getValue() {
         throw std::exception();
     }
     std::string _fraction;
-    if (numerator == 0) {
+    int _n = numerator;
+    int _d = denominator;
+    if (_n == 0) {
         _fraction += '0';
         return _fraction;
     } else {
-        if (abs(denominator) == abs(numerator)) {
-            if ((denominator < 0 && numerator < 0) || (denominator > 0 && numerator > 0)) {
+        if (abs(_d) == abs(_n)) {
+            if ((_d < 0 && _n < 0) || (_d > 0 && _n > 0)) {
                 _fraction += '1';
                 return _fraction;
-            } else if ((denominator < 0 && numerator > 0) || (denominator > 0 && numerator < 0)) {
+            } else if ((_d < 0 && _n > 0) || (_d > 0 && _n < 0)) {
                 _fraction += "-1";
                 return _fraction;
             }
         } else {
-            if ((denominator < 0 && numerator < 0) || (denominator > 0 && numerator > 0)) {
+            if ((_d < 0 && _n < 0) || (_d > 0 && _n > 0)) {
                 normalize();
-                if (abs(denominator) == 1) {
-                    _fraction += std::to_string(abs(numerator));
+                if (abs(_d) == 1) {
+                    _fraction += std::to_string(abs(_n));
                     return _fraction;
                 } else {
-                    _fraction += std::to_string(abs(numerator));
+                    _fraction += std::to_string(abs(_n));
                     _fraction += '/';
-                    _fraction += std::to_string(abs(denominator));
+                    _fraction += std::to_string(abs(_d));
                     return _fraction;
                 }
-            } else if ((denominator < 0 && numerator > 0) || (denominator > 0 && numerator < 0)) {
+            } else if ((_d < 0 && _n > 0) || (_d > 0 && _n < 0)) {
                 normalize();
-                if (abs(denominator) == 1) {
+                if (abs(_d) == 1) {
                     _fraction += '-';
-                    _fraction += std::to_string(abs(numerator));
+                    _fraction += std::to_string(abs(_n));
                     return _fraction;
                 } else {
                     _fraction += '-';
-                    _fraction += std::to_string(abs(numerator));
+                    _fraction += std::to_string(abs(_n));
                     _fraction += '/';
-                    _fraction += std::to_string(abs(denominator));
+                    _fraction += std::to_string(abs(_d));
                     return _fraction;
                 }
             }
@@ -100,26 +103,34 @@ Fraction Fraction::operator+(const Fraction &_fraction) {
     if (denominator == 0) {
         throw std::exception();
     }
-    int _num1 = numerator;
-    int _den1 = denominator;
-    int _num2 = _fraction.numerator;
-    int _den2 = _fraction.denominator;
-    Fraction _temp(_num1 * _den2 + _num2 * _den1, _den1 * _den2);
-    _temp.normalize();
-    return _temp;
+    int _num1 = numerator * _fraction.denominator;
+    int _num2 = _fraction.numerator * denominator;
+    int _den = denominator * _fraction.denominator;
+    if (_num1 + _num2 == 0) {
+        Fraction _temp(0, 1);
+        return _temp;
+    } else {
+        Fraction _temp(_num1 + _num2, _den);
+        _temp.normalize();
+        return _temp;
+    }
 }
 
 Fraction Fraction::operator-(const Fraction &_fraction) {
     if (denominator == 0) {
         throw std::exception();
     }
-    int _num1 = numerator;
-    int _den1 = denominator;
-    int _num2 = _fraction.numerator;
-    int _den2 = _fraction.denominator;
-    Fraction _temp(_num1 * _den2 - _num2 * _den1, _den1 * _den2);
-    _temp.normalize();
-    return _temp;
+    int _num1 = numerator * _fraction.denominator;
+    int _num2 = _fraction.numerator * denominator;
+    int _den = denominator * _fraction.denominator;
+    if (_num1 - _num2 == 0) {
+        Fraction _temp(0, 1);
+        return _temp;
+    } else {
+        Fraction _temp(_num1 - _num2, _den);
+        _temp.normalize();
+        return _temp;
+    }
 }
 
 Fraction& Fraction::operator=(const Fraction &_fraction) {
@@ -135,7 +146,9 @@ Fraction Fraction::operator*(const Fraction &_fraction) {
     if (denominator == 0) {
         throw std::exception();
     }
-    Fraction _temp(numerator * _fraction.numerator, denominator * _fraction.denominator);
+    int _num = numerator * _fraction.numerator;
+    int _den = denominator * _fraction.denominator;
+    Fraction _temp(_num, _den);
     _temp.normalize();
     return _temp;
 }
@@ -144,7 +157,9 @@ Fraction Fraction::operator/(const Fraction &_fraction) {
     if (denominator == 0) {
         throw std::exception();
     }
-    Fraction _temp(numerator * _fraction.denominator, denominator * _fraction.numerator);
+    int _num = numerator * _fraction.denominator;
+    int _den = denominator * _fraction.numerator;
+    Fraction _temp(_num, _den);
     _temp.normalize();
     return _temp;
 }

@@ -1,15 +1,15 @@
 // Copyright 2020 GHA Frac Team
-#ifndef FRACTION_FRACTION_H
-#define FRACTION_FRACTION_H
 
-#include <iostream>
+#ifndef INCLUDE_FRACTION_H
+#define INCLUDE_FRACTION_H
+
 #include <string>
 
 class Fraction {
-private:
+ private:
     int numerator, denominator;
     void normalize();
-public:
+ public:
     explicit Fraction(int _numerator = 0, int _denominator = 1);
     Fraction(const Fraction &_fraction);
     std::string getValue();
@@ -21,4 +21,5 @@ public:
     Fraction operator*(const Fraction &_fraction);
     Fraction operator/(const Fraction &_fraction);
 };
-#endif // FRACTION_FRACTION_H
+
+#endif // INCLUDE_FRACTION_H
