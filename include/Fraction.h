@@ -8,13 +8,14 @@ class Fraction{
  private:
   int numerator, denominator;
   void normalize();
+
  public:
   Fraction();
   Fraction(const Fraction& x) {
   this->numerator = x.numerator;
   this->denominator = x.denominator;
   }
-  Fraction(int a, int b) {
+  explicit Fraction(int a, int b) {
   if (b == 0 && a != 0) {
   throw "Error";
   } else {
