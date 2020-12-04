@@ -2,9 +2,7 @@
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
 
-#include <stdexcept>
 #include <string>
-#include <stdio.h>
 #include <iostream>
 
 class Fraction {
@@ -12,14 +10,7 @@ class Fraction {
   int numerator, denominator;
   void normalize();
  public:
-  explicit Fraction(int numerator = 0, int denominator = 1) {
-    if (denominator == 0) {
-      throw std::invalid_argument("it's not good to divide by zero");
-    }
-    this->numerator = numerator;
-    this->denominator = denominator;
-    normalize();
-  }
+  explicit Fraction(int numerator = 0, int denominator = 1);
   Fraction(const Fraction &number) {
     this->numerator = number.getNumerator();
     this->denominator = number.getDenominator();

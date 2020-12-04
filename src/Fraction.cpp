@@ -1,6 +1,15 @@
 //  Copyright © 2020 Ksuvot. All rights reserved.
 #include "Fraction.h"
 
+Fraction::Fraction(int numerator, int denominator) {
+  this->numerator = numerator;
+  if (denominator == 0) this->denominator = 1;
+  else
+    this->denominator = denominator;
+  if (this->numerator == 0) this->denominator = 1;
+  this->normalize();
+}
+
 int commonDivisor(int numerator, int denominator) {
   while (numerator * denominator != 0) {
     if (numerator > denominator)
