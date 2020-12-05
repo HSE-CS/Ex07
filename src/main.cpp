@@ -19,5 +19,9 @@ int main() {
 	std::cout << c.getValue() << std::endl;
 	c = a - b;
 	std::cout << c.getValue() << std::endl;
+	Fraction s(1, 3), t(2, 3), w;
+	w = s - t;
+	std::cout << w.getNumerator() << std::endl;
+	std::cout << w.getDenominator() << std::endl;
 	return 0;
 }

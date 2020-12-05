@@ -59,6 +59,7 @@ Fraction Fraction::operator*(const Fraction &c) {
     n = numerator * c.numerator;
     m = denominator * c.denominator;
     Fraction a(n, m);
+    a.normalize();
     return a;
 }
 
@@ -67,6 +68,7 @@ Fraction Fraction::operator/(const Fraction &c) {
     n = numerator * c.denominator;
     m = denominator * c.numerator;
     Fraction a(n, m);
+    a.normalize();
     return a;
 }
 
@@ -76,6 +78,7 @@ Fraction Fraction::operator+(const Fraction &c) {
     a = numerator * (t / denominator);
     b = c.numerator * (t / c.denominator);
     Fraction x(a + b, t);
+    x.normalize();
     return x;
 }
 
@@ -85,5 +88,6 @@ Fraction Fraction::operator-(const Fraction &c) {
     a = numerator * (t / denominator);
     b = c.numerator * (t / c.denominator);
     Fraction x(a - b, t);
+    x.normalize();
     return x;
 }
