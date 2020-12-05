@@ -8,7 +8,7 @@
 
 class Fraction {
  private:
-	int numerator, denominator;
+    int numerator, denominator;
  public:
     explicit Fraction(int n = 0, int d = 1);
     Fraction(const Fraction&);
