@@ -1,3 +1,4 @@
+// Copyright 2020 <Shaidi19>
 #include "Fraction.h"
 
 Fraction::Fraction(int a, int b) {
@@ -26,8 +27,7 @@ void Fraction::normalize() {
 
     if (abs(numerator) <= abs(denominator)) {
         min = numerator;
-    }
-    else {
+    } else {
         min = denominator;
     }
 
@@ -44,8 +44,7 @@ void Fraction::normalize() {
 std::string Fraction::getValue() {
     if (denominator == 1) {
         return std::to_string(numerator);
-    }
-    else {
+    } else {
         return std::to_string(numerator) + "/" + std::to_string(denominator);
     }
 }
