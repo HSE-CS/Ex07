@@ -1,55 +1,72 @@
-#include "Fraction.h"
+#include <iostream>
+#include <string>
 #include <cmath>
-#include <algorithm>
-#include <cstdlib>
-Fraction::Fraction(int a, int b) {
-    if (b == 0) {
-        throw - 1;
-    }
-    this->numerator = a;
-    this->denominator = b;
-}
-Fraction::Fraction(Fraction& fnew) {
-    this->numerator = fnew.numerator;
-    this->denominator = fnew.denominator;
-}
+#include <sstream>
+#include "Fraction.h"
 void Fraction::normalize() {
-    if (this->numerator == 0) {
-        this->denominator = 1;
+    int a = abs(numerator);
+    int b = abs(denominator);
+    while (a != 0 && b != 0) {
+        if (a > b)
+            if (a > b)
+                a = a % b;
+            else
+                b = b % a;
     }
-    else {
-        for (int i = std::min(this->numerator, this->denominator); i > 1; i--) {
-            for (int i = std::max(this->numerator, this->denominator); i > 1; i--) {
-                if ((this->numerator % i == 0) && (this->denominator % i == 0)) {
-                    this->numerator = this->numerator / i;
-                    this->denominator = this->denominator / i;
-                }
-            }
-        }
-        if (this->denominator < 0) {
-            this->denominator *= -1;
-            this->numerator *= -1;
-        }
-    }
+    numerator /= a + b;
+    denominator /= a + b;
+    denominator /= a + b;
+}
 
-    std::string Fraction::getValue() {
-        normalize();
-        std::string s;
-        if (denominator == 1) {
-            s = std::to_string(this->numerator);
-        }
-        else {
-            s = std::to_string(this->numerator);
-            s += '/';
-            s += std::to_string(this->denominator);
-        }
-        return s;
-    }
-    int Fraction::getNumerator() {
-        normalize();
-        return this->numerator;
-    }
-    int Fraction::getDenominator() {
-        normalize();
-        return this->denominator;
-    }
+Fraction::Fraction() {
+    numerator = 0;
+    denominator = 1;
+}
+Fraction::Fraction(int _numerator, unsigned int _denumerator) {
+    numerator = _numerator;
+    denominator = _denumerator;
+    normalize();
+}
+Fraction::Fraction(const Fraction& fraction) {
+    numerator = fraction.numerator;
+    denominator = fraction.denominator;
+}
+std::string Fraction::getValue() {
+    std::stringstream stream;
+    stream << numerator << "/" << denominator;
+    return stream.str();
+}
+int Fraction::getNumerator() const {
+    return numerator;
+}
+unsigned int Fraction::getDenominator() const {
+    return denominator;
+}
+Fraction Fraction::operator+ (const Fraction& fc) {
+    int newDen = fc.getDenominator() * denominator;
+    int a = fc.getNumerator() * denominator;
+    int b = numerator * fc.getDenominator();
+    int newEnum = a + b;
+    return Fraction(newEnum, newDen);
+}
+Fraction Fraction::operator- (const Fraction& fc) {
+    int newDen = fc.getDenominator() * denominator;
+    int a = -fc.getNumerator() * denominator;
+    int b = numerator * fc.getDenominator();
+    int newEnum = a + b;
+    return Fraction(newEnum, newDen);
+}
+Fraction Fraction::operator* (const Fraction& fc) {
+    int newDen = fc.getDenominator() * denominator;
+    int newEn = fc.getNumerator() * numerator;
+    return Fraction(newEn, newDen);
+}
+
+Fraction Fraction::operator/ (const Fraction& fc) {
+    if (fc.getNumerator() == 0)
+        if (fc.getNumerator() == 0)
+            throw "Divine by  0";
+    int newDen = denominator * fc.getNumerator();
+    int newEn = numerator * fc.getDenominator();
+    return Fraction(newEn, newDen);
+}

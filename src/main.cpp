@@ -1,30 +1,20 @@
+#include <iostream>
+#include <string>
 #include "Fraction.h"
-
-
-int main() {
-	Fraction a(-1, 2);
-	Fraction b(3, 4);
-	Fraction a(2, -3);
-	Fraction b(3, -2);
-	Fraction c;
-	c = a + b;
-	std::cout << "numerator = " << c.getNumerator() << "\n";
-	std::cout << "denominator = " << c.getDenominator() << "\n";
-	std::cout << "fraction = " << c.getValue() << "\n";
-	std::cout << "\n";
-	c = a - b;
-	std::cout << "numerator = " << c.getNumerator() << "\n";
-	std::cout << "denominator = " << c.getDenominator() << "\n";
-	std::cout << "fraction = " << c.getValue() << "\n";
-	std::cout << "\n";
-	c = a * b;
-	std::cout << "numerator = " << c.getNumerator() << "\n";
-	std::cout << "denominator = " << c.getDenominator() << "\n";
-	std::cout << "fraction = " << c.getValue() << "\n";
-	std::cout << "\n";
-	c = a / b;
-	std::cout << "numerator = " << c.getNumerator() << "\n";
-	std::cout << "denominator = " << c.getDenominator() << "\n";
-	std::cout << "fraction = " << c.getValue() << "\n";
-	std::cout << "\n";
+int main()
+{
+    Fraction a(1, 2);
+    Fraction b(a);
+    Fraction c;
+    Fraction d;
+    Fraction e;
+    Fraction f;
+    c = a + b;
+    d = a * b;
+    e = a - d;
+    f = d / a;
+    std::cout << c.getNumerator() << "  " << c.getDenominator() << std::endl;
+    std::cout << d.getNumerator() << "  " << d.getDenominator() << std::endl;
+    std::cout << e.getNumerator() << "  " << e.getDenominator() << std::endl;
+    std::cout << f.getNumerator() << "  " << f.getDenominator() << std::endl;
 }
