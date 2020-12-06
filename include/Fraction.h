@@ -12,6 +12,7 @@ private:
     int nok(int a, int b);
     void normalize();
 public:
+    Fraction();
     Fraction(int n, int d);
     Fraction(const Fraction &fraction);
 

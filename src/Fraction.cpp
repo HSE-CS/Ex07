@@ -25,6 +25,10 @@ void Fraction::normalize() {
     }
 }
 
+Fraction::Fraction() {
+    this->numerator = 0;
+    this->denominator = 1;
+}
 Fraction::Fraction(int n, int d) {
     if (d == 0)
         d = 1;
