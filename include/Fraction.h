@@ -1,4 +1,4 @@
-// Copyright 2020 <Shaidi19>
+// Copyright 2020 Sharibzhanova Diana
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
 
@@ -8,11 +8,10 @@
 
 class Fraction {
 
-private:
+ private:
     int numerator, denominator;
     void normalize();
-
-public:
+ public:
     Fraction(int, int);
     Fraction();
     Fraction(const Fraction&);

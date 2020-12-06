@@ -1,8 +1,7 @@
-// Copyright 2020 <Shaidi19>
+// Copyright 2020 Sharibzhanova Diana
 #include "Fraction.h"
 
-int main()
-{
+int main() {
     Fraction a(1, 2);     // 1/2
     Fraction b(a);
     Fraction c;

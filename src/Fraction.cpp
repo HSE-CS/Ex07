@@ -1,7 +1,7 @@
-// Copyright 2020 <Shaidi19>
-#include "Fraction.h"
+// Copyright 2020 Sharibzhanova Diana
+#include "faction.h"
 
-Fraction::Fraction(int a, int b) {
+faction::faction(int a, int b) {
     numerator = a;
     denominator = b;
     if (denominator == 0) {
@@ -9,12 +9,12 @@ Fraction::Fraction(int a, int b) {
     }
 }
 
-Fraction::Fraction() {
+faction::faction() {
     numerator = 0;
     denominator = 1;
 }
 
-Fraction::Fraction(const Fraction& f) {
+faction::faction(const faction& f) {
     numerator = f.numerator;
     denominator = f.denominator;
     if (denominator == 0) {
@@ -22,7 +22,7 @@ Fraction::Fraction(const Fraction& f) {
     }
 }
 
-void Fraction::normalize() {
+void faction::normalize() {
     int min = 0;
 
     if (abs(numerator) <= abs(denominator)) {
@@ -37,11 +37,11 @@ void Fraction::normalize() {
             nod = i;
         }
     }
-    numerator = numerator / nod;
-    denominator = denominator / nod;
+    numerator /= nod;
+    denominator /= nod;
 }
 
-std::string Fraction::getValue() {
+std::string faction::getValue() {
     if (denominator == 1) {
         return std::to_string(numerator);
     } else {
@@ -49,43 +49,43 @@ std::string Fraction::getValue() {
     }
 }
 
-int Fraction::getNumerator() {
+int faction::getNumerator() {
     return numerator;
 }
 
-int Fraction::getDenominator() {
+int faction::getDenominator() {
     return denominator;
 }
 
-Fraction Fraction::operator+(const Fraction& f) {
-    int n = f.numerator * denominator + f.denominator * numerator;
-    int d = f.denominator * denominator;
-    Fraction result(n, d);
+faction faction::operator+(const faction& f) {
+    int n = f.denominator * numerator + f.numerator * denominator;
+    int d = denominator * f.denominator;
+    faction result(n, d);
     return result;
 }
 
-Fraction Fraction::operator-(const Fraction& f) {
+faction faction::operator-(const faction& f) {
     int n = f.denominator * numerator - f.numerator * denominator;
-    int d = f.denominator * denominator;
-    Fraction result(n, d);
+    int d = denominator * f.denominator;
+    faction result(n, d);
     return result;
 }
 
-Fraction Fraction::operator*(const Fraction& f) {
+faction faction::operator*(const faction& f) {
     int n = f.numerator * numerator;
-    int d = f.denominator * denominator;
-    Fraction result(n, d);
+    int d = denominator * f.denominator;
+    faction result(n, d);
     return result;
 }
 
-Fraction Fraction::operator/(const Fraction& f) {
-    int n = numerator * f.denominator;
-    int d = denominator * f.numerator;
-    Fraction result(n, d);
+faction faction::operator/(const faction& f) {
+    int n = f.denominator * numerator;
+    int d = f.numerator * denominator;
+    faction result(n, d);
     return result;
 }
 
-Fraction& Fraction::operator=(const Fraction& f) {
+faction& faction::operator=(const faction& f) {
     this->numerator = f.numerator;
     this->denominator = f.denominator;
     normalize();
