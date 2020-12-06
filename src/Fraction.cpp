@@ -2,7 +2,7 @@
 #include <string>
 #include <cmath>
 #include <sstream>
-#include "Fraction.h"
+#include "../include/Fraction.h"
 void Fraction::normalize() {
     int a = abs(numerator);
     int b = abs(denominator);

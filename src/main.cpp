@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "Fraction.h"
+#include "../include/Fraction.h"
 int main()
 {
     Fraction a(1, 2);
