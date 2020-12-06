@@ -1,4 +1,4 @@
-
+#ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
 #include <string>
 class Fraction {
@@ -18,5 +18,7 @@ public:
 	Fraction operator*(const Fraction& fraction);
 	Fraction operator/(const Fraction& fraction);
 	Fraction operator=(const Fraction& fraction);
+
 };
+#endif
 #endif
