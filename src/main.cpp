@@ -9,7 +9,7 @@ int main() {
     c = a + b;
     std::cout << c.getValue() << std::endl;     // 1
     c = a - b;
-    std::cout << c.getValue() << std::endl;     // 0
+    std::cout << c.getValue() << std::endl;     // 0/4
     c = a * b;
     std::cout << c.getValue() << std::endl;     // 1/4
     c = a / b;
@@ -17,6 +17,6 @@ int main() {
     c = a;
     std::cout << c.getValue() << std::endl;     // 1/2
     std::cout << c.getNumerator() << std::endl;     // 1
-    std::cout << c.getDenominator() << std::endl;       // 2
+    std::cout << c.getDenominator() << std::endl;       // 2*
     return 0;
 }
