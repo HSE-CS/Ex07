@@ -1,58 +1,98 @@
-Fraction operator+ (const Fraction& a) {
-    Fraction b;
-    if (this->denominator == a.denominator) {
-        b.numerator = this->numerator + a.numerator;
-        b.denominator = this->denominator;
+#define INCLUDE_FRACTION_H_
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include <cmath>
+#include <iostream>
+#include <algorithm>
+#include <ctime>
+#include <string>
+class Fraction {
+private:
+    int numerator;
+    int denominator;
+    void normalize();
+
+public:
+    Fraction(int a = 0, int b = 1);
+    explicit Fraction(int a = 0, int b = 1);
+
+    Fraction(Fraction&);
+
+    std::string getValue();
+    int getNumerator();
+    int getDenominator();
+    Fraction& operator= (const Fraction& a) {
+        this->numerator = a.numerator;
+        this->denominator = a.denominator;
+        if (this->denominator == 0) {
+            throw - 1;
+        }
+        return *this;
     }
-    else {
-        b.denominator = this->denominator * a.denominator;
-        b.numerator = this->numerator * a.denominator +
-            a.numerator * this->denominator;
-    }
-    b.denominator = this->denominator * a.denominator;
-    b.numerator = this->numerator * a.denominator +
-        a.numerator * this->denominator;
-    if (b.denominator == 0) {
-        throw - 1;
-    }
-    Fraction operator- (const Fraction & a) {
-        Fraction b;
+    Fraction operator+ (const Fraction& a) {
+        Fraction result;
         if (this->denominator == a.denominator) {
-            b.numerator = this->numerator - a.numerator;
-            b.denominator = this->denominator;
+            result.numerator = this->numerator + a.numerator;
+            result.denominator = this->denominator;
         }
         else {
-            b.denominator = this->denominator * a.denominator;
-            b.numerator = this->numerator * a.denominator -
-                a.numerator * this->denominator;
         }
-        b.denominator = this->denominator * a.denominator;
-        b.numerator = this->numerator * a.denominator -
-            a.numerator * this->denominator;
-        if (b.denominator == 0) {
+ else {
+ Fraction c;
+ Fraction d;
+ c.numerator = this->numerator * a.denominator;
+ c.denominator = this->denominator * a.denominator;
+ d.denominator = c.denominator;
+ d.numerator = a.numerator * this->denominator;
+ result.numerator = c.numerator + d.numerator;
+ result.denominator = c.denominator;
+        }
+        if (result.denominator == 0) {
             throw - 1;
         }
-
-        Fraction b;
-        b.numerator = this->numerator * a.numerator;
-        b.denominator = this->denominator * a.denominator;
-        if (b.denominator < 0) {
-            b.numerator *= -1;
-            b.denominator *= -1;
-        }
-        if (b.denominator == 0) {
-            throw - 1;
-        }
-
-        Fraction b;
-        b.numerator = this->numerator * a.denominator;
-        b.denominator = this->denominator * a.numerator;
-        if (b.denominator < 0) {
-            b.numerator *= -1;
-            b.denominator *= -1;
-        }
-        if (b.denominator == 0) {
-            throw - 1;
-        }
+        normalize();
+        return result;
     }
-}
+    Fraction operator- (const Fraction& a) {
+        Fraction result;
+        if (this->denominator == a.denominator) {
+            result.numerator = this->numerator - a.numerator;
+            result.denominator = this->denominator;
+        }
+        else {
+        }
+ else {
+ Fraction c;
+ Fraction d;
+ c.numerator = this->numerator * a.denominator;
+ c.denominator = this->denominator * a.denominator;
+ d.denominator = c.denominator;
+ d.numerator = a.numerator * this->denominator;
+ result.numerator = c.numerator - d.numerator;
+ result.denominator = c.denominator;
+        }
+        if (result.denominator == 0) {
+            throw - 1;
+        }
+        normalize();
+        return result;
+    }
+    Fraction operator* (const Fraction& a) {
+        Fraction result;
+        result.numerator = this->numerator * a.numerator;
+        result.denominator = this->denominator * a.denominator;
+        if (result.denominator == 0) {
+            throw - 1;
+        }
+        return result;
+    }
+    Fraction operator/ (const Fraction& a) {
+        Fraction result;
+        result.numerator = this->numerator * a.denominator;
+        result.denominator = this->denominator * a.numerator;
+        if (result.denominator == 0) {
+            throw - 1;
+        }
+        return result;
+    }
+};
