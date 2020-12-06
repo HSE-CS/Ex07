@@ -1,28 +1,10 @@
 #include <iostream>
-#include "../include/Fraction.h"
+#include "Fraction.h"
 int main() {
-    Fraction fr3;
-    std::cout << fr3.getNumerator() << '\n';
-    std::cout << fr3.getDenominator() << '\n';
-    std::cout << fr3.getValue() << '\n';
-    Fraction a(1, 5);
-    std::cout << a.getNumerator() << '\n';
-    std::cout << a.getDenominator() << '\n';
-    std::cout << a.getValue() << '\n';
-    Fraction b(1, 2);
-    std::cout << b.getNumerator() << '\n';
-    std::cout << b.getDenominator() << '\n';
-    std::cout << b.getValue() << '\n';
-    Fraction c;
-    c = a;
-    std::cout << c.getValue() << '\n';
-    c = a + b;
-    std::cout << c.getValue() << '\n';
-    c = a - b;
-    std::cout << c.getValue() << '\n';
-    c = a * b;
-    std::cout << c.getValue() << '\n';
-    c = a / b;
-    std::cout << c.getValue() << '\n';
-    return 0;
+	Fraction newFraction = Fraction(14, 7);
+	std::cout << newFraction.getValue() << "\n";
+	Fraction newFraction2 = Fraction(77, 22);
+	std::cout << newFraction2.getValue() << "\n";
+	newFraction2 = newFraction2 - newFraction;
+	std::cout << newFraction2.getValue() << "\n";
 }
