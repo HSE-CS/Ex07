@@ -19,7 +19,7 @@ void Fraction::normalize() {
     if (this->numerator == 0) {
         this->denominator = 1;
     }
-    else {
+    if (this->numerator != 0) {
         int n = nod(this->numerator, this->denominator);
         this->numerator = (this->numerator / n);
         this->denominator = (this->denominator / n);
