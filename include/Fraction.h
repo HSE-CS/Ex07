@@ -7,7 +7,6 @@
 #include <string>
 
 class Fraction {
-
  private:
     int numerator, denominator;
     void normalize();

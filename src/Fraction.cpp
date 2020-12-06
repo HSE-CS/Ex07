@@ -26,8 +26,7 @@ void Fraction::normalize() {
     int min = 0;
     if (abs(numerator) <= abs(denominator)) {
         min = numerator;
-    }
-    else {
+    } else {
         min = denominator;
     }
 
