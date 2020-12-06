@@ -27,12 +27,10 @@ void Fraction::normalize() {
 
 Fraction::Fraction(int n, int d) {
     if (d == 0)
-        throw runtime_error("Denominator can not equal zero!");
-    else {
-        this->numerator = n;
-        this->denominator = d;
-        this->normalize();
-    }
+        d = 1;
+    this->numerator = n;
+    this->denominator = d;
+    this->normalize();
 }
 
 Fraction::Fraction(const Fraction &fraction) {
@@ -41,8 +39,8 @@ Fraction::Fraction(const Fraction &fraction) {
     this->normalize();
 }
 
-string Fraction::getValue() {
-    return to_string(this->numerator) + "/" + to_string(this->denominator);
+std::string Fraction::getValue() {
+    return std::to_string(this->numerator) + "/" + std::to_string(this->denominator);
 }
 
 int Fraction::getNumerator() {
@@ -72,13 +70,13 @@ Fraction Fraction::operator*(const Fraction &fraction) {
 }
 
 Fraction Fraction::operator/(const Fraction &fraction) {
+    int dec;
     if (fraction.numerator == 0)
-        throw runtime_error("Denominator can not equal zero!");
-    else {
-        int num = this->numerator * fraction.denominator;
-        int dec = this->denominator * fraction.numerator;
-        return Fraction(num, dec);
-    }
+        dec = this->denominator;
+    else
+        dec = this->denominator * fraction.numerator;
+    int num = this->numerator * fraction.denominator;
+    return Fraction(num, dec);
 }
 
 Fraction & Fraction::operator=(const Fraction &fraction) {

@@ -15,7 +15,7 @@ public:
     Fraction(int n, int d);
     Fraction(const Fraction &fraction);
 
-    string getValue();
+    std::string getValue();
     int getNumerator();
     int getDenominator();
 
