@@ -1,8 +1,6 @@
+// Copyright 2020 VarginDimitry
 #ifndef EX07_FRACTION_H
 #define EX07_FRACTION_H
-
-#include <iostream>
-using namespace std;
 
 #include "string"
 

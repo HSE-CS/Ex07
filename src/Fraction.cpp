@@ -1,3 +1,4 @@
+// Copyright 2020 VarginDimitry
 #include "Fraction.h"
 
 int Fraction::nod(int a, int b) {
