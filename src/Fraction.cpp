@@ -1,74 +1,92 @@
-#include <string>
-#include <iostream>
-#include "Fraction.h"
+#include <cstring>
+#include <cmath>
 
-Fraction::Fraction() {
-    numerator = 0;
-    denominator = 1;
-}
-
-Fraction::Fraction(int a, int b) {
-    numerator = a;
-    denominator = b;
-    normalize();
-}
-
-Fraction::Fraction(const Fraction& a) {
-    numerator = a.numerator;
-    denominator = a.denominator;
-}
-
-void Fraction::normalize() {
-    int a = numerator;
-    int b = denominator;
-    int c = 0;
-    while (b) {
-        c = a % b;
-        a = b;
-        b = c;
+Fraction::Fraction(int n, int d) {
+    Fraction::Fraction(int n, int d) {
+        numerator = n;
+        denominator = d;
     }
-    numerator = numerator / abs(a);
-    denominator = denominator / abs(a);
-}
 
-std::string Fraction::getValue() {
-    std::string ans = "";
-    ans = std::to_string(numerator) + "/" + std::to_string(denominator);
-    return ans;
-}
+    Fraction::Fraction(const Fraction & c) {
+        Fraction::Fraction(const Fraction & c) {
+            numerator = c.numerator;
+            denominator = c.denominator;
+        }
+        int gcd(int a, int b) {
+            return a;
+        }
 
-int Fraction::getNumerator() const {
-    return numerator;
-}
+        void Fraction::normalize() {
+            void Fraction::normalize() {
+                int t = gcd(numerator, denominator);
+                numerator = numerator / t;
+                denominator = denominator / t;
+            }
 
-int Fraction::getDenominator() const {
-    return denominator;
-}
+            std::string Fraction::getValue() const {
+                std::string Fraction::getValue() const {
+                    std::string n, d, ret;
+                    n = std::to_string(numerator);
+                    d = std::to_string(denominator);
+                    ret = n + "/" + d;
+                    return ret;
+                }
 
-Fraction Fraction::operator+(const Fraction& b) {
-    int num, den;
-    num = numerator * b.getDenominator() + b.getNumerator() * denominator;
-    den = denominator * b.getDenominator();
-    return Fraction(num, den);
-}
+                int Fraction::getNumerator() const {
+                    int Fraction::getNumerator() const {
+                        return numerator;
+                    }
 
-Fraction Fraction::operator-(const Fraction& b) {
-    int num, den;
-    num = numerator * b.getDenominator() - b.getNumerator() * denominator;
-    den = denominator * b.getDenominator();
-    return Fraction(num, den);
-}
+                    int Fraction::getDenominator() const {
+                        int Fraction::getDenominator() const {
+                            return denominator;
+                        }
 
-Fraction Fraction::operator*(const Fraction& b) {
-    int num, den;
-    num = numerator * b.getNumerator();
-    den = denominator * b.getDenominator();
-    return Fraction(num, den);
-}
+                        Fraction& Fraction::operator=(const Fraction & c) {
+                            Fraction& Fraction::operator=(const Fraction & c) {
+                                numerator = c.numerator;
+                                denominator = c.denominator;
+                                return *this;
+                            }
 
-Fraction Fraction::operator/(const Fraction& b) {
-    int num, den;
-    num = numerator * b.getDenominator();
-    den = denominator * b.getNumerator();
-    return Fraction(num, den);
-}
+                            Fraction Fraction::operator*(const Fraction & c) {
+                                Fraction Fraction::operator*(const Fraction & c) {
+                                    int n, m;
+                                    n = numerator * c.numerator;
+                                    m = denominator * c.denominator;
+                                    Fraction a(n, m);
+                                    a.normalize();
+                                    return a;
+                                }
+
+                                Fraction Fraction::operator/(const Fraction & c) {
+                                    Fraction Fraction::operator/(const Fraction & c) {
+                                        int n, m;
+                                        n = numerator * c.denominator;
+                                        m = denominator * c.numerator;
+                                        Fraction a(n, m);
+                                        a.normalize();
+                                        return a;
+                                    }
+
+                                    Fraction Fraction::operator+(const Fraction & c) {
+                                        Fraction Fraction::operator+(const Fraction & c) {
+                                            int t, a, b;
+                                            t = denominator * c.denominator / gcd(denominator, c.denominator);
+                                            a = numerator * (t / denominator);
+                                            b = c.numerator * (t / c.denominator);
+                                            Fraction x(a + b, t);
+                                            x.normalize();
+                                            return x;
+                                        }
+
+                                        Fraction Fraction::operator-(const Fraction & c) {
+                                            Fraction Fraction::operator-(const Fraction & c) {
+                                                int t, a, b;
+                                                t = denominator * c.denominator / gcd(denominator, c.denominator);
+                                                a = numerator * (t / denominator);
+                                                b = c.numerator * (t / c.denominator);
+                                                Fraction x(a - b, t);
+                                                x.normalize();
+                                                return x;
+                                            }

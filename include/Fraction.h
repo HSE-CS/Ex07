@@ -1,19 +1,21 @@
-#define INCLUDE_FRACTION_H_
+#define FRACTION_H_
+
 #include <string>
+#include <cstring>
 
 class Fraction {
 private:
 	int numerator, denominator;
 public:
-	Fraction();
-	explicit Fraction(int a, int b);
-	Fraction(const Fraction& a);
+	Fraction(int n = 0, int d = 1);
+	Fraction(const Fraction&);
 	void normalize();
-	std::string getValue();
+	std::string getValue() const;
 	int getNumerator() const;
 	int getDenominator() const;
-	Fraction operator+(const Fraction& b);
-	Fraction operator-(const Fraction& b);
-	Fraction operator*(const Fraction& b);
-	Fraction operator/(const Fraction& b);
+	Fraction& operator=(const Fraction&);
+	Fraction operator+(const Fraction&);
+	Fraction operator-(const Fraction&);
+	Fraction operator*(const Fraction&);
+	Fraction operator/(const Fraction&);
 };

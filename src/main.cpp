@@ -1,12 +1,14 @@
-#include<iostream>
+#include <iostream>
 #include "Fraction.h"
 
 int main() {
-	Fraction fst(1, 5);
-	Fraction scnd(1, 2);
-	std::cout << scnd.getNumerator() << '\n';
-	std::cout << scnd.getDenominator() << '\n';
-	fst.normalize();
-	std::cout << fst.getValue() << '\n';
-	std::cout << (fst / scnd).getValue() << '\n';
-}
+    Fraction a(1, 2), b(2, 3), c;
+    c = a / b;
+    std::cout << c.getValue();
+    return 0;
+    int main() {
+        Fraction a(1, 2), b(2, 3), c;
+        c = a / b;
+        std::cout << c.getValue();
+        return 0;
+    }
