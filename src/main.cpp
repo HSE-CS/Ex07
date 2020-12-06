@@ -1,14 +1,5 @@
-#include <iostream>
-#include "Fraction.h"
-
 int main() {
-    Fraction a(1, 2), b(2, 3), c;
-    c = a / b;
-    std::cout << c.getValue();
-    return 0;
-    int main() {
-        Fraction a(1, 2), b(2, 3), c;
-        c = a / b;
-        std::cout << c.getValue();
-        return 0;
-    }
+    Fraction a(-1, 2);
+    Fraction a(1, -2);
+    Fraction b(3, 4);
+    Fraction c;
