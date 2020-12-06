@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Fraction.h"
+#include "../include/Fraction.h"
 int main() {
 	Fraction newFraction = Fraction(14, 7);
 	std::cout << newFraction.getValue() << "\n";

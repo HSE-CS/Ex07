@@ -1,4 +1,4 @@
-#include "Fraction.h"
+#include "../include/Fraction.h"
 int gcd(int a, int b) {
     int result = 1;
     for (int i = a; i > 0; i--) {
