@@ -2,7 +2,7 @@
 #include "Fraction.h"
 #include <iostream>
 
-int main(){
+int main() {
     Fraction f1(10, 20);
     std::cout << "Value of f1: "<< f1.getValue() << std::endl;
     Fraction f2(11, 21);

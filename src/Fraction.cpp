@@ -2,7 +2,7 @@
 #include "Fraction.h"
 
 int Fraction::nod(int a, int b) {
-    while (a != b){
+    while (a != b) {
         if (a > b)
             a -= b;
         else
@@ -12,16 +12,17 @@ int Fraction::nod(int a, int b) {
 }
 
 int Fraction::nok(int a, int b) {
-    return (int) (a * b / Fraction::nod(a, b));
+    return a * b / Fraction::nod(a, b);
 }
 
 void Fraction::normalize() {
-    if (this->numerator == 0)
+    if (this->numerator == 0) {
         this->denominator = 1;
+    }
     else {
         int n = nod(this->numerator, this->denominator);
-        this->numerator = (int) (this->numerator / n);
-        this->denominator = (int) (this->denominator / n);
+        this->numerator = (this->numerator / n);
+        this->denominator = (this->denominator / n);
     }
 }
 
@@ -44,7 +45,9 @@ Fraction::Fraction(const Fraction &fraction) {
 }
 
 std::string Fraction::getValue() {
-    return std::to_string(this->numerator) + "/" + std::to_string(this->denominator);
+    std::string s1 = std::to_string(this->numerator);
+    std::string s2 = std::to_string(this->denominator);
+    return s1 + "/" + s2;
 }
 
 int Fraction::getNumerator() {
@@ -56,13 +59,15 @@ int Fraction::getDenominator() {
 }
 
 Fraction Fraction::operator+(const Fraction &fraction) {
-    int num = this->numerator * fraction.denominator + fraction.numerator * this->denominator;
+    int num = this->numerator * fraction.denominator;
+    num += fraction.numerator * this->denominator;
     int dec = this->denominator * fraction.denominator;
     return Fraction(num, dec);
 }
 
 Fraction Fraction::operator-(const Fraction &fraction) {
-    int num = this->numerator * fraction.denominator - fraction.numerator * this->denominator;
+    int num = this->numerator * fraction.denominator;
+    num -= fraction.numerator * this->denominator;
     int dec = this->denominator * fraction.denominator;
     return Fraction(num, dec);
 }
