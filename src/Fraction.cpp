@@ -1,0 +1,98 @@
+// Copyright 2020 VarginDimitry
+#include "Fraction.h"
+#include <cmath>
+
+int Fraction::nod(int a, int b) {
+    a = abs(a);
+    b = abs(b);
+    while (a != b) {
+        if (a > b)
+            a -= b;
+        else
+            b -= a;
+    }
+    return a;
+}
+
+int Fraction::nok(int a, int b) {
+    return a * b / Fraction::nod(a, b);
+}
+
+void Fraction::normalize() {
+    if (this->numerator == 0) {
+        this->denominator = 1;
+    }
+    if (this->numerator != 0) {
+        int n = nod(this->numerator, this->denominator);
+        this->numerator = (this->numerator / n);
+        this->denominator = (this->denominator / n);
+    }
+}
+
+Fraction::Fraction() {
+    this->numerator = 0;
+    this->denominator = 1;
+}
+Fraction::Fraction(int n, int d) {
+    if (d == 0)
+        d = 1;
+    this->numerator = n;
+    this->denominator = d;
+    this->normalize();
+}
+
+Fraction::Fraction(const Fraction &fraction) {
+    this->numerator = fraction.numerator;
+    this->denominator = fraction.denominator;
+    this->normalize();
+}
+
+std::string Fraction::getValue() {
+    std::string s1 = std::to_string(this->numerator);
+    std::string s2 = std::to_string(this->denominator);
+    return s1 + "/" + s2;
+}
+
+int Fraction::getNumerator() {
+    return this->numerator;
+}
+
+int Fraction::getDenominator() {
+    return this->denominator;
+}
+
+Fraction Fraction::operator+(const Fraction &fraction) {
+    int num = this->numerator * fraction.denominator;
+    num += fraction.numerator * this->denominator;
+    int dec = this->denominator * fraction.denominator;
+    return Fraction(num, dec);
+}
+
+Fraction Fraction::operator-(const Fraction &fraction) {
+    int num = this->numerator * fraction.denominator;
+    num -= fraction.numerator * this->denominator;
+    int dec = this->denominator * fraction.denominator;
+    return Fraction(num, dec);
+}
+
+Fraction Fraction::operator*(const Fraction &fraction) {
+    int num = this->numerator * fraction.numerator;
+    int dec = this->denominator * fraction.denominator;
+    return Fraction(num, dec);
+}
+
+Fraction Fraction::operator/(const Fraction &fraction) {
+    int dec;
+    if (fraction.numerator == 0)
+        dec = this->denominator;
+    else
+        dec = this->denominator * fraction.numerator;
+    int num = this->numerator * fraction.denominator;
+    return Fraction(num, dec);
+}
+
+Fraction & Fraction::operator=(const Fraction &fraction) {
+    this->numerator = fraction.numerator;
+    this->denominator = fraction.denominator;
+    return *this;
+}
