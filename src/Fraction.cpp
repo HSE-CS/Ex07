@@ -6,6 +6,7 @@ void Fraction::normilize() {
     if (this->denominator == 0)
         throw "Denominator is 0!";
     if (this->numerator == 0)
+        this->denominator = 1;
         return;
     int p, q;
     bool isMinus = (this->numerator >= 0 && this->denominator < 0
@@ -25,8 +26,8 @@ void Fraction::normilize() {
 }
 
 Fraction::Fraction(int a, int b) {
-	this->numerator = a;
-	this->denominator = b;
+    this->numerator = a;
+    this->denominator = b;
 }
 
 Fraction::Fraction(const Fraction& fr) {
@@ -48,11 +49,11 @@ std::string Fraction::getValue() {
 }
 
 int Fraction::getNumerator() const {
-	return this->numerator;
+    return this->numerator;
 }
 
 int Fraction::getDenominator() const {
-	return this->denominator;
+    return this->denominator;
 }
 
 const Fraction Fraction::getNormilized() const {
