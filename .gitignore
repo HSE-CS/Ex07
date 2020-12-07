@@ -1,6 +1,7 @@
 .idea
-.github
+cmake-build-debug
 
+.github
 img
 
 README.md
