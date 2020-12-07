@@ -1,7 +1,10 @@
 // Copyright 2020 VarginDimitry
 #include "Fraction.h"
+#include <cmath>
 
 int Fraction::nod(int a, int b) {
+    a = abs(a);
+    b = abs(b);
     while (a != b) {
         if (a > b)
             a -= b;
