@@ -4,23 +4,19 @@
 #include "../include/Fraction.h"
 
 int main() {
-	using namespace std;
-	int num, denom;
-	cout << "Enter the numerator ";
-	cin >> num;
-	cout << "Enter the denominator ";
-	cin >> denom;
+	int num = 1;
+	int denom = 3;
 	Fraction a(num, denom);
-	cout << "\na = " << a.getValue() << endl;
+	std::cout << "\na = " << a.getValue() << std::endl;
 	Fraction b;
-	cout << "b = " << b.getValue() << endl;
+	std::cout << "b = " << b.getValue() << std::endl;
 	Fraction c = a - b;
-	cout << "c = " << c.getValue() << endl;
-	cout << "a = " << a.getValue() << endl;
+	std::cout << "c = " << c.getValue() << std::endl;
+	std::cout << "a = " << a.getValue() << std::endl;
 	c = a;
-	cout << "c = " << c.getValue() << endl;
+	std::cout << "c = " << c.getValue() << std::endl;
 	Fraction d(c);
 	d = d * b;
-	cout << "d = " << d.getValue();
+	std::cout << "d = " << d.getValue();
 }
 
