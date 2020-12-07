@@ -5,9 +5,10 @@
 void Fraction::normilize() {
     if (this->denominator == 0)
         throw "Denominator is 0!";
-    if (this->numerator == 0)
+    if (this->numerator == 0) {
         this->denominator = 1;
         return;
+    }
     int p, q;
     bool isMinus = (this->numerator >= 0 && this->denominator < 0
                  || this->numerator < 0 && this->denominator >= 0);
