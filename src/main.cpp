@@ -3,9 +3,8 @@
 #include <iostream>
 #include "../include/Fraction.h"
 
-using namespace std;
-
 int main() {
+	using namespace std;
 	int num, denom;
 	cout << "Enter the numerator ";
 	cin >> num;

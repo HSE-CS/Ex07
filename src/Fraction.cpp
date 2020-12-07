@@ -8,7 +8,8 @@ void Fraction::normilize() {
     if (this->numerator == 0)
         return;
     int p, q;
-    bool isMinus = (this->numerator >= 0 && this->denominator < 0 || this->numerator < 0 && this->denominator >= 0);
+    bool isMinus = (this->numerator >= 0 && this->denominator < 0 
+                 || this->numerator < 0 && this->denominator >= 0);
     this->numerator = abs(this->numerator);
     this->denominator = abs(this->denominator);
     for (int i = 1; i <= this->numerator && i <= this->denominator; i++) {
@@ -23,7 +24,7 @@ void Fraction::normilize() {
     this->denominator = q;
 }
 
-explicit Fraction::Fraction(int a, int b) {
+Fraction::Fraction(int a, int b) {
 	this->numerator = a;
 	this->denominator = b;
 }
@@ -35,7 +36,8 @@ Fraction::Fraction(const Fraction& fr) {
 
 std::string Fraction::getValue() {
     std::string val;
-    bool isMinus = (this->numerator >= 0 && this->denominator < 0 || this->numerator < 0 && this->denominator >= 0);
+    bool isMinus = (this->numerator >= 0 && this->denominator < 0 
+                 || this->numerator < 0 && this->denominator >= 0);
     val += isMinus ? "-" : "";
     val += std::to_string(abs(this->numerator));
     if (this->denominator != 1 && this->numerator != 0) {
@@ -69,7 +71,7 @@ const Fraction Fraction::getNormilized() const {
         if (!(a % i) && !(b % i)) {
             p = a / i;
             q = b / i;
-        }   
+        }
     }
     a = isMinus ? -1 * p : p;
     b = q;

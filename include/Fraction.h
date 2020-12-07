@@ -1,12 +1,11 @@
 // Copyright [2020] <Balayan Roman>
 
-#ifndef EX07_INCLUDE_FRACTION_H_
-#define EX07_INCLUDE_FRACTION_H_
+#ifndef INCLUDE_FRACTION_H_
+#define INCLUDE_FRACTION_H_
 
 #include <string>
 
-class Fraction
-{
+class Fraction {
  private:
 	int numerator;
 	int denominator;
@@ -25,5 +24,5 @@ class Fraction
 	void operator=(const Fraction&);
 };
 
-#endif
+#endif // INCLUDE_FRACTION_H_
 
