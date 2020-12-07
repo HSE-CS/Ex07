@@ -1,10 +1,11 @@
-#include "../include/Fraction.h"
+// Copyright [2020] <Balayan Roman>
+
 #include <iostream>
+#include "../include/Fraction.h"
 
 using namespace std;
 
-int main()
-{
+int main() {
 	int num, denom;
 	cout << "Enter the numerator ";
 	cin >> num;
@@ -23,3 +24,4 @@ int main()
 	d = d * b;
 	cout << "d = " << d.getValue();
 }
+

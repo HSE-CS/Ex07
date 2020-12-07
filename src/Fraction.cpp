@@ -1,7 +1,8 @@
+// Copyright [2020] <Balayan Roman>
+
 #include "../include/Fraction.h"
 
-void Fraction::normilize()
-{
+void Fraction::normilize() {
     if (this->denominator == 0)
         throw "Denominator is 0!";
     if (this->numerator == 0)
@@ -10,12 +11,10 @@ void Fraction::normilize()
     bool isMinus = (this->numerator >= 0 && this->denominator < 0 || this->numerator < 0 && this->denominator >= 0);
     this->numerator = abs(this->numerator);
     this->denominator = abs(this->denominator);
-    for (int i = 1; i <= this->numerator && i <= this->denominator; i++)
-    {
+    for (int i = 1; i <= this->numerator && i <= this->denominator; i++) {
         float aa = this->numerator % i;
         float bb = this->denominator % i;
-        if (!(this->numerator % i) && !(this->denominator % i))
-        {
+        if (!(this->numerator % i) && !(this->denominator % i)) {
             p = this->numerator / i;
             q = this->denominator / i;
         }
@@ -24,44 +23,37 @@ void Fraction::normilize()
     this->denominator = q;
 }
 
-Fraction::Fraction(int a, int b)
-{
+explicit Fraction::Fraction(int a, int b) {
 	this->numerator = a;
 	this->denominator = b;
 }
 
-Fraction::Fraction(const Fraction& fr)
-{
+Fraction::Fraction(const Fraction& fr) {
     this->numerator = fr.getNumerator();
     this->denominator = fr.getDenominator();
 }
 
-std::string Fraction::getValue()
-{
+std::string Fraction::getValue() {
     std::string val;
     bool isMinus = (this->numerator >= 0 && this->denominator < 0 || this->numerator < 0 && this->denominator >= 0);
     val += isMinus ? "-" : "";
     val += std::to_string(abs(this->numerator));
-    if (this->denominator != 1 && this->numerator != 0)
-    {
+    if (this->denominator != 1 && this->numerator != 0) {
         val += "/";
         val += std::to_string(abs(this->denominator));
     }
     return val;
 }
 
-inline int Fraction::getNumerator() const
-{
+int Fraction::getNumerator() const {
 	return this->numerator;
 }
 
-inline int Fraction::getDenominator() const
-{
+int Fraction::getDenominator() const {
 	return this->denominator;
 }
 
-const Fraction Fraction::getNormilized() const
-{
+const Fraction Fraction::getNormilized() const {
     if (this->denominator == 0)
         throw "Denominator is 0!";
     int a = this->numerator;
@@ -71,45 +63,42 @@ const Fraction Fraction::getNormilized() const
     bool isMinus = (a >= 0 && b < 0 || a < 0 && b >= 0);
     a = abs(a);
     b = abs(b);
-    for (int i = 1; i <= a && i <= b; i++)
-    {
+    for (int i = 1; i <= a && i <= b; i++) {
         float aa = a % i;
         float bb = b % i;
-        if (!(a % i) && !(b % i))
-        {
+        if (!(a % i) && !(b % i)) {
             p = a / i;
             q = b / i;
         }   
     }
     a = isMinus ? -1 * p : p;
     b = q;
-    return Fraction(a,b);
+    return Fraction(a, b);
 }
 
-const Fraction Fraction::operator+(const Fraction& b)
-{
+const Fraction Fraction::operator+(const Fraction& b) {
     Fraction aNorm = this->getNormilized();
     Fraction bNorm = b.getNormilized();
-    int num = aNorm.getNumerator() * bNorm.getDenominator() + bNorm.getNumerator() * aNorm.getDenominator();
+    int num = aNorm.getNumerator() * bNorm.getDenominator() 
+            + bNorm.getNumerator() * aNorm.getDenominator();
     int denom = aNorm.getDenominator() * bNorm.getDenominator();
     Fraction res(num, denom);
     res.normilize();
     return res;
 }
 
-const Fraction Fraction::operator-(const Fraction& b)
-{
+const Fraction Fraction::operator-(const Fraction& b) {
     Fraction aNorm = this->getNormilized();
     Fraction bNorm = b.getNormilized();
-    int num = aNorm.getNumerator() * bNorm.getDenominator() - bNorm.getNumerator() * aNorm.getDenominator();
+    int num = aNorm.getNumerator() * bNorm.getDenominator() 
+            - bNorm.getNumerator() * aNorm.getDenominator();
     int denom = aNorm.getDenominator() * bNorm.getDenominator();
     Fraction res(num, denom);
     res.normilize();
     return res;
 }
 
-const Fraction Fraction::operator*(const Fraction& b)
-{
+const Fraction Fraction::operator*(const Fraction& b) {
     Fraction aNorm = this->getNormilized();
     Fraction bNorm = b.getNormilized();
     int num = aNorm.getNumerator() *  bNorm.getNumerator();
@@ -119,8 +108,7 @@ const Fraction Fraction::operator*(const Fraction& b)
     return res;
 }
 
-const Fraction Fraction::operator/(const Fraction& b)
-{
+const Fraction Fraction::operator/(const Fraction& b) {
     Fraction aNorm = this->getNormilized();
     Fraction bNorm = b.getNormilized();
     int num = aNorm.getNumerator() * bNorm.getDenominator();
@@ -130,8 +118,8 @@ const Fraction Fraction::operator/(const Fraction& b)
     return res;
 }
 
-void Fraction::operator=(const Fraction& b)
-{
+void Fraction::operator=(const Fraction& b) {
     this->numerator = b.getNumerator();
     this->denominator = b.getDenominator();
 }
+
