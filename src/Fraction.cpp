@@ -55,7 +55,9 @@ void Fraction::normalize() {
 
 std::string Fraction::getValue() {
     std::string s;
-    if (numerator>=0 && denominator>=0 || numerator<=0 && denominator<=0) {
+    int n = nominator;
+    int d = denominator;
+    if (n >=0 && d >=0 || n <=0 && d <=0) {
         s = std::to_string(numerator);
         s += "/";
         s += std::to_string(denominator);
