@@ -1,3 +1,5 @@
+//Copyright [2020] <Olesya Nikolaeva>
+
 #include "Fraction.h"
 #include <string.h>
 
@@ -23,10 +25,10 @@ void Fraction::normalize() {
             this->denominator = this->denominator / tmp;
             tmp = 2;
         }
-        else
+        else {
             tmp++;
+        }
     }
-    
 }
 
 std::string Fraction::getValue() const {
@@ -52,7 +54,10 @@ Fraction Fraction::operator+(const Fraction& arg) {
         Fraction result(arg.getNumerator() + this->numerator, this->denominator);
         return result;
     }
-    Fraction result((arg.getNumerator() * this->denominator) + (this->numerator * arg.getDenominator()), arg.getDenominator() * this->denominator);
+    Fraction result;
+    result.numerator = arg.getNumerator() * this->denominator;
+    result.numerator += this->numerator * arg.getDenominator();
+    result.denominator = arg.getDenominator() * this->denominator;
     result.normalize();
     return result;
 }
@@ -62,19 +67,26 @@ Fraction Fraction::operator-(const Fraction& arg) {
         Fraction result(this->numerator - arg.getNumerator(), this->denominator);
         return result;
     }
-    Fraction result((this->numerator * arg.getDenominator() - (arg.getNumerator() * this->denominator)), arg.getDenominator() * this->denominator);
+    Fraction result;
+    result.numerator = this->numerator * arg.getDenominator();
+    result.numerator += arg.getNumerator() * this->denominator;
+    result.denominator = arg.getDenominator() * this->denominator;
     result.normalize();
     return result;
 }
 
 Fraction Fraction::operator*(const Fraction& arg) {
-    Fraction result(arg.getNumerator() * this->numerator, arg.getDenominator() * this->denominator);
+    Fraction result;
+    result.numerator = arg.getNumerator() * this->numerator;
+    result.denominator = arg.getDenominator() * this->denominator;
     result.normalize();
     return result;
 }
 
 Fraction Fraction::operator/(const Fraction& arg) {
-    Fraction result(arg.getDenominator() * this->numerator, arg.getNumerator() * this->denominator);
+    Fraction result;
+    result.numerator = arg.getDenominator() * this->numerator;
+    result.denominator = arg.getNumerator() * this->denominator;
     result.normalize();
     return result;
 }
