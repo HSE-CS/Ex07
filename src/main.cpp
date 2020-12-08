@@ -8,5 +8,10 @@ int main() {
     Fraction b(5, 5);
     Fraction c = a - b;
     std::cout << c.getValue() << std::endl;
+    Fraction d(1, 2);
+    Fraction f(d);
+    c = d + f;
+    std::cout << c.getNumerator() << std::endl;
+    std::cout << c.getDenominator() << std::endl;
     return 0;
 }

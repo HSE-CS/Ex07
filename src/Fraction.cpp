@@ -53,6 +53,7 @@ Fraction Fraction::operator+(const Fraction& arg) {
         Fraction result;
         result.numerator = arg.getNumerator() + this->numerator;
         result.denominator = this->denominator;
+        result.normalize();
         return result;
     }
     Fraction result;
@@ -68,6 +69,7 @@ Fraction Fraction::operator-(const Fraction& arg) {
         Fraction result;
         result.numerator = this->numerator - arg.getNumerator();
         result.denominator = this->denominator;
+        result.normalize();
         return result;
     }
     Fraction result;
