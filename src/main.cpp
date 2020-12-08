@@ -1,7 +1,7 @@
 // Copyright 2020 DBarinov
 
-#include "Fraction.h"
 #include <iostream>
+#include "Fraction.h"
 
 int main() {
     Fraction a(1, 2), b(2, 3), c;

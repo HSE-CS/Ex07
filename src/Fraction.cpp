@@ -5,13 +5,13 @@
 #include <cmath>
 
 Fraction::Fraction(int n, int d) {
-    num = n;
-    denum = d;
+    numerator = n;
+    denominator = d;
 }
 
 Fraction::Fraction(const Fraction& c) {
-    num = c.num;
-    denum = c.denum;
+    numerator = c.numerator;
+    denominator = c.denominator;
 }
 
 int gcd(int a, int b) {
@@ -25,37 +25,37 @@ int gcd(int a, int b) {
 }
 
 void Fraction::normalize() {
-    int t = gcd(num, denum);
-    num = num/t;
-    denum = denum/t;
+    int t = gcd(numerator, denominator);
+    numerator = numerator/t;
+    denominator = denominator/t;
 }
 
 std::string Fraction::getValue() const {
     std::string n, d, ret;
-    n = std::to_string(num);
-    d = std::to_string(denum);
+    n = std::to_string(numerator);
+    d = std::to_string(denominator);
     ret = n+"/"+d;
     return ret;
 }
 
-int Fraction::getNum() const {
-    return num;
+int Fraction::getNumerator() const {
+    return numerator;
 }
 
-int Fraction::getDenum() const {
-    return denum;
+int Fraction::getDenominator() const {
+    return denominator;
 }
 
 Fraction& Fraction::operator=(const Fraction& c) {
-    num = c.num;
-    denum = c.denum;
+    numerator = c.numerator;
+    denominator = c.denominator;
     return *this;
 }
 
 Fraction Fraction::operator*(const Fraction& c) {
     int n, m;
-    n = num*c.num;
-    m = denum*c.denum;
+    n = numerator*c.numerator;
+    m = denominator*c.denominator;
     Fraction a(n, m);
     a.normalize();
     return a;
@@ -63,8 +63,8 @@ Fraction Fraction::operator*(const Fraction& c) {
 
 Fraction Fraction::operator/(const Fraction& c) {
     int n, m;
-    n = num*c.denum;
-    m = denum*c.num;
+    n = numerator*c.denominator;
+    m = denominator*c.numerator;
     Fraction a(n, m);
     a.normalize();
     return a;
@@ -72,9 +72,9 @@ Fraction Fraction::operator/(const Fraction& c) {
 
 Fraction Fraction::operator+(const Fraction& c) {
     int t, a, b;
-    t = denum * c.denum/ gcd(denum, c.denum);
-    a = num * (t / denum);
-    b = c.num * (t / c.denum;
+    t = denominator * c.denominator / gcd(denominator, c.denominator);
+    a = numerator * (t / denominator);
+    b = c.numerator * (t / c.denominator);
     Fraction x(a+b, t);
     x.normalize();
     return x;
@@ -82,9 +82,9 @@ Fraction Fraction::operator+(const Fraction& c) {
 
 Fraction Fraction::operator-(const Fraction& c) {
     int t, a, b;
-    t = denum*c.denum/gcd(denum, c.denum);
-    a = num*(t/denum);
-    b = c.num*(t/c.denum);
+    t = denominator*c.denominator/gcd(denominator, c.denominator);
+    a = numerator*(t/denominator);
+    b = c.numerator*(t/c.denominator);
     Fraction x(a-b, t);
     x.normalize();
     return x;
