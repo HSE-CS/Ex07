@@ -1,4 +1,4 @@
-Copyright 2020 Tatsenko Alexey
+// Copyright 2020 Tatsenko Alexey
 #include<iostream>
 #include"Fraction.h"
 

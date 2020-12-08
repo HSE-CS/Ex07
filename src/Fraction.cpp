@@ -1,4 +1,4 @@
-Copyright 2020 Tatsenko Alexey
+// Copyright 2020 Tatsenko Alexey
 #include"Fraction.h"
 #include<cstring>
 #include<cmath>

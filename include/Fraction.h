@@ -1,4 +1,4 @@
-Copyright 2020 Tatsenko Alexey
+// Copyright 2020 Tatsenko Alexey
 #pragma once
 #include<iostream>
 #include<string>
