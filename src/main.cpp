@@ -1,4 +1,4 @@
-// Copyright 2020 DBarinov
+//Copyright 2020 DBarinov
 
 #include <iostream>
 #include "Fraction.h"
@@ -9,3 +9,4 @@ int main() {
     std::cout << c.getValue();
     return 0;
 }
+
