@@ -13,5 +13,10 @@ int main() {
     c = d + f;
     std::cout << c.getNumerator() << std::endl;
     std::cout << c.getDenominator() << std::endl;
+    Fraction g(1, 2);
+    Fraction h(-1, 2);
+    c = g + h;
+    std::cout << c.getNumerator() << std::endl;
+    std::cout << c.getDenominator() << std::endl;
     return 0;
 }

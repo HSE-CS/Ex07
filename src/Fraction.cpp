@@ -16,6 +16,10 @@ Fraction::Fraction(const Fraction& copy) {
 void Fraction::normalize() {
     if (this->denominator == 0)
         throw 0;
+    if (this->numerator == 0) {
+        this->denominator = 1;
+        return;
+    }
     if (this->numerator == 1 || this->denominator == 1)
         return;
     int tmp = 2;
