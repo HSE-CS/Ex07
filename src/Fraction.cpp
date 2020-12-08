@@ -46,28 +46,28 @@ int Fraction::getDenominator() {
 	return denominator;
 }
 
-Fraction Fraction::operator+(const Fraction &fraction) {
-	return Fraction(numerator * fraction.denominator + fraction.numerator * denominator,
-	 denominator * fraction.denominator);
+Fraction Fraction::operator+(const Fraction &f) {
+	return Fraction(numerator * f.denominator + f.numerator * denominator,
+	 denominator * f.denominator);
 }
 
-Fraction Fraction::operator-(const Fraction &fraction) {
-	return Fraction(numerator * fraction.denominator - fraction.numerator * denominator,
-	 denominator * fraction.denominator);
+Fraction Fraction::operator-(const Fraction &f) {
+	return Fraction(numerator * f.denominator - f.numerator * denominator,
+	 denominator * f.denominator);
 }
 
-Fraction Fraction::operator*(const Fraction &fraction) {
-	return Fraction(numerator * fraction.numerator,
-	 denominator * fraction.denominator);
+Fraction Fraction::operator*(const Fraction &f) {
+	return Fraction(numerator * f.numerator,
+	 denominator * f.denominator);
 }
 
-Fraction Fraction::operator/(const Fraction &fraction) {
-	return Fraction(numerator * fraction.denominator,
-	 denominator * fraction.numerator);
+Fraction Fraction::operator/(const Fraction &f) {
+	return Fraction(numerator * f.denominator,
+	 denominator * f.numerator);
 }
 
-Fraction &Fraction::operator=(const Fraction &fraction) {
-	numerator = fraction.numerator;
-	denominator = fraction.denominator;
+Fraction &Fraction::operator=(const Fraction &f) {
+	numerator = f.numerator;
+	denominator = f.denominator;
 	return *this;
 }

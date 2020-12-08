@@ -15,7 +15,7 @@ class Fraction {
 	 std::string getValue();
 	 int getNumerator();
 	 int getDenominator();
-	 Fraction operator+(const Fraction &fraction);  //check using references
+	 Fraction operator+(const Fraction &fraction);  // check using references
 	 Fraction operator-(const Fraction &fraction);
 	 Fraction operator*(const Fraction &fraction);
 	 Fraction operator/(const Fraction &fraction);
