@@ -33,11 +33,11 @@ Fraction::Fraction(const Fraction &x) {
 }
 
 Fraction::Fraction(int a, int b) {
-  if ( a != 0 && b == 0 )
+  if ( a != 0 && b == 0 ) {
     throw "Error";
-  else {
-   numerator = a;
-   denominator = b;
+  } else {
+    numerator = a;
+    denominator = b;
   }
 }
 
@@ -45,19 +45,19 @@ void Fraction::normalize() {
     int NOD = nod_func(this->numerator, this->denominator);
 
   if ( NOD == 0 ) {
-   this->numerator = 0;
-   this->denominator = 1;
+    this->numerator = 0;
+    this->denominator = 1;
   } else {
-     this->numerator = this->numerator / NOD;
-     this->denominator = this->denominator / NOD;
+      this->numerator = this->numerator / NOD;
+      this->denominator = this->denominator / NOD;
     }
 }
 
 std::string Fraction::getValue() {
     std::string s;
-    if (numerator >= 0 && denominator >= 0 || numerator <= 0 && denominator <= 0) {
+    if (numerator>= 0 && denominator>=0 || numerator<=0 && denominator<=0) {
         s = std::to_string(numerator);
-        s += "/" ;
+        s += "/";
         s += std::to_string(denominator);
     } else {
         s += "-";
@@ -88,12 +88,10 @@ Fraction Fraction::operator+(Fraction y) {
     if (x_d == y_d) {
         s.numerator = x_n + y_n;
         s.denominator = x_d;
-    }
-    else
-    {
+    } else {
         s.denominator = x_d * y_d;
         s.numerator = x_n * y_d + y_n * x_d;
-    }
+      }
 
     s.normalize();
 
@@ -111,11 +109,10 @@ Fraction Fraction::operator-(Fraction y) {
         if (x_d = y_d) {
         r.denominator = x_d;
         r.numerator = x_n - y_n;
-        }
-        else {
-        r.denominator = x_d * y_d;
-        r.numerator = x_n * y_d - y_n * x_d;
-        }
+        } else {
+            r.denominator = x_d * y_d;
+            r.numerator = x_n * y_d - y_n * x_d;
+          }
 
         r.normalize();
 
