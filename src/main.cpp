@@ -1,8 +1,8 @@
+Copyright 2020 Tatsenko Alexey
 #include<iostream>
 #include"Fraction.h"
 
-int main()
-{
+int main() {
     Fraction x(1, 2);
     Fraction y(2, 2);
     Fraction op1;
@@ -10,11 +10,10 @@ int main()
     Fraction op3;
     Fraction op4;
     Fraction op5;
-
-    std::cout << x.getValue() << endl;
+    std::cout << x.getValue() << std::endl;
     std::cout << y.getValue() << std::endl;
-    std::cout << y.getNumerator() << endl;
-    std::cout << y.getDenominator() << endl;
+    std::cout << y.getNumerator() << std::endl;
+    std::cout << y.getDenominator() << std::endl;
     op1 = x + y;
     op2 = x - y;
     op3 = x * y;
@@ -26,5 +25,4 @@ int main()
     std::cout << op3.getValue() << std::endl;
     std::cout << op4.getValue() << std::endl;
     std::cout << op5.getValue() << std::endl;
-
 }
