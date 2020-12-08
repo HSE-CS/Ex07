@@ -1,4 +1,4 @@
-//Copyright 2020 DBarinov
+// Copyright 2020 DBarinov
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
 
@@ -22,5 +22,5 @@ class Fraction{
   Fraction operator/(const Fraction&);
 };
 
-#endif//INCLUDE_FRACTION_H_
+#endif  // INCLUDE_FRACTION_H_
 

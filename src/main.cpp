@@ -1,4 +1,4 @@
-//Copyright 2020 DBarinov
+// Copyright 2020 DBarinov
 
 #include <iostream>
 #include "Fraction.h"
