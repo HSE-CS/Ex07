@@ -1,4 +1,4 @@
-// Copyright by GHA test team
+  // Copyright by GHA test team
 #include <iostream>
 #include "Fraction.h"
 
@@ -10,14 +10,21 @@ int main() {
 	std::cout << a.getValue() << " -- First fraction" << std::endl;
 	std::cout << b.getValue() << " -- Copy of first fraction" << std::endl;
 	std::cout << c.getValue() << " -- Second fraction\n" << std::endl;
-	std::cout << d.getValue() << " -- Third fraction which was '10/2' by initialization\n" << std::endl;
+	std::cout << d.getValue()
+		<< " -- Third fraction which was '10/2'\n" << std::endl;
 
-	std::cout << (a + c).getValue() << " -- First fraction + Second fraction" << std::endl;
-	std::cout << (a - c).getValue() << " -- First fraction - Second fraction" << std::endl;
-	std::cout << (a * c).getValue() << " -- First fraction * Second fraction" << std::endl;
-	std::cout << (a / c).getValue() << " -- First fraction / Second fraction" << std::endl;
+	std::cout << (a + c).getValue()
+		<< " -- First fraction + Second fraction" << std::endl;
+	std::cout << (a - c).getValue()
+		<< " -- First fraction - Second fraction" << std::endl;
+	std::cout << (a * c).getValue()
+		<< " -- First fraction * Second fraction" << std::endl;
+	std::cout << (a / c).getValue()
+		<< " -- First fraction / Second fraction" << std::endl;
 	c = a;
-	std::cout << c.getValue() << " -- Now the third fraction is equal to first \n" << std::endl;
+	std::cout << c.getValue()
+		<< " -- Now the third fraction is equal to first \n"
+		<< std::endl;
 
 	return 0;
 }

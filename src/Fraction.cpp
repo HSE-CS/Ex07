@@ -1,4 +1,4 @@
-﻿// Copyright by GHA test team
+﻿  // Copyright by GHA test team
 
 #include "Fraction.h"
 #include <string>
@@ -24,11 +24,10 @@ Fraction::Fraction(int num, int denom) {
 
 Fraction::Fraction(const Fraction &fraction) :
 	numerator(fraction.numerator), denominator(fraction.denominator) {
-
 }
 
 std::string Fraction::getValue() {
-	if (denominator == 1) 
+	if (denominator == 1)
 		return std::to_string(numerator);
 	return std::to_string(numerator) + "/" + std::to_string(denominator);
 }
@@ -48,19 +47,23 @@ int Fraction::getDenominator() {
 }
 
 Fraction Fraction::operator+(const Fraction &fraction) {
-	return Fraction(numerator * fraction.denominator + fraction.numerator * denominator, denominator * fraction.denominator);
+	return Fraction(numerator * fraction.denominator + fraction.numerator * denominator,
+	 denominator * fraction.denominator);
 }
 
 Fraction Fraction::operator-(const Fraction &fraction) {
-	return Fraction(numerator * fraction.denominator - fraction.numerator * denominator, denominator * fraction.denominator);
+	return Fraction(numerator * fraction.denominator - fraction.numerator * denominator,
+	 denominator * fraction.denominator);
 }
 
 Fraction Fraction::operator*(const Fraction &fraction) {
-	return Fraction(numerator * fraction.numerator, denominator * fraction.denominator);
+	return Fraction(numerator * fraction.numerator,
+	 denominator * fraction.denominator);
 }
 
 Fraction Fraction::operator/(const Fraction &fraction) {
-	return Fraction(numerator * fraction.denominator, denominator * fraction.numerator);
+	return Fraction(numerator * fraction.denominator,
+	 denominator * fraction.numerator);
 }
 
 Fraction &Fraction::operator=(const Fraction &fraction) {
