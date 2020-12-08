@@ -1,4 +1,4 @@
-//Copyright [2020] <Olesya Nikolaeva>
+// Copyright [2020] <Olesya Nikolaeva>
 
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
@@ -8,10 +8,10 @@
 #include <string>
 
 class Fraction {
-private:
+ private:
     int numerator;
     int denominator;
-public:
+ public:
     explicit Fraction(int up = 0, int down = 1);
     Fraction(const Fraction& copy);
     std::string getValue() const;
@@ -22,8 +22,8 @@ public:
     Fraction operator*(const Fraction&);
     Fraction operator/(const Fraction&);
     Fraction operator=(const Fraction&);
-protected:
+ protected:
     void normalize();
 };
 
-#endif
+#endif  // INCLUDE_FRACTION_H_

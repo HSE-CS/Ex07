@@ -1,4 +1,4 @@
-//Copyright [2020] <Olesya Nikolaeva>
+// Copyright [2020] <Olesya Nikolaeva>
 
 #include "Fraction.h"
 #include <string.h>
@@ -24,8 +24,7 @@ void Fraction::normalize() {
             this->numerator = this->numerator / tmp;
             this->denominator = this->denominator / tmp;
             tmp = 2;
-        }
-        else {
+        } else {
             tmp++;
         }
     }
@@ -51,7 +50,9 @@ int Fraction::getDenominator() const {
 
 Fraction Fraction::operator+(const Fraction& arg) {
     if (this->denominator == arg.getDenominator()) {
-        Fraction result(arg.getNumerator() + this->numerator, this->denominator);
+        Fraction result;
+        result.numerator = arg.getNumerator() + this->numerator;
+        result.denominator = this->denominator;
         return result;
     }
     Fraction result;
@@ -64,7 +65,9 @@ Fraction Fraction::operator+(const Fraction& arg) {
 
 Fraction Fraction::operator-(const Fraction& arg) {
     if (this->denominator == arg.getDenominator()) {
-        Fraction result(this->numerator - arg.getNumerator(), this->denominator);
+        Fraction result;
+        result.numerator = this->numerator - arg.getNumerator();
+        result.denominator = this->denominator;
         return result;
     }
     Fraction result;
