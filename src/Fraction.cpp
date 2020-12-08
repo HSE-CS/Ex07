@@ -60,6 +60,9 @@ int Fraction::getDenominator() {
 Fraction Fraction::operator+(const Fraction& f) {
     int n = f.denominator * numerator + f.numerator * denominator;
     int d = denominator * f.denominator;
+    if (n == 0) {
+        d = 1;
+    }
     Fraction result(n, d);
     return result;
 }
@@ -67,6 +70,9 @@ Fraction Fraction::operator+(const Fraction& f) {
 Fraction Fraction::operator-(const Fraction& f) {
     int n = f.denominator * numerator - f.numerator * denominator;
     int d = denominator * f.denominator;
+    if (n == 0) {
+        d = 1;
+    }
     Fraction result(n, d);
     return result;
 }
