@@ -9,13 +9,11 @@
 #include <string>
 
 class Fraction {
-private:
 
+private:
     int numerator, denominator;
 
-
 public:
-
     explicit Fraction(int value_numerator = 0, int value_denominator = 1) {
         if (value_denominator == 0) {
             throw "ERROR! Denominator is zero";
@@ -25,6 +23,7 @@ public:
         }
         normalize();
     }
+
 
     Fraction(const Fraction &value_fraction) {
         numerator = value_fraction.numerator;
