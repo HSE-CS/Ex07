@@ -9,10 +9,10 @@
 #include <string>
 
 class Fraction {
-     private:
-        int numerator, denominator;
+ private:
+    int numerator, denominator;
 
-     public:
+ public:
         explicit Fraction(int value_numerator = 0, int value_denominator = 1) {
             if (value_denominator == 0) {
                 throw "ERROR! Denominator is zero";
