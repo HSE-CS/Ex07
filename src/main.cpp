@@ -10,13 +10,13 @@ int main() {
     std::cout << first_fr.getNumerator() << std::endl;
     std::cout << first_fr.getDenominator() << std::endl;
     std::cout << first_fr.getValue() << std::endl;
-    Fraction secondFr(3, 5);
-    Fraction threeFr(first_fr);
-    first_fr = secondFr + threeFr;
+    Fraction second_fr(3, 5);
+    Fraction three_fr(first_fr);
+    first_fr =  second_fr + three_fr;
     std::cout << first_fr.getValue() << std::endl;
-    threeFr = first_fr * secondFr;
-    std::cout << threeFr.getValue() << std::endl;
-    threeFr = secondFr / threeFr;
-    std::cout << threeFr.getValue() << std::endl;
+    three_fr = first_fr *  second_fr;
+    std::cout << three_fr.getValue() << std::endl;
+    three_fr = second_fr / three_fr;
+    std::cout << three_fr.getValue() << std::endl;
     return 0;
 }
