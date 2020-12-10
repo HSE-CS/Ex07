@@ -6,17 +6,17 @@
 #include "Fraction.h"
 
 int main() {
-    Fraction first_fr;
-    std::cout << first_fr.getNumerator() << std::endl;
-    std::cout << first_fr.getDenominator() << std::endl;
-    std::cout << first_fr.getValue() << std::endl;
-    Fraction second_fr(3, 5);
-    Fraction three_fr(first_fr);
-    first_fr =  second_fr + three_fr;
-    std::cout << first_fr.getValue() << std::endl;
-    three_fr = first_fr *  second_fr;
-    std::cout << three_fr.getValue() << std::endl;
-    three_fr = second_fr / three_fr;
-    std::cout << three_fr.getValue() << std::endl;
+    Fraction a(1, 2);
+    std::cout << a.getNumerator() << std::endl;
+    std::cout << a.getDenominator() << std::endl;
+    std::cout << a.getValue() << std::endl;
+    Fraction b(3, 5);
+    Fraction c(a);
+   a =  b + c;
+    std::cout << a.getValue() << std::endl;
+    c = a *  b;
+    std::cout << c.getValue() << std::endl;
+    c =  b / c;
+    std::cout << c.getValue() << std::endl;
     return 0;
 }

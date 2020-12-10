@@ -10,7 +10,7 @@
 
 class Fraction {
 private:
-    int numerator = 0, denominator = 0;
+    int numerator, denominator;
 
 public:
     explicit Fraction(int value_numerator = 0, int value_denominator = 1) {
@@ -24,8 +24,8 @@ public:
     }
 
     Fraction(const Fraction &value_fraction) {
-        numerator = value_fraction.numerator,
-                denominator = value_fraction.denominator;
+        numerator = value_fraction.numerator;
+        denominator = value_fraction.denominator;
     }
 
 

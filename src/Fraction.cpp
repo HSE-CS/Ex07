@@ -9,7 +9,7 @@ int get_NOD(int first_number, int second_number) {
         if (first_number > second_number) {
             first_number %= second_number;
         } else {
-            first_number %= first_number;
+            second_number %= first_number;
         }
     }
     return first_number + second_number;
