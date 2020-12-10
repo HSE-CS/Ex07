@@ -19,4 +19,4 @@ int main() {
     c =  b / c;
     std::cout << c.getValue() << std::endl;
     return 0;
- }
+}
