@@ -12,11 +12,11 @@ int main() {
     std::cout << a.getValue() << std::endl;
     Fraction b(3, 5);
     Fraction c(a);
-   a =  b + c;
+    a =  b + c;
     std::cout << a.getValue() << std::endl;
     c = a *  b;
     std::cout << c.getValue() << std::endl;
     c =  b / c;
     std::cout << c.getValue() << std::endl;
     return 0;
-}
+ }
