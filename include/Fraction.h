@@ -11,7 +11,7 @@ private:
 	void normalize();
 
 public:
-	Fraction(int, int);
+	Fraction(int num = 0, int den = 1);
 	Fraction(const Fraction &);
 	std::string getValue();
 	int getNumerator();
