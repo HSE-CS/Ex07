@@ -22,7 +22,7 @@ void Fraction::normalize() {
 Fraction::Fraction(int num, int den) {
     if (den == 0) {
         throw "Div by zero";
-    } else
+    } else {
         if (num == 0) {
             numerator = num;
             denominator = 1;
@@ -30,6 +30,7 @@ Fraction::Fraction(int num, int den) {
             numerator = num;
             denominator = den;
         }
+    }
     this->normalize();
 }
 
