@@ -1,3 +1,8 @@
+// Copyright 2020 RBurtsev
+//
+// Created by roman on 10.12.2020.
+//
+
 #include "Fraction.h"
 
 

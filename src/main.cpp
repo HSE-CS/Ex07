@@ -1,3 +1,6 @@
+// Copyright 2020 RBurtsev
+
+
 #include <iostream>
 #include "Fraction.h"
 
