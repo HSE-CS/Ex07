@@ -23,5 +23,5 @@ int main() {
     std::cout << (fr3 * fr4).getValue() << '\n';
     std::cout << (fr3 / fr4).getValue() << '\n';
 
-    sreturn 0;
+    return 0;
 }
