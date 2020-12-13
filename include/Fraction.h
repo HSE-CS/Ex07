@@ -1,3 +1,6 @@
+#ifndef INCLUDE_FRACTION_H_
+#define INCLUDE_FRACTION_H_
+
 #include <cstring>
 #include <string>
 
@@ -64,3 +67,4 @@ class Fraction {
         return new_frac;
     }
 };
+#endif  // INCLUDE_FRACTION_H_
