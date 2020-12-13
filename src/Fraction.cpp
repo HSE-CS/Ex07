@@ -24,10 +24,15 @@ Fraction::Fraction(int num, int den) {
 	if (den == 0) {
 		throw "Div by zero";
 	}
-	else {
-		numerator = num;
-		denominator = den;
-	}
+	else
+		if (num == 0) {
+			numerator = num;
+			denominator = 1;
+		}
+		else {
+			numerator = num;
+			denominator = den;
+		}
 	this->normalize();
 }
 
@@ -54,15 +59,17 @@ int Fraction::getDenominator() {
 }
 
 Fraction Fraction::operator+(const Fraction &frac) {
-	return Fraction(frac.denominator * numerator +
+	Fraction fr(frac.denominator * numerator +
 		denominator * frac.numerator,
 		denominator * frac.denominator);
+	return fr;
 }
 
 Fraction Fraction::operator-(const Fraction &frac) {
-	return Fraction(frac.denominator * numerator -
+	Fraction fr(frac.denominator * numerator -
 		denominator * frac.numerator,
 		denominator * frac.denominator);
+	return fr;
 }
 
 Fraction Fraction::operator*(const Fraction &frac) {
