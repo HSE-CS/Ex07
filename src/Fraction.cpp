@@ -6,7 +6,7 @@ void Fraction::normalize() {
     int min = 0;
     if (abs(numerator) < abs(denominator)) {
         min = abs(numerator);
-    }else {
+    } else {
         min = abs(denominator);
     }
     int gcd = 1;
@@ -22,11 +22,11 @@ void Fraction::normalize() {
 Fraction::Fraction(int num, int den) {
     if (den == 0) {
         throw "Div by zero";
-    }else
+    } else
         if (num == 0) {
             numerator = num;
             denominator = 1;
-        }else {
+        } else {
             numerator = num;
             denominator = den;
         }
@@ -41,7 +41,7 @@ Fraction::Fraction(const Fraction &frac) {
 std::string Fraction::getValue() {
     if (denominator == 1) {
         return std::to_string(numerator);
-    }else {
+    } else {
         return std::to_string(numerator) + "/" + std::to_string(denominator);
     }
 }
