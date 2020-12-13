@@ -9,20 +9,20 @@
 class Fraction {
  private:
     int numerator;
-	int denominator;
-	void normalize();
+    int denominator;
+    void normalize();
 
  public:
     explicit Fraction(int num = 0, int den = 1);
-	Fraction(const Fraction &);
-	std::string getValue();
-	int getNumerator();
-	int getDenominator();
-	Fraction operator+(const Fraction &);
-	Fraction operator-(const Fraction &);
-	Fraction operator*(const Fraction &);
-	Fraction operator/(const Fraction &);
-	Fraction &operator=(const Fraction &);
+    Fraction(const Fraction &);
+    std::string getValue();
+    int getNumerator();
+    int getDenominator();
+    Fraction operator+(const Fraction &);
+    Fraction operator-(const Fraction &);
+    Fraction operator*(const Fraction &);
+    Fraction operator/(const Fraction &);
+    Fraction &operator=(const Fraction &);
 };
 
 #endif  // INCLUDE_FRACTION_H_
