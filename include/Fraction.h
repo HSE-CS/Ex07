@@ -72,6 +72,4 @@ class Fraction {
         return new_frac;
     }
 };
-
-
-#endif   // INCLUDE_FRACTION_H_ 
+#endif  // INCLUDE_FRACTION_H_
