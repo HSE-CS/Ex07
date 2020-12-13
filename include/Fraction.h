@@ -1,3 +1,5 @@
+// Copyright 2020 Bugrov
+
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
 

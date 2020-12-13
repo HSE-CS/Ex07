@@ -1,3 +1,5 @@
+// Copyright 2020 Bugrov
+
 #include <iostream>
 
 #include "Fraction.h"

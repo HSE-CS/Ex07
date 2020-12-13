@@ -1,3 +1,5 @@
+// Copyright 2020 Bugrov
+
 #include "Fraction.h"
 
 void Fraction::normalize() {
