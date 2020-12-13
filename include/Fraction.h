@@ -8,24 +8,26 @@ class Fraction {
  private:
   int numerator;
   int denominator;
-  void normalize(); // cuts the fraction
+  void normalize(); //  cuts the fraction
   int GCD(int tempNum, int tempDen);
-  std::string convertToStr(int number); // because itoa is unknown to online compiler
-  // creating the function for transition both of fractions to the same denominatior is useless
-  // due to impossibility to return both of them
+  std::string convertToStr(int number); 
+  // ^ because itoa is unknown to online compiler
+  //  creating the function for transition both 
+  //  of fractions to the same denominatior is useless
+  //  due to impossibility to return both of them
 
  public:
-  Fraction(int newNum, int newDen); // - конструктор с двумя параметрами, со значениями по умолчанию(0, 1)
+  Fraction(int newNum, int newDen);
   Fraction();
-  Fraction(const Fraction& otherFraction); //конструктор копирования.
-  std::string getValue(); // -метод, возвращающий строку типа std::string, содержащую изображение дроби
-  int getNumerator(); // -вернуть числитель.
-  int getDenominator(); // -вернуть знаменатель.
-  Fraction operator+(const Fraction& otherFraction); //-сложение
-  Fraction operator-(const Fraction& otherFraction); //-вычитание
-  Fraction operator*(const Fraction& otherFraction); //-умножение
-  Fraction operator/(const Fraction& otherFraction); //-деление
+  Fraction(const Fraction& otherFraction);
+  std::string getValue();
+  int getNumerator();
+  int getDenominator();
+  Fraction operator+(const Fraction& otherFraction);
+  Fraction operator-(const Fraction& otherFraction);
+  Fraction operator*(const Fraction& otherFraction);
+  Fraction operator/(const Fraction& otherFraction);
   Fraction operator=(const Fraction& otherFraction);
 };
 
-#endif  // INCLUDE_FRACTION_H_
+#endif  //  INCLUDE_FRACTION_H_
