@@ -88,7 +88,7 @@ int Fraction::getDenominator() {
 }
 
 Fraction Fraction::operator+(const Fraction& otherFraction) {
-  int LCM = otherFraction.denominator * denominator / 
+  int LCM = otherFraction.denominator * denominator /
   GCD(abs(otherFraction.denominator), abs(denominator));
   int tempNum1 = numerator * (LCM / denominator);
   int tempNum2 = otherFraction.numerator * (LCM / otherFraction.denominator);
