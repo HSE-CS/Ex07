@@ -8,7 +8,7 @@ int main() {
     Fraction fr1(0, 1);
     std::cout << fr1.getNumerator() << '\n';
     std::cout << fr1.getDenominator() << '\n';
-   	std::cout << fr1.getValue() << '\n';
+    std::cout << fr1.getValue() << '\n';
 
     Fraction fr2(fr1);
     std::cout << fr2.getValue() << '\n';
