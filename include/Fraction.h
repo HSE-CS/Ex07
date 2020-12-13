@@ -3,7 +3,6 @@
 // Created by roman on 10.12.2020.
 //
 
-
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
 
@@ -73,4 +72,6 @@ class Fraction {
         return new_frac;
     }
 };
+
+
 #endif  // INCLUDE_FRACTION_H_
