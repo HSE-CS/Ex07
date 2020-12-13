@@ -8,11 +8,11 @@ class Fraction {
  private:
   int numerator;
   int denominator;
-  void normalize(); //  cuts the fraction
+  void normalize();  //  cuts the fraction
   int GCD(int tempNum, int tempDen);
-  std::string convertToStr(int number); 
+  std::string convertToStr(int number);
   // ^ because itoa is unknown to online compiler
-  //  creating the function for transition both 
+  //  creating the function for transition both
   //  of fractions to the same denominatior is useless
   //  due to impossibility to return both of them
 
