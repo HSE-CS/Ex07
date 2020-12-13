@@ -17,8 +17,8 @@ std::string Fraction::convertToStr(int number) {
   std::string tempStr = "", tempStr2 = "";
   int i = 0;
   while (number) {
-    tempStr += number % (int)powf(10.0, i) + 48;
-    number = number / (int)powf(10.0, i);
+    tempStr += number % static_cast<int>(powf(10.0, i)) + 48;
+    number = number / static_cast<int>(powf(10.0, i));
     i++;
   }
   for (int j = tempStr.length() - 1; j >= 1; j--) {
@@ -32,10 +32,10 @@ void Fraction::normalize() {
     int tGCD = GCD(abs(numerator), abs(denominator));
     numerator /= tGCD;
     denominator /= tGCD;
-	if (numerator < 0 && denominator < 0) {
+    if (numerator < 0 && denominator < 0) {
       numerator = -numerator;
       denominator = -denominator;
-	}
+    }
   } else {
     denominator = 1;
   }
@@ -66,8 +66,8 @@ std::string Fraction::getValue() {
   } else {
     int temp = abs(numerator);
     std::string tempStr = "";
-	int i = 0;
-    if (numerator < 0 || denominator < 0){
+    int i = 0;
+    if (numerator < 0 || denominator < 0) {
       fractShow += '-';
     }
     tempStr = convertToStr(abs(numerator));
@@ -88,7 +88,8 @@ int Fraction::getDenominator() {
 }
 
 Fraction Fraction::operator+(const Fraction& otherFraction) {
-  int LCM = otherFraction.denominator * denominator / GCD(abs(otherFraction.denominator), abs(denominator));
+  int LCM = otherFraction.denominator * denominator / 
+  GCD(abs(otherFraction.denominator), abs(denominator));
   int tempNum1 = numerator * (LCM / denominator);
   int tempNum2 = otherFraction.numerator * (LCM / otherFraction.denominator);
   tempNum1 = tempNum1 + tempNum2;
@@ -96,7 +97,8 @@ Fraction Fraction::operator+(const Fraction& otherFraction) {
 }
 
 Fraction Fraction::operator-(const Fraction& otherFraction) {
-  int LCM = otherFraction.denominator * denominator / GCD(abs(otherFraction.denominator), abs(denominator));
+  int LCM = otherFraction.denominator * denominator /
+  GCD(abs(otherFraction.denominator), abs(denominator));
   int tempNum1 = numerator * (LCM / denominator);
   int tempNum2 = otherFraction.numerator * (LCM / otherFraction.denominator);
   tempNum1 = tempNum1 - tempNum2;
