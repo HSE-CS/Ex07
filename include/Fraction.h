@@ -8,12 +8,12 @@
 
 class Fraction {
  private:
-	int numerator;
+    int numerator;
 	int denominator;
 	void normalize();
 
  public:
-	explicit Fraction(int num = 0, int den = 1);
+    explicit Fraction(int num = 0, int den = 1);
 	Fraction(const Fraction &);
 	std::string getValue();
 	int getNumerator();
