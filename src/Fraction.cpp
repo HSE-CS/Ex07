@@ -28,7 +28,8 @@ int Fraction::getDenominator() {
 }
 
 std::string Fraction::getValue() {
-    if (denominator != 1) return std::to_string(numerator) + "/" + std::to_string(denominator);
+    if (denominator != 1) return std::to_string(numerator) +
+    "/" + std::to_string(denominator);
     else if (denominator == 1) return std::to_string(numerator);
 }
 
