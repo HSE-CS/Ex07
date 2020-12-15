@@ -23,7 +23,7 @@ void Fraction::normalize() {
     if (abs(numerator) < abs(denominator)) {
         min = abs(numerator);
     }
-    if ((abs(numerator) > abs(denominator)) || (abs(numerator) == abs(denominator))) {
+    if ((abs(numerator) >= abs(denominator))) {
         min = abs(denominator);
     }
     int gcd = 1;
@@ -72,5 +72,4 @@ Fraction Fraction::operator=(const Fraction& fr) {
     numerator = fr.numerator;
     denominator = fr.denominator;
     return *this;
-
 }

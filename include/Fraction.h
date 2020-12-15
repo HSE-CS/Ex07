@@ -1,14 +1,14 @@
 // Copyright 2020 Igor Tyulin
-#ifndef EX07_FRACTION_H
-#define EX07_FRACTION_H
+#ifndef INCLUDE_FRACTION_H_
+#define INCLUDE_FRACTION_H_
 
 #include <string>
 #include <iostream>
 class Fraction {
-private:
+ private:
     int numerator, denominator;
     void normalize();
-public:
+ public:
     explicit Fraction(
             int numerator = 0,
             int denominator = 1);
@@ -22,5 +22,5 @@ public:
     Fraction operator/(const Fraction&);
     Fraction operator=(const Fraction&);
 };
-#endif
+#endif  // INCLUDE_FRACTION_H_
 
