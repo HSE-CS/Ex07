@@ -29,9 +29,9 @@ int Fraction::getDenominator() {
     return denominator;
 }
 
-string Fraction::getValue() {
-    if (denominator!=1) return to_string(numerator) + "/" + to_string(denominator);
-    else if (denominator == 1) return to_string(numerator);
+std::string Fraction::getValue() {
+    if (denominator!=1) return std::to_string(numerator) + "/" + std::to_string(denominator);
+    else if (denominator == 1) return std::to_string(numerator);
 }
 
 void Fraction::normalize() {
