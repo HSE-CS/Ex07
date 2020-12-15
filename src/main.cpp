@@ -1,6 +1,4 @@
-//
-// Created by stoja on 15.12.2020.
-//
+// Copyright 2020 Stolbov Yaroslav
 
 #include "Fraction.h"
 

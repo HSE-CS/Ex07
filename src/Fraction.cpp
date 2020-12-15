@@ -1,6 +1,4 @@
-//
-// Created by stoja on 15.12.2020.
-//
+// Copyright 2020 Stolbov Yaroslav
 #include "Fraction.h"
 #include <iostream>
 
@@ -30,7 +28,7 @@ int Fraction::getDenominator() {
 }
 
 std::string Fraction::getValue() {
-    if (denominator!=1) return std::to_string(numerator) + "/" + std::to_string(denominator);
+    if (denominator != 1) return std::to_string(numerator) + "/" + std::to_string(denominator);
     else if (denominator == 1) return std::to_string(numerator);
 }
 
@@ -57,7 +55,7 @@ void Fraction::normalize() {
     denominator /= nod;
 }
 
-Fraction Fraction::operator + (const Fraction& num){
+Fraction Fraction::operator + (const Fraction& num) {
     int n = num.denominator * numerator + num.numerator * denominator;
     int d = denominator * num.denominator;
     if (n == 0) {
@@ -68,7 +66,7 @@ Fraction Fraction::operator + (const Fraction& num){
     return res;
 }
 
-Fraction Fraction::operator - (const Fraction& num){
+Fraction Fraction::operator - (const Fraction& num) {
     int n = num.denominator * numerator - num.numerator * denominator;
     int d = denominator * num.denominator;
     if (n == 0) {
@@ -79,7 +77,7 @@ Fraction Fraction::operator - (const Fraction& num){
     return res;
 }
 
-Fraction Fraction::operator * (const Fraction& num){
+Fraction Fraction::operator * (const Fraction& num) {
     int n = num.numerator * numerator;
     int d = denominator * num.denominator;
     if (n == 0) {
@@ -90,7 +88,7 @@ Fraction Fraction::operator * (const Fraction& num){
     return res;
 }
 
-Fraction Fraction::operator / (const Fraction& num){
+Fraction Fraction::operator / (const Fraction& num) {
     int n = numerator * num.denominator;
     int d = denominator * num.numerator;
     if (n == 0) {
@@ -101,7 +99,7 @@ Fraction Fraction::operator / (const Fraction& num){
     return res;
 }
 
-Fraction Fraction::operator = (const Fraction& num){
+Fraction Fraction::operator = (const Fraction& num) {
     numerator = num.numerator;
     denominator = num.denominator;
     normalize();
