@@ -2,3 +2,21 @@
 
 #include "../include/Fraction.h"
 
+using namespace std;
+
+
+int main() {
+    Fraction a(1, 9);
+    cout << a.GetValue() << endl;
+    Fraction b(a);
+    cout << b.GetValue() << endl;
+    cout << b.getNumerator() << '/' << b.getDenominator() << endl;
+    Fraction c, d;
+    c = a + b;
+    cout << c.GetValue() << endl;
+    d = a * b;
+    cout << d.GetValue() << endl;
+    b = d / c;
+    cout << b.GetValue() << endl;
+    return 0;
+}
