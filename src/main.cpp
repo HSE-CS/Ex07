@@ -16,7 +16,5 @@ int main() {
     cout << c.GetValue() << endl;
     d = a * b;
     cout << d.GetValue() << endl;
-    b = d / c;
-    cout << b.GetValue() << endl;
     return 0;
 }

@@ -28,6 +28,7 @@ string Fraction::GetValue() {
     s += to_string(numerator);
     s += '/';
     s += to_string(denominator);
+    return s;
 }
 
 int Fraction::getNumerator() { return numerator; }
@@ -55,7 +56,7 @@ void Fraction::normalize() {
     denominator /= nod;
 }
 
-Fraction Fraction::operator+(const Fraction &frac) {
+Fraction Fraction::operator+(const Fraction& frac) {
     int num = numerator * frac.denominator + frac.numerator * denominator;
     int denom = denominator * frac.denominator;
 
@@ -64,7 +65,7 @@ Fraction Fraction::operator+(const Fraction &frac) {
     return res;
 }
 
-Fraction Fraction::operator-(const Fraction &frac) {
+Fraction Fraction::operator-(const Fraction& frac) {
     int num = numerator * frac.denominator - frac.numerator * denominator;
     int denom = denominator * frac.denominator;
 
@@ -73,7 +74,7 @@ Fraction Fraction::operator-(const Fraction &frac) {
     return res;
 }
 
-Fraction Fraction::operator*(const Fraction &frac) {
+Fraction Fraction::operator*(const Fraction& frac) {
     int num = numerator * frac.numerator;
     int denom = denominator * frac.denominator;
 
@@ -82,7 +83,7 @@ Fraction Fraction::operator*(const Fraction &frac) {
     return res;
 }
 
-Fraction Fraction::operator/(const Fraction &frac) {
+Fraction Fraction::operator/(const Fraction& frac) {
     int num = numerator * frac.denominator;
     int denom = denominator * frac.numerator;
 
@@ -91,7 +92,7 @@ Fraction Fraction::operator/(const Fraction &frac) {
     return res;
 }
 
-Fraction Fraction::operator=(const Fraction &frac) {
+Fraction Fraction::operator=(const Fraction& frac) {
     int num = frac.denominator;
     int denom = frac.numerator;
 
