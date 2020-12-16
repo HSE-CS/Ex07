@@ -7,14 +7,12 @@
 #include <string>
 
 class Fraction {
-private:
-
+private :
     int numerator, denominator;
     void normalize();
 
 
-public:
-
+public :
     Fraction();
     Fraction(int, int);
     Fraction(const Fraction&);
