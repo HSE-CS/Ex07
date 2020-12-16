@@ -4,6 +4,7 @@
 #define INCLUDE_FRACTION_H_
 
 #include <iostream>
+#include <string>
 
 class Fraction {
  private:
