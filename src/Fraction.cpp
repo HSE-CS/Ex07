@@ -34,9 +34,7 @@ std::string Fraction::getValue() {
         std::string denom = std::to_string(denominator);
         return num + "/" + denom;
     }
-    else if (denominator == 1) {
-        return num;
-    }
+    else if (denominator == 1) return num;
 }
 
 void Fraction::normalize() {
