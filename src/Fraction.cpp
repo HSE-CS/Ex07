@@ -12,8 +12,8 @@ Fraction::Fraction() {
 }
 
 Fraction::Fraction(int num, int denom) {
-    numerator = nu;
-    denominator = den;
+    numerator = num;
+    denominator = denom;
     if (denominator == 0) throw;
 
 }
