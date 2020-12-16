@@ -20,11 +20,11 @@ public:
     int getNumerator();
     int getDenominator();
 
-    Fraction operator + (const Fraction&);
-    Fraction operator - (const Fraction&);
-    Fraction operator / (const Fraction&);
-    Fraction operator * (const Fraction&);
-    Fraction operator = (const Fraction&);
+    Fraction operator+(const Fraction&);
+    Fraction operator-(const Fraction&);
+    Fraction operator/(const Fraction&);
+    Fraction operator*(const Fraction&);
+    Fraction operator=(const Fraction&);
 };
 
 

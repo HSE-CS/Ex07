@@ -6,7 +6,7 @@ using namespace std;
 
 
 int main() {
-    Fraction a(1, 9);
+    Fraction a(3, 9);
     cout << a.GetValue() << endl;
     Fraction b(a);
     cout << b.GetValue() << endl;

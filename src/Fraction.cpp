@@ -57,7 +57,7 @@ void Fraction::normalize() {
 }
 
 Fraction Fraction::operator+(const Fraction& frac) {
-    int num = numerator * frac.denominator + frac.numerator * denominator;
+    int num = frac.denominator * numerator + frac.numerator * denominator;
     int denom = denominator * frac.denominator;
 
     Fraction res(num, denom);
@@ -93,11 +93,8 @@ Fraction Fraction::operator/(const Fraction& frac) {
 }
 
 Fraction Fraction::operator=(const Fraction& frac) {
-    int num = frac.denominator;
-    int denom = frac.numerator;
-
-    Fraction res(num, denom);
-    res.normalize();
-    return res;
+    numerator = frac.numerator;
+    denominator = frac.denominator;
+    return *this;
 }
 
