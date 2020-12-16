@@ -33,8 +33,7 @@ std::string Fraction::getValue() {
     if (denominator != 1) {
         std::string denom = std::to_string(denominator);
         return num + "/" + denom;
-    } else if (denominator == 1) return num;
-}
+    } else if (denominator == 1) { return num; } }
 
 void Fraction::normalize() {
     if (denominator == 0) throw;
