@@ -1,18 +1,18 @@
 // Copyright 2020 Grachev Alexander
 
-#ifndef EX07_FRACTION_H
-#define EX07_FRACTION_H
+#ifndef INCLUDE_FRACTION_H_
+#define INCLUDE_FRACTION_H_
 
 #include <iostream>
 
 using namespace std;
 
 class Fraction {
-private:
+ private:
     int numerator;
     int denominator;
     void normalize();
-public:
+ public:
     Fraction();
     Fraction(int, int);
     Fraction(const Fraction&);
@@ -28,4 +28,4 @@ public:
 };
 
 
-#endif //EX07_FRACTION_H
+#endif // INCLUDE_FRACTION_H_

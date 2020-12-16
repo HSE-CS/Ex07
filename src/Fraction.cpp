@@ -4,8 +4,6 @@
 
 #include <string>
 
-using namespace std;
-
 Fraction::Fraction() {
     numerator = 0;
     denominator = 1;
@@ -23,11 +21,11 @@ Fraction::Fraction(const Fraction &frac) {
     denominator = frac.denominator;
 }
 
-string Fraction::GetValue() {
-    string s;
-    s += to_string(numerator);
+std::string Fraction::GetValue() {
+    std::string s;
+    s += std::to_string(numerator);
     s += '/';
-    s += to_string(denominator);
+    s += std::to_string(denominator);
     return s;
 }
 
