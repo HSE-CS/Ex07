@@ -103,4 +103,3 @@ Fraction Fraction::operator=(const Fraction& frac) {
     denominator = frac.denominator;
     return *this;
 }
-

@@ -5,8 +5,6 @@
 
 #include <iostream>
 
-using namespace std;
-
 class Fraction {
  private:
     int numerator;
@@ -16,7 +14,7 @@ class Fraction {
     Fraction();
     Fraction(int, int);
     Fraction(const Fraction&);
-    string GetValue();
+    std::string GetValue();
     int getNumerator();
     int getDenominator();
 
@@ -27,5 +25,4 @@ class Fraction {
     Fraction operator=(const Fraction&);
 };
 
-
-#endif // INCLUDE_FRACTION_H_
+#endif  // INCLUDE_FRACTION_H_
