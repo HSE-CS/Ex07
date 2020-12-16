@@ -1,3 +1,8 @@
+// Copyright 2020 Mushka Nikita
+
+#ifndef INCLUDE_FRACTION_H_
+#define INCLUDE_FRACTION_H_
+
 #include <cmath>
 #include <iostream>
 #include <string>
@@ -20,3 +25,5 @@ public:
     Fraction operator / (const Fraction&);
     Fraction operator = (const Fraction&);
 };
+
+#endif  // INCLUDE_FRACTION_H_

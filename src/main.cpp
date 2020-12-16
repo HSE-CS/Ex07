@@ -1,3 +1,5 @@
+// Copyright 2020 Mushka Nikita
+
 #include "Fraction.h"
 
 int main()
