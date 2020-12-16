@@ -48,14 +48,16 @@ void Fraction::normalize() {
 
     int lcd = 1;
     for (int i = 1; i <= min; i++) {
-        if ((numerator % i == 0) && (denominator % i == 0) && (i > lcd)) lcd = i;
+        if ((numerator % i == 0) && (denominator % i == 0) && (i > lcd))
+            lcd = i;
     }
     numerator /= lcd;
     denominator /= lcd;
 }
 
 Fraction Fraction::operator + (const Fraction& fraction) {
-    int num = fraction.denominator * numerator + fraction.numerator * denominator;
+    int num = fraction.denominator
+            * numerator + fraction.numerator * denominator;
     int denom = denominator * fraction.denominator;
 
     if (num == 0) denom = 1;
