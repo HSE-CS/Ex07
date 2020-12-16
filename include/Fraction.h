@@ -1,5 +1,4 @@
 // Copyright 2020 Mushka Nikita
-
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
 
@@ -10,11 +9,13 @@
 class Fraction{
 
 private:
+
     int numerator, denominator;
     void normalize();
 
 
 public:
+
     Fraction();
     Fraction(int, int);
     Fraction(const Fraction&);
