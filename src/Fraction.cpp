@@ -33,7 +33,10 @@ std::string Fraction::getValue() {
     if (denominator != 1) {
         std::string denom = std::to_string(denominator);
         return num + "/" + denom;
-    } else if (denominator == 1) return num;
+    }
+    else if (denominator == 1) {
+        return num;
+    }
 }
 
 void Fraction::normalize() {
@@ -66,7 +69,8 @@ Fraction Fraction::operator + (const Fraction& fraction) {
 }
 
 Fraction Fraction::operator - (const Fraction& fraction) {
-    int num = fraction.denominator * numerator - fraction.numerator * denominator;
+    int num = fraction.denominator *
+            numerator - fraction.numerator * denominator;
     int denom = denominator * fraction.denominator;
     if (num == 0) {
         denom = 1;

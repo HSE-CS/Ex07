@@ -6,16 +6,13 @@
 #include <iostream>
 #include <string>
 
-class Fraction{
-
+class Fraction {
 private:
-
     int numerator, denominator;
     void normalize();
 
 
 public:
-
     Fraction();
     Fraction(int, int);
     Fraction(const Fraction&);
