@@ -60,6 +60,8 @@ Fraction Fraction::operator+(const Fraction& frac) {
     int num = frac.denominator * numerator + frac.numerator * denominator;
     int denom = denominator * frac.denominator;
 
+    if (num == 0) denom = 1;
+
     Fraction res(num, denom);
     res.normalize();
     return res;
@@ -68,6 +70,8 @@ Fraction Fraction::operator+(const Fraction& frac) {
 Fraction Fraction::operator-(const Fraction& frac) {
     int num = numerator * frac.denominator - frac.numerator * denominator;
     int denom = denominator * frac.denominator;
+
+    if (num == 0) denom = 1;
 
     Fraction res(num, denom);
     res.normalize();
@@ -78,6 +82,8 @@ Fraction Fraction::operator*(const Fraction& frac) {
     int num = numerator * frac.numerator;
     int denom = denominator * frac.denominator;
 
+    if (num == 0) denom = 1;
+
     Fraction res(num, denom);
     res.normalize();
     return res;
@@ -86,6 +92,8 @@ Fraction Fraction::operator*(const Fraction& frac) {
 Fraction Fraction::operator/(const Fraction& frac) {
     int num = numerator * frac.denominator;
     int denom = denominator * frac.numerator;
+
+    if (num == 0) denom = 1;
 
     Fraction res(num, denom);
     res.normalize();
