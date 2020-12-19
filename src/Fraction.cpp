@@ -19,6 +19,7 @@ int check_nod(int num, int den) {
         diff *= -1;
         div = check_nod(num, diff);
     }
+
     else {
         div = check_nod(den, diff);
     }
