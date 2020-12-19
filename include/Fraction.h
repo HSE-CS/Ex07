@@ -1,6 +1,8 @@
 // Copyright 2020 SalakhovRamazan
 #pragma once
 #include <string>
+#include <stdio.h>
+#include <iostream>
 class Fraction {
 private:
 	int numerator;

@@ -1,6 +1,4 @@
 // Copyright 2020 SalakhovRamazan
-#include <stdio.h>
-#include <iostream>
 
 #include "Fraction.h"
 
