@@ -7,11 +7,11 @@
 #include <iostream>
 
 class Fraction {
-private:
+ private:
 	int numerator;
 	int denominator;
 	void normalize();
-public:
+ public:
 	explicit Fraction(int = 0, int = 1);
 	Fraction(Fraction&);
 	Fraction operator+(const Fraction&);
