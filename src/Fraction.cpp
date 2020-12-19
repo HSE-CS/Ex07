@@ -1,4 +1,7 @@
 // Copyright 2020 SalakhovRamazan
+#include <stdio.h>
+#include <iostream>
+
 #include "Fraction.h"
 
 int check_nod(int num, int den) {
