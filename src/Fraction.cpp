@@ -20,10 +20,9 @@ int check_nod(int num, int den) {
         div = check_nod(num, diff);
     }
 
-    else {
+    else 
         div = check_nod(den, diff);
-    }
-
+  
     return div;
 }
 
