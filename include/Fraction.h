@@ -4,7 +4,6 @@
 #define INCLUDE_FRACTION_H_
 
 #include <string>
-#include <stdio.h>
 #include <iostream>
 
 class Fraction {
