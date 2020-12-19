@@ -1,5 +1,7 @@
 // Copyright 2020 SalakhovRamazan
 
+#include <stdio.h>
+#include <iostream>
 #include "Fraction.h"
 
 int check_nod(int num, int den) {
@@ -36,7 +38,7 @@ denominator(fract.denominator) {
 }
 
 void Fraction::normalize() {
-
+    // check zero denominator
     try {
         if (this->denominator == 0)
             throw - 1;
@@ -44,15 +46,17 @@ void Fraction::normalize() {
     catch (int) {
         exit(-1);
     }
+    // handle the minus
     if ((this->denominator < 0 && this->numerator < 0)
         || (this->denominator < 0 && this->numerator > 0)) {
         this->numerator *= -1;
         this->denominator *= -1;
     }
+    // handle the nod
     int nod = check_nod(this->numerator, this->denominator);
     this->numerator /= nod;
     this->denominator /= nod;
-
+    // zero num
     if (this->numerator == 0)
         this->denominator = 1;
 }

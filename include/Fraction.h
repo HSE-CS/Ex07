@@ -1,8 +1,9 @@
 // Copyright 2020 SalakhovRamazan
-#pragma once
+#ifndef INCLUDE_FRACTION_H_
+#define INCLUDE_FRACTION_H_
+
 #include <string>
-#include <stdio.h>
-#include <iostream>
+
 class Fraction {
 private:
 	int numerator;
@@ -21,3 +22,5 @@ public:
 	int getDenominator() const;
 };
 
+
+#endif  // INCLUDE_FRACTION_H_
