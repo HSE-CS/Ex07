@@ -1,9 +1,7 @@
 // Copyright 2020 SalakhovRamazan
 #include "Fraction.h"
-using namespace std;
 
-int main()
-{
+int main() {
     Fraction a(1, 2); 
     Fraction b(a);
     Fraction c;
