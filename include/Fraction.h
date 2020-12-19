@@ -1,4 +1,5 @@
 // Copyright 2020 SalakhovRamazan
+
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
 
@@ -22,5 +23,5 @@ public:
 	int getDenominator() const;
 };
 
-
 #endif  // INCLUDE_FRACTION_H_
+
