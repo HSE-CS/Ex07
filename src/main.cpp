@@ -1,12 +1,22 @@
 #include <iostream>
 #include "../include/Fraction.h"
 int main() {
-	Fraction newFraction = Fraction(14, 7);
-	std::cout << newFraction.getValue() << "\n";
-	Fraction newFraction2 = Fraction(77, 22);
-	std::cout << newFraction2.getValue() << "\n";
-	newFraction2 = newFraction2 - newFraction;
-	std::cout << newFraction2.getValue() << "\n";
-	
-	
+  Fraction a(1, 2);
+  Fraction b(a);
+  Fraction c;
+  std::cout << a.getValue() << " " << b.getValue() << " " << c.getValue()
+            << std::endl;
+  std::cout << a.getNumerator() << a.getDenominator() << std::endl;
+  c = a + b;
+  std::cout << c.getValue() << std::endl;
+  c = a - b;
+  std::cout << c.getValue() << std::endl;
+  c = a * b;
+  std::cout << c.getValue() << std::endl;
+  c = a / b;
+  std::cout << c.getValue() << std::endl;
+  c = a;
+  std::cout << c.getValue() << std::endl;
+  return 0;
+} 
 }
