@@ -7,4 +7,6 @@ int main() {
 	std::cout << newFraction2.getValue() << "\n";
 	newFraction2 = newFraction2 - newFraction;
 	std::cout << newFraction2.getValue() << "\n";
+	
+	
 }
