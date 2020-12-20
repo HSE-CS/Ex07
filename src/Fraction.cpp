@@ -7,11 +7,11 @@ Fraction::Fraction(int num, int denom) {
   }
   if (num == 0) {
     numerator = num;
-	denominator = 1;
+  denominator = 1;
   }
   if ((num != 0) && (denom != 0)) {
     numerator = num;
-	denominator = denom;
+  denominator = denom;
   }
   this->normalize();
 }
@@ -24,11 +24,11 @@ void Fraction::normalize() {
   int min = 0;
   if (abs(numerator) < abs(denominator)) {
     min = abs(numerator);
- }
+  }
   if ((abs(numerator) > abs(denominator)) ||
   (abs(numerator) == abs(denominator))) {
     min = abs(denominator);
- }
+  }
   int gcd = 1;
   for (int i = 1; i <= min; ++i) {
     if ((numerator % i == 0) && (denominator % i == 0) && (i > gcd)) {
