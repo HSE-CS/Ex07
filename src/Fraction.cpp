@@ -51,7 +51,8 @@ int Fraction::getDenominator() {
 
 Fraction operator+(const Fraction &left, const Fraction &right) {
     auto result = new Fraction{
-            left.numerator * right.denominator + right.numerator * left.denominator,
+            left.numerator * right.denominator +
+            right.numerator * left.denominator,
             left.denominator * right.denominator
     };
     result->normalize();
@@ -60,7 +61,8 @@ Fraction operator+(const Fraction &left, const Fraction &right) {
 
 Fraction operator-(const Fraction &left, const Fraction &right) {
     auto result = new Fraction{
-            left.numerator * right.denominator - right.numerator * left.denominator,
+            left.numerator * right.denominator -
+            right.numerator * left.denominator,
             left.denominator * right.denominator
     };
     result->normalize();
