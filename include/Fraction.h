@@ -10,7 +10,6 @@ class Fraction {
  private:
   int numerator, denominator;
   void normalize();
-  
  public:
   Fraction();
 
