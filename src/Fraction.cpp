@@ -32,8 +32,8 @@ void Fraction::normalize() {
   int gcd = 1;
   for (int i = 1; i <= min; ++i) {
     if ((numerator % i == 0) && (denominator % i == 0) && (i > gcd)) {
-	  gcd = i;
-	}
+	gcd = i;
+  }
   }
   numerator /= gcd;
   denominator /= gcd;
