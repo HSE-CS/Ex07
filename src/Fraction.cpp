@@ -79,4 +79,9 @@ Fraction operator/(const Fraction &left, const Fraction &right) {
     return *result;
 }
 
+Fraction::Fraction() {
+    this->numerator = 0;
+    this->denominator = 1;
+}
+
 Fraction &Fraction::operator=(const Fraction &fraction) = default;

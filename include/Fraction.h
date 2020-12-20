@@ -11,6 +11,8 @@ private:
     void normalize();
 
 public:
+    Fraction();
+
     Fraction(int numerator, int denominator);
 
     Fraction(const Fraction &fraction);
