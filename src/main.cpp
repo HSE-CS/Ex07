@@ -1,3 +1,5 @@
+// Copyright 2020 Dyryaev Daniil
+
 #include "../include/Fraction.h"
 
 signed main() noexcept {

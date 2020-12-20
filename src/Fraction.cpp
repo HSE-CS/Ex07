@@ -1,3 +1,5 @@
+// Copyright 2020 Dyryaev Daniil
+
 #include <cassert>
 #include <exception>
 
@@ -23,15 +25,19 @@ int gcd(int a, int b) {
 }
 
 void Fraction::normalize() {
-    int new_n = this->numerator / gcd(this->numerator, this->denominator);
-    int new_d = this->denominator / gcd(this->numerator, this->denominator);
+    int new_n = this->numerator / gcd(this->numerator,
+                                      this->denominator);
+    int new_d = this->denominator / gcd(this->numerator,
+                                        this->denominator);
     this->numerator = new_n;
     this->denominator = new_d;
 }
 
 std::string Fraction::getValue() {
-    if (this->denominator == 1) return std::string(std::to_string(this->numerator));
-    std::string result = std::to_string(this->numerator) + "/" + std::to_string(this->denominator);
+    if (this->denominator == 1)
+        return std::string(std::to_string(this->numerator));
+    std::string result = std::to_string(this->numerator)
+                         + "/" + std::to_string(this->denominator);
     return result;
 }
 
