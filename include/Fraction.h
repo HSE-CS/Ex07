@@ -9,31 +9,26 @@
 
 class Fraction{
  private:
-	 int numerator;
-	 int denominator;
+  int numerator;
+  int denominator;
 
-	 void normalize();
+  void normalize();
 
  public:
-	 explicit Fraction(int num = 0, int denom = 1);
+  explicit Fraction(int num = 0, int denom = 1);
 
-	 Fraction(const Fraction& fr);
-	 
-	 std::string getValue();
-	 
-	 int getNumerator();
+  Fraction(const Fraction& fr);
 
-	 int getDenominator();
+  std::string getValue(); 
+  int getNumerator();
+  int getDenominator();
 	 
-	 Fraction operator+(const Fraction& fr);
-	 
-	 Fraction operator-(const Fraction& fr);
-	 
-	 Fraction operator*(const Fraction& fr);
-	 
-	 Fraction operator/(const Fraction& fr);
-	 
-	 Fraction operator=(const Fraction& fr); 
+  Fraction operator+(const Fraction& fr);
+  Fraction operator-(const Fraction& fr);
+  Fraction operator*(const Fraction& fr);
+  Fraction operator/(const Fraction& fr);
+  Fraction operator=(const Fraction& fr); 
 };
 
-#endif // INCLUDE_FRACTION_H_
+
+#endif  // INCLUDE_FRACTION_H_
