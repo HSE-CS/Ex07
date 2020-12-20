@@ -7,12 +7,13 @@
 #include <iostream>
 
 class Fraction {
-private:
 
+private:
     int numerator, denominator;
 
     void normalize();
 
+    
 public:
 
     Fraction();
