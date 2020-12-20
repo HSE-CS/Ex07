@@ -7,36 +7,33 @@
 #include <iostream>
 
 class Fraction {
+    private:
+        int numerator, denominator;
 
-private:
-    int numerator, denominator;
+        void normalize();
+        
+    public:
+        Fraction();
 
-    void normalize();
+        Fraction(int numerator, int denominator);
 
-    
-public:
+        Fraction(const Fraction &fraction);
 
-    Fraction();
+        std::string getValue();
 
-    Fraction(int numerator, int denominator);
+        int getNumerator();
 
-    Fraction(const Fraction &fraction);
+        int getDenominator();
 
-    std::string getValue();
+        friend Fraction operator+(const Fraction &left, const Fraction &right);
 
-    int getNumerator();
+        friend Fraction operator-(const Fraction &left, const Fraction &right);
 
-    int getDenominator();
+        friend Fraction operator*(const Fraction &left, const Fraction &right);
 
-    friend Fraction operator+(const Fraction &left, const Fraction &right);
+        friend Fraction operator/(const Fraction &left, const Fraction &right);
 
-    friend Fraction operator-(const Fraction &left, const Fraction &right);
-
-    friend Fraction operator*(const Fraction &left, const Fraction &right);
-
-    friend Fraction operator/(const Fraction &left, const Fraction &right);
-
-    Fraction& operator=(const Fraction &fraction);
+        Fraction& operator=(const Fraction &fraction);
 };
 
 #endif  // INCLUDE_FRACTION_H_
