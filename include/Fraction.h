@@ -19,10 +19,9 @@ class Fraction{
 
   Fraction(const Fraction& fr);
 
-  std::string getValue(); 
+  std::string getValue();
   int getNumerator();
-  int getDenominator();
-	 
+  int getDenominator(); 
   Fraction operator+(const Fraction& fr);
   Fraction operator-(const Fraction& fr);
   Fraction operator*(const Fraction& fr);
@@ -30,5 +29,4 @@ class Fraction{
   Fraction operator=(const Fraction& fr); 
 };
 
-
-#endif  // INCLUDE_FRACTION_H_
+#endif  // INCLUDE_FRACTION_H_ 
