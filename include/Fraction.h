@@ -6,11 +6,11 @@
 #include <numeric>
 #include <algorithm>
 class Fraction {
-private:
+ private:
     int numerator;
     int denominator;
     void normalize();
-public:
+ public:
     explicit Fraction(int num = 0, int denom = 1);
     Fraction(const Fraction& fr);
     std::string getValue();
