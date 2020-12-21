@@ -1,26 +1,35 @@
+// Copyright 2020 Nikita Semaev
 #include <stdio.h>
 #include <iostream>
-
-using namespace std;
+#include <string>
 
 
 #ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
 
 class Fraction {
-private:
-	int numerator, denominator;
-public:
-	Fraction(int numerator, int denominator);
-//	Fraction(const Fraction &test);
+ private:
+  int numerator, denominator;
+  void normalize();
+
+ public:
+  Fraction(int numerator, int denominator);
+
+  Fraction(const Fraction &);
+
+  std::string getValue();
+
+  int getNumerator();
+
+  int getDenominator();
+
+  friend Fraction operator+(const Fraction &left, const Fraction &right);
+
+  friend Fraction operator-(const Fraction &left, const Fraction &right);
+
+  friend Fraction operator*(const Fraction &left, const Fraction &right);
+
+  friend Fraction operator/(const Fraction &left, const Fraction &right);
 };
-
-
-//Fraction::Fraction(const Fraction &test){
-////	this->numerator = second.numerator;
-////	this->denominator = second.denominator;
-//}
-
-
 
 #endif /* INCLUDE_FRACTION_H_ */

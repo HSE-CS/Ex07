@@ -1,14 +1,17 @@
+// Copyright 2020 Nikita Semaev
 #include <stdio.h>
 #include <iostream>
 #include "../include/Fraction.h"
 
-using namespace std;
 
 int main(){
 	Fraction test(1, 1);
 	Fraction test2(test);
 
-	cout << "Hello" << endl;
+	test = test + test2;
+	std::cout << test.getNumerator() << " " << test.getDenominator() << std::endl;
+
+	std::cout << "Hello" << std::endl;
 	getchar();
 	getchar();
 	return 0;
