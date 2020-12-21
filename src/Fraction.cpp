@@ -1,6 +1,11 @@
 // Copyright 2020 Nikita Semaev
 #include "../include/Fraction.h"
 
+Fraction::Fraction() {
+  this->numerator = 0;
+  this->denominator = 1;
+}
+
 Fraction::Fraction(int numerator = 0, int denominator = 1) {
   this->numerator = numerator;
   this->denominator = denominator;
