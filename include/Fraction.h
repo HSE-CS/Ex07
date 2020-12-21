@@ -32,4 +32,4 @@ class Fraction {
   friend Fraction operator/(const Fraction &left, const Fraction &right);
 };
 
-#endif /* INCLUDE_FRACTION_H_ */
+#endif  // INCLUDE_FRACTION_H_
